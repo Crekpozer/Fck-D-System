@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://v0ubdhyitkgn"
+path="res://.godot/imported/number-5.obj-c3cd922e0a14ec140d1d9c26534caded.mesh"
+
+[deps]
+
+files=["res://.godot/imported/number-5.obj-c3cd922e0a14ec140d1d9c26534caded.mesh"]
+
+source_file="res://Assets/Addon/Prototype/Models/OBJ format/number-5.obj"
+dest_files=["res://.godot/imported/number-5.obj-c3cd922e0a14ec140d1d9c26534caded.mesh", "res://.godot/imported/number-5.obj-c3cd922e0a14ec140d1d9c26534caded.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
