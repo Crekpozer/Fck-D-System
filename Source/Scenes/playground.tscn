@@ -1,0 +1,139 @@
+[gd_scene load_steps=15 format=3 uid="uid://cbm576t7ngsrs"]
+
+[ext_resource type="Script" uid="uid://wpo6i0eodhwe" path="res://Source/Script/player_character.gd" id="1_ft4vy"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ft4vy"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_61d18"]
+sky_material = SubResource("ProceduralSkyMaterial_ft4vy")
+
+[sub_resource type="Environment" id="Environment_pr1x3"]
+background_mode = 2
+sky = SubResource("Sky_61d18")
+tonemap_mode = 2
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_pr1x3"]
+points = PackedVector3Array(2.5, 1, 0.5, 2.5, 1, -0.5, -2.5, 1, 0.5, 2.5, -1, 0.5, 2.5, -1, -0.5, -2.5, 1, -0.5, -2.5, -1, 0.5, -2.5, -1, -0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ft4vy"]
+size = Vector3(5, 2, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_61d18"]
+points = PackedVector3Array(2.5, 1, 0.5, 2.5, 1, -0.5, -2.5, 1, 0.5, 2.5, -1, 0.5, 2.5, -1, -0.5, -2.5, 1, -0.5, -2.5, -1, 0.5, -2.5, -1, -0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_pr1x3"]
+size = Vector3(5, 2, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ft4vy"]
+points = PackedVector3Array(25, 2.5, 0.5, 25, 2.5, -0.5, -25, 2.5, 0.5, 25, -2.5, 0.5, 25, -2.5, -0.5, -25, 2.5, -0.5, -25, -2.5, 0.5, -25, -2.5, -0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_eg3x1"]
+size = Vector3(50, 5, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_w4enk"]
+points = PackedVector3Array(2.5, 1, 0.5, 2.5, 1, -0.5, -2.5, 1, 0.5, 2.5, -1, 0.5, 2.5, -1, -0.5, -2.5, 1, -0.5, -2.5, -1, 0.5, -2.5, -1, -0.5)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_61d18"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_pr1x3"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_w4enk"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[node name="Playground" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_pr1x3")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Floor" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.4957, 3.5033, 0)
+shape = SubResource("ConvexPolygonShape3D_pr1x3")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Floor/CollisionShape3D3"]
+mesh = SubResource("BoxMesh_ft4vy")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.4957, 3.5033, 0)
+shape = SubResource("ConvexPolygonShape3D_pr1x3")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Floor/CollisionShape3D4"]
+mesh = SubResource("BoxMesh_ft4vy")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4957, 2.70689, 0)
+shape = SubResource("ConvexPolygonShape3D_61d18")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Floor/CollisionShape3D2"]
+mesh = SubResource("BoxMesh_pr1x3")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_ft4vy")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor/CollisionShape3D"]
+mesh = SubResource("BoxMesh_eg3x1")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.4957, 3.5033, 0)
+shape = SubResource("ConvexPolygonShape3D_pr1x3")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Floor/CollisionShape3D5"]
+mesh = SubResource("BoxMesh_ft4vy")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.4957, 3.5033, 0)
+shape = SubResource("ConvexPolygonShape3D_pr1x3")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Floor/CollisionShape3D6"]
+mesh = SubResource("BoxMesh_ft4vy")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.496, 3.5112, 0)
+shape = SubResource("ConvexPolygonShape3D_w4enk")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Floor/CollisionShape3D7"]
+mesh = SubResource("BoxMesh_pr1x3")
+skeleton = NodePath("../..")
+
+[node name="CameraFollow" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.46781, 10.4207)
+
+[node name="Camera3D" type="Camera3D" parent="CameraFollow"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03112, 10.4207)
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+physics_interpolation_mode = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.43669, 0)
+script = ExtResource("1_ft4vy")
+moveSpeed = 15
+airMoveSpeed = 5.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+shape = SubResource("CapsuleShape3D_61d18")
+
+[node name="CircleBody" type="MeshInstance3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.464753, 0)
+mesh = SubResource("SphereMesh_pr1x3")
+
+[node name="SquareHead" type="MeshInstance3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.239531, 0.263071, 0)
+mesh = SubResource("BoxMesh_w4enk")
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="CharacterBody3D"]
+remote_path = NodePath("../../CameraFollow")
+update_rotation = false
+update_scale = false
