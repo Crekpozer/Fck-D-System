@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://c25if1tggla6x"]
+
+[ext_resource type="Script" uid="uid://wpo6i0eodhwe" path="res://Source/Script/player_character.gd" id="1_e8n8p"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_61d18"]
+radius = 0.256384
+height = 1.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_pr1x3"]
+radius = 0.25
+height = 0.5
+
+[sub_resource type="BoxMesh" id="BoxMesh_w4enk"]
+size = Vector3(0.25, 0.25, 0.25)
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+physics_interpolation_mode = 1
+floor_max_angle = 0.261799
+script = ExtResource("1_e8n8p")
+moveSpeed = 10
+airMoveSpeed = 5.0
+gravity = 20.0
+jumpForce = 10.0
+wallStickTime = 2.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.497942, 0)
+shape = SubResource("CapsuleShape3D_61d18")
+
+[node name="CircleBody" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.254385, 0)
+mesh = SubResource("SphereMesh_pr1x3")
+
+[node name="SquareHead" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0903973, 0.589106, 0)
+mesh = SubResource("BoxMesh_w4enk")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.165908, 0.5, 0)
+target_position = Vector3(0.15, 0, 0)
+collision_mask = 2
+debug_shape_custom_color = Color(0.886275, 0, 0, 1)
+debug_shape_thickness = 3
+
+[node name="Timers" type="Node" parent="."]
+
+[node name="StickTimer" type="Timer" parent="Timers"]
+unique_name_in_owner = true
+process_callback = 0
+one_shot = true

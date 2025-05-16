@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://2nncjcrxng75"
-path.s3tc="res://.godot/imported/colormap.png-87c20e5d164d447be2a2799de1f723cf.s3tc.ctex"
+path.s3tc="res://.godot/imported/colormap.png-e086ecd3eb98f514d6a2de5f88124825.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Addon/Prototype/Models/GLB format/Textures/colormap.png"
-dest_files=["res://.godot/imported/colormap.png-87c20e5d164d447be2a2799de1f723cf.s3tc.ctex"]
+source_file="res://Source/Resource/Materials/Textures/colormap.png"
+dest_files=["res://.godot/imported/colormap.png-e086ecd3eb98f514d6a2de5f88124825.s3tc.ctex"]
 
 [params]
 
