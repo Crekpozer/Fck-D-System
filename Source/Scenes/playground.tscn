@@ -1677,13 +1677,13 @@ mesh = SubResource("BoxMesh_61d18")
 skeleton = NodePath("../..")
 
 [node name="CameraFollow" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 3.43669, -0.136041)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.6863, 2.4631, -0.136041)
 
 [node name="Camera3D" type="Camera3D" parent="CameraFollow"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.279452, 4.7853)
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("19_bcye1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 3.43669, -0.136041)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.6863, 2.4631, -0.136041)
 wallStickTime = 0.2
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="CharacterBody3D"]
