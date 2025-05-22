@@ -1,0 +1,98 @@
+[gd_scene load_steps=7 format=3 uid="uid://b5cw5rnxum1br"]
+
+[ext_resource type="Script" uid="uid://e87sjpixwnyy" path="res://Source/Script/cube_static_body.gd" id="1_te4dg"]
+[ext_resource type="Script" uid="uid://dw0e8eqencur3" path="res://Source/Script/button.gd" id="1_upjl1"]
+[ext_resource type="Material" uid="uid://cp0qha1bkb274" path="res://Source/Resource/Materials/cube_material_3d.tres" id="2_4opui"]
+[ext_resource type="Script" uid="uid://pndyux5kef4h" path="res://Source/Script/sfx_button.gd" id="3_uyedr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_csrd7"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_n6ccc"]
+material = ExtResource("2_4opui")
+subdivide_width = 1
+subdivide_height = 1
+subdivide_depth = 1
+
+[node name="Node3D" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0.451427, -0.462157, 0.763299, -0.214981, 0.773892, 0.595714, 0, 7.36789, 7.5784)
+shadow_enabled = true
+
+[node name="CubeStaticBody" type="StaticBody3D" parent="."]
+script = ExtResource("1_te4dg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CubeStaticBody"]
+shape = SubResource("BoxShape3D_csrd7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CubeStaticBody"]
+unique_name_in_owner = true
+mesh = SubResource("BoxMesh_n6ccc")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="SFXButton" type="Button" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -344.0
+offset_top = -17.0
+offset_right = -182.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_uyedr")
+
+[node name="SFXButtonLabel" type="Label" parent="CanvasLayer/SFXButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -41.0
+offset_top = -11.5
+offset_right = 41.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Efeitos sonoros aqui"
+
+[node name="MusicButton" type="Button" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 280.0
+offset_top = -15.0
+offset_right = 376.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_upjl1")
+
+[node name="MusicButtonLabel" type="Label" parent="CanvasLayer/MusicButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -41.0
+offset_top = -12.0
+offset_right = 41.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Musica aqui"
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.930283, -0.0976086, 0.353618, 0, 0.963952, 0.266078, -0.366842, -0.247528, 0.896748, 2.05176, 2.00955, 4.84574)
+
+[connection signal="input_event" from="CubeStaticBody" to="CubeStaticBody" method="_on_input_event"]
+[connection signal="pressed" from="CanvasLayer/SFXButton" to="CanvasLayer/SFXButton" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/MusicButton" to="CanvasLayer/MusicButton" method="_on_pressed"]

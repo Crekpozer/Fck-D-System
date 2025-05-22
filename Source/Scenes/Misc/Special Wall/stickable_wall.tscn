@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://d2md3evaysfe1"]
+
+[ext_resource type="Material" uid="uid://d2jd1y0vaj41p" path="res://Source/Resource/Materials/stick_wall_material_3d.tres" id="1_b7sle"]
+[ext_resource type="Script" uid="uid://cg76pv7w3xf3o" path="res://Source/Scenes/Misc/Special Wall/stickable_wall.gd" id="1_n1c2n"]
+[ext_resource type="ArrayMesh" uid="uid://cfbg7thfbcpwp" path="res://Source/Scenes/Misc/Special Wall/wall.obj" id="2_n1c2n"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_b7sle"]
+points = PackedVector3Array(0.1, 1, 0.5, -0.1, 1, 0.5, 0.1, 0, 0.5, 0.1, 1, -0.5, -0.1, 1, -0.5, -0.1, 0, 0.5, 0.1, 0, -0.5, -0.1, 0, -0.5)
+
+[node name="StickableWall" type="StaticBody3D"]
+collision_layer = 3
+collision_mask = 0
+script = ExtResource("1_n1c2n")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_b7sle")
+
+[node name="Wall" type="MeshInstance3D" parent="."]
+material_override = ExtResource("1_b7sle")
+mesh = ExtResource("2_n1c2n")
