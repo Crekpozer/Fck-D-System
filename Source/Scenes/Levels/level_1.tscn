@@ -909,66 +909,68 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.8458, -33.8908, 1.06675)
 [node name="Camera3D" type="Camera3D" parent="CameraFollow"]
 transform = Transform3D(0.999976, 1.16413e-10, 0.00687654, -0.000652636, 0.995486, 0.0949053, -0.0068455, -0.0949076, 0.995463, -0.28513, 1.27481, 7.44945)
 
-[node name="StickableWall" parent="." instance=ExtResource("3_woc6x")]
+[node name="StickWallSection2" type="Node3D" parent="."]
+
+[node name="StickableWall" parent="StickWallSection2" instance=ExtResource("3_woc6x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -17.739, 1.01349)
 wallSide = true
 
-[node name="StickableWall2" parent="." instance=ExtResource("3_woc6x")]
+[node name="StickableWall2" parent="StickWallSection2" instance=ExtResource("3_woc6x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -16.739, 1.01349)
 wallSide = true
 
-[node name="StickableWall3" parent="." instance=ExtResource("3_woc6x")]
+[node name="StickableWall3" parent="StickWallSection2" instance=ExtResource("3_woc6x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -15.739, 1.01349)
 wallSide = true
 
-[node name="StickableWall4" parent="." instance=ExtResource("3_woc6x")]
+[node name="StickableWall4" parent="StickWallSection2" instance=ExtResource("3_woc6x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -14.739, 1.01349)
 wallSide = true
 
-[node name="StickableWall5" parent="." instance=ExtResource("3_woc6x")]
+[node name="StickableWall5" parent="StickWallSection2" instance=ExtResource("3_woc6x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -13.739, 1.01349)
 wallSide = true
 
-[node name="StickableWall6" parent="." instance=ExtResource("3_woc6x")]
+[node name="StickableWall6" parent="StickWallSection2" instance=ExtResource("3_woc6x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -12.739, 1.01349)
 wallSide = true
 
-[node name="StickableWall7" parent="." instance=ExtResource("3_woc6x")]
+[node name="StickableWall7" parent="StickWallSection2" instance=ExtResource("3_woc6x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -11.739, 1.01349)
 wallSide = true
 
-[node name="StickableWall8" parent="." instance=ExtResource("3_woc6x")]
+[node name="StickableWall8" parent="StickWallSection2" instance=ExtResource("3_woc6x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -10.739, 1.01349)
 wallSide = true
 
-[node name="StickableWall9" parent="." instance=ExtResource("3_woc6x")]
+[node name="StickableWall9" parent="StickWallSection2" instance=ExtResource("3_woc6x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -9.73899, 1.01349)
 wallSide = true
 
-[node name="StickableWall10" parent="." instance=ExtResource("3_woc6x")]
+[node name="StickableWall10" parent="StickWallSection2" instance=ExtResource("3_woc6x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -8.73899, 1.01349)
 wallSide = true
 
-[node name="StickableWall11" parent="." instance=ExtResource("3_woc6x")]
+[node name="StickableWall11" parent="StickWallSection2" instance=ExtResource("3_woc6x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.7439, -16.2051, 1.01349)
 
-[node name="StickableWall12" parent="." instance=ExtResource("3_woc6x")]
+[node name="StickableWall12" parent="StickWallSection2" instance=ExtResource("3_woc6x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.7439, -15.2051, 1.01349)
 
-[node name="StickableWall13" parent="." instance=ExtResource("3_woc6x")]
+[node name="StickableWall13" parent="StickWallSection2" instance=ExtResource("3_woc6x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.7439, -14.2051, 1.01349)
 
-[node name="StickableWall14" parent="." instance=ExtResource("3_woc6x")]
+[node name="StickableWall14" parent="StickWallSection2" instance=ExtResource("3_woc6x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.7439, -13.2051, 1.01349)
 
-[node name="StickableWall15" parent="." instance=ExtResource("3_woc6x")]
+[node name="StickableWall15" parent="StickWallSection2" instance=ExtResource("3_woc6x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.7439, -12.2051, 1.01349)
 
-[node name="StickableWall16" parent="." instance=ExtResource("3_woc6x")]
+[node name="StickableWall16" parent="StickWallSection2" instance=ExtResource("3_woc6x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.7439, -11.2051, 1.01349)
 
-[node name="StickableWall17" parent="." instance=ExtResource("3_woc6x")]
+[node name="StickableWall17" parent="StickWallSection2" instance=ExtResource("3_woc6x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.7439, -10.2051, 1.01349)
 
-[node name="StickableWall18" parent="." instance=ExtResource("3_woc6x")]
+[node name="StickableWall18" parent="StickWallSection2" instance=ExtResource("3_woc6x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.7439, -9.20515, 1.01349)
