@@ -35,8 +35,10 @@ func StopAll() -> void:
 
 # Function to set the volume of all
 # WIP: This function will split to cover the volume of each one.
-func SetVolume(volume: float):
+func SetVolumeMusic(volume: float):
 	gameplayMusicPlayer.volume_db = volume
+
+func SetVolumeSFX(volume : float):
 	SFXPlayer.volume_db = volume
 
 # Function to configure the bus of an AudioStreamPlayer

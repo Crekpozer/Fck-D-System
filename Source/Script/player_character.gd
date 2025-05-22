@@ -151,12 +151,3 @@ func _physics_process(delta: float) -> void:
 	
 	# inclina levemente o personagem para dar a impressão de movimento
 	rotation = rotation.lerp(Vector3(rotation.x, rotation.y, tilt), 1.0)
-
-
-#func _on_stick_timer_timeout() -> void:
-	#print("Acabou o timer")
-	#isSticking = false
-	#if collider.wallSide:
-		#velocity.x = wallJumpForce
-	#else:
-		#velocity.x = -wallJumpForce

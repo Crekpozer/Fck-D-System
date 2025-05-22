@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bq17otcfyc2m5"]
+
+[ext_resource type="Texture2D" uid="uid://bxi5rniq6qlnw" path="res://Source/Resource/Materials/Textures/PolygonPrototype_Texture_Grid_07.png" id="1_8i8e4"]
+
+[resource]
+albedo_color = Color(0.149835, 0.149835, 0.149835, 1)
+albedo_texture = ExtResource("1_8i8e4")
+uv1_scale = Vector3(100, 100, 100)

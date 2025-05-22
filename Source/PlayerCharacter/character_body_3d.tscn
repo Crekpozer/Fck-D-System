@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://wpo6i0eodhwe" path="res://Source/Script/player_character.gd" id="1_e8n8p"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_61d18"]
-radius = 0.204184
-height = 0.466331
+radius = 0.20389
+height = 0.407781
 
 [sub_resource type="SphereMesh" id="SphereMesh_pr1x3"]
 radius = 0.25
@@ -21,7 +21,7 @@ jumpForce = 10.0
 wallStickTime = 2.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.257786, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.252683, 0)
 shape = SubResource("CapsuleShape3D_61d18")
 
 [node name="CircleBody" type="MeshInstance3D" parent="."]
