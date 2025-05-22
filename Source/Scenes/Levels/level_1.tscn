@@ -1,7 +1,9 @@
-[gd_scene load_steps=36 format=4 uid="uid://eutd8b3mxb0o"]
+[gd_scene load_steps=38 format=4 uid="uid://eutd8b3mxb0o"]
 
 [ext_resource type="Texture2D" uid="uid://ca8kgb6838p6k" path="res://Source/Resource/Materials/Textures/PolygonPrototype_Texture_Grid_02.png" id="2_mfu6t"]
+[ext_resource type="Texture2D" uid="uid://dgny17gglxjkc" path="res://Assets/Images/level_design_miro.png" id="2_woc6x"]
 [ext_resource type="PackedScene" uid="uid://c25if1tggla6x" path="res://Source/PlayerCharacter/character_body_3d.tscn" id="3_mfu6t"]
+[ext_resource type="PackedScene" uid="uid://d2md3evaysfe1" path="res://Source/Scenes/Misc/Special Wall/stickable_wall.tscn" id="3_woc6x"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mfu6t"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -129,6 +131,7 @@ _surfaces = [{
 }]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mfu6t"]
+albedo_texture = ExtResource("2_woc6x")
 
 [sub_resource type="QuadMesh" id="QuadMesh_woc6x"]
 material = SubResource("StandardMaterial3D_mfu6t")
@@ -145,6 +148,7 @@ shadow_enabled = true
 
 [node name="Malha de fora" type="CSGMesh3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.75554, -35.749, 0.0980167)
+visible = false
 mesh = SubResource("BoxMesh_p3odm")
 material = SubResource("StandardMaterial3D_o4wny")
 
@@ -836,7 +840,6 @@ material = SubResource("StandardMaterial3D_o4wny")
 
 [node name="CSGBakedMeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.75554, -35.749, 0.0980167)
-visible = false
 mesh = SubResource("ArrayMesh_p3odm")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="CSGBakedMeshInstance3D2"]
@@ -847,22 +850,52 @@ shape = SubResource("ConcavePolygonShape3D_mfu6t")
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.75554, -35.749, 0.0980167)
-visible = false
 mesh = SubResource("ArrayMesh_mfu6t")
 
-[node name="Mapa" type="Node3D" parent="."]
-visible = false
+[node name="StickWallSection1" type="Node3D" parent="."]
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Mapa"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0277977, 0, -0.00823593)
+[node name="StickableWall" parent="StickWallSection1" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.1172, -26.0581, 1.01388)
+
+[node name="StickableWall6" parent="StickWallSection1" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.1172, -27.0581, 1.01388)
+
+[node name="StickableWall7" parent="StickWallSection1" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.1172, -28.0581, 1.01388)
+
+[node name="StickableWall2" parent="StickWallSection1" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.1172, -25.0581, 1.01388)
+
+[node name="StickableWall3" parent="StickWallSection1" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.1172, -24.0581, 1.01388)
+
+[node name="StickableWall4" parent="StickWallSection1" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.1172, -23.0581, 1.01388)
+
+[node name="StickableWall5" parent="StickWallSection1" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.1172, -22.0581, 1.01388)
+
+[node name="StickableWall8" parent="StickWallSection1" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.3711, -21.7447, 1.01388)
+wallSide = true
+
+[node name="StickableWall9" parent="StickWallSection1" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.3711, -20.7447, 1.01388)
+wallSide = true
+
+[node name="LevelDesign" type="Node3D" parent="."]
+
+[node name="LevelMap" type="MeshInstance3D" parent="LevelDesign"]
+transform = Transform3D(0.858193, 0, 0, 0, 0.792, 0, 0, 0, 1.019, 6.25494, 1.93184, -0.00823593)
 mesh = SubResource("QuadMesh_woc6x")
 skeleton = NodePath("../..")
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("3_mfu6t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.4851, -32.5674, 1.06675)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.8458, -33.8908, 1.06675)
 moveSpeed = 6
 tiltAmount = 0.0
-jumpForce = 7.0
+jumpForce = 6.0
+wallJumpCorrectionWindow = 0.5
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="CharacterBody3D"]
 remote_path = NodePath("../../CameraFollow")
@@ -871,7 +904,71 @@ update_scale = false
 
 [node name="CameraFollow" type="Node3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.4851, -32.5674, 1.06675)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.8458, -33.8908, 1.06675)
 
 [node name="Camera3D" type="Camera3D" parent="CameraFollow"]
 transform = Transform3D(0.999976, 1.16413e-10, 0.00687654, -0.000652636, 0.995486, 0.0949053, -0.0068455, -0.0949076, 0.995463, -0.28513, 1.27481, 7.44945)
+
+[node name="StickableWall" parent="." instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -17.739, 1.01349)
+wallSide = true
+
+[node name="StickableWall2" parent="." instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -16.739, 1.01349)
+wallSide = true
+
+[node name="StickableWall3" parent="." instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -15.739, 1.01349)
+wallSide = true
+
+[node name="StickableWall4" parent="." instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -14.739, 1.01349)
+wallSide = true
+
+[node name="StickableWall5" parent="." instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -13.739, 1.01349)
+wallSide = true
+
+[node name="StickableWall6" parent="." instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -12.739, 1.01349)
+wallSide = true
+
+[node name="StickableWall7" parent="." instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -11.739, 1.01349)
+wallSide = true
+
+[node name="StickableWall8" parent="." instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -10.739, 1.01349)
+wallSide = true
+
+[node name="StickableWall9" parent="." instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -9.73899, 1.01349)
+wallSide = true
+
+[node name="StickableWall10" parent="." instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -8.73899, 1.01349)
+wallSide = true
+
+[node name="StickableWall11" parent="." instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.7439, -16.2051, 1.01349)
+
+[node name="StickableWall12" parent="." instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.7439, -15.2051, 1.01349)
+
+[node name="StickableWall13" parent="." instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.7439, -14.2051, 1.01349)
+
+[node name="StickableWall14" parent="." instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.7439, -13.2051, 1.01349)
+
+[node name="StickableWall15" parent="." instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.7439, -12.2051, 1.01349)
+
+[node name="StickableWall16" parent="." instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.7439, -11.2051, 1.01349)
+
+[node name="StickableWall17" parent="." instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.7439, -10.2051, 1.01349)
+
+[node name="StickableWall18" parent="." instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.7439, -9.20515, 1.01349)

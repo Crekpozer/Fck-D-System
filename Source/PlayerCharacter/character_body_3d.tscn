@@ -16,9 +16,10 @@ floor_max_angle = 0.261799
 script = ExtResource("1_e8n8p")
 moveSpeed = 10
 airMoveSpeed = 5.0
-gravity = 20.0
+gravity = 14.0
 jumpForce = 10.0
 wallStickTime = 2.0
+wallJumpForce = 7.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.252683, 0)
@@ -42,3 +43,6 @@ debug_shape_thickness = 3
 unique_name_in_owner = true
 process_callback = 0
 one_shot = true
+
+[node name="wallJumpCorrectionTimer" type="Timer" parent="Timers"]
+unique_name_in_owner = true
