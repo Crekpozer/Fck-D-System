@@ -1,10 +1,13 @@
-[gd_scene load_steps=45 format=4 uid="uid://eutd8b3mxb0o"]
+[gd_scene load_steps=47 format=4 uid="uid://eutd8b3mxb0o"]
 
 [ext_resource type="Texture2D" uid="uid://ca8kgb6838p6k" path="res://Source/Resource/Materials/Textures/PolygonPrototype_Texture_Grid_02.png" id="2_mfu6t"]
 [ext_resource type="Texture2D" uid="uid://dgny17gglxjkc" path="res://Assets/Images/level_design_miro.png" id="2_woc6x"]
 [ext_resource type="PackedScene" uid="uid://c25if1tggla6x" path="res://Source/PlayerCharacter/character_body_3d.tscn" id="3_mfu6t"]
 [ext_resource type="PackedScene" uid="uid://d2md3evaysfe1" path="res://Source/Scenes/Misc/Special Wall/stickable_wall.tscn" id="3_woc6x"]
-[ext_resource type="Script" uid="uid://bcef27w3aptpj" path="res://Source/Scenes/Misc/Moving Plataform/moving_plataform.gd" id="5_o4wny"]
+[ext_resource type="PackedScene" uid="uid://dx1cqunyvykvh" path="res://Source/Scenes/Misc/Moving Plataform/moving_plataform.tscn" id="5_o4wny"]
+[ext_resource type="Material" uid="uid://dx8vmqimc3nkc" path="res://Source/Resource/Materials/danger_standard_material_3d.tres" id="6_4g030"]
+[ext_resource type="PackedScene" uid="uid://c2y628badbr66" path="res://Source/Scenes/Misc/DeathArea/death_area_3d.tscn" id="6_eaf8p"]
+[ext_resource type="Texture2D" uid="uid://bxi5rniq6qlnw" path="res://Source/Resource/Materials/Textures/PolygonPrototype_Texture_Grid_07.png" id="7_eaf8p"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mfu6t"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -138,226 +141,33 @@ albedo_texture = ExtResource("2_woc6x")
 material = SubResource("StandardMaterial3D_mfu6t")
 size = Vector2(150, 100)
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_e7t1m"]
-data = PackedVector3Array(-2.75, 0.5, 2.5, 2.75, 0.5, 2.5, -2.75, -0.5, 2.5, 2.75, 0.5, 2.5, 2.75, -0.5, 2.5, -2.75, -0.5, 2.5, 2.75, 0.5, -2.5, -2.75, 0.5, -2.5, 2.75, -0.5, -2.5, -2.75, 0.5, -2.5, -2.75, -0.5, -2.5, 2.75, -0.5, -2.5, 2.75, 0.5, 2.5, 2.75, 0.5, -2.5, 2.75, -0.5, 2.5, 2.75, 0.5, -2.5, 2.75, -0.5, -2.5, 2.75, -0.5, 2.5, -2.75, 0.5, -2.5, -2.75, 0.5, 2.5, -2.75, -0.5, -2.5, -2.75, 0.5, 2.5, -2.75, -0.5, 2.5, -2.75, -0.5, -2.5, 2.75, 0.5, 2.5, -2.75, 0.5, 2.5, 2.75, 0.5, -2.5, -2.75, 0.5, 2.5, -2.75, 0.5, -2.5, 2.75, 0.5, -2.5, -2.75, -0.5, 2.5, 2.75, -0.5, 2.5, -2.75, -0.5, -2.5, 2.75, -0.5, 2.5, 2.75, -0.5, -2.5, -2.75, -0.5, -2.5)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eaf8p"]
+albedo_color = Color(1, 0.0980392, 0.121569, 1)
+albedo_texture = ExtResource("7_eaf8p")
+uv1_triplanar = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_1b8a6"]
+_surfaces = [{
+"aabb": AABB(-7.36312, -1.00273, -1.05509, 14.7262, 2.94887, 2.11018),
+"attribute_data": PackedByteArray("AACAPwAAAAAAAIA/AAAAP6uqKj8AAAA/q6qqPgAAAD+rqqo+AACAPwAAAAAAAIA/q6oqPwAAAD8AAIA/AAAAP6uqKj8AAIA/AAAAAAAAAD+rqqo+AAAAPwAAAAAAAIA/q6oqPwAAAD+rqio/AACAP6uqqj4AAIA/AAAAAAAAAACrqqo+AAAAAAAAAAAAAAA/AACAPwAAAD8AAIA/AACAP6uqKj8AAIA/q6oqPwAAAACrqio/AAAAP6uqqj4AAAA/q6qqPgAAAACrqqo+AAAAPwAAAAAAAAA/q6oqPwAAAAAAAIA/AAAAAKuqKj8AAAA/q6qqPgAAAD+rqio/AAAAP6uqqj4AAIA/q6qqPgAAAACrqio/AAAAAKuqqj4AAAA/"),
+"format": 34359738391,
+"material": SubResource("StandardMaterial3D_eaf8p"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 36,
+"vertex_data": PackedByteArray("rp7rwEgb+T8cDYe/rp7rwExZgL8cDYe/rp7rQExZgL8cDYe/rp7rwEgb+T8cDYc/rp7rwExZgL8cDYc/rp7rwExZgL8cDYe/rp7rwExZgL8cDYc/rp7rQExZgL8cDYc/rp7rwExZgL8cDYe/rp7rwEgb+T8cDYe/rp7rwEgb+T8cDYc/rp7rwExZgL8cDYe/rp7rwEgb+T8cDYc/rp7rwEgb+T8cDYe/rp7rQEgb+T8cDYe/rp7rwEgb+T8cDYc/rp7rQEgb+T8cDYc/rp7rwExZgL8cDYc/rp7rQExZgL8cDYc/rp7rQExZgL8cDYe/rp7rwExZgL8cDYe/rp7rQEgb+T8cDYe/rp7rQExZgL8cDYe/rp7rQExZgL8cDYc/rp7rQEgb+T8cDYc/rp7rQExZgL8cDYc/rp7rwExZgL8cDYc/rp7rQEgb+T8cDYe/rp7rwEgb+T8cDYe/rp7rQExZgL8cDYe/rp7rQEgb+T8cDYc/rp7rwEgb+T8cDYc/rp7rQEgb+T8cDYe/rp7rQEgb+T8cDYc/rp7rQEgb+T8cDYe/rp7rQExZgL8cDYc//////wAA/7//////AAD/v/////8AAP+/AAD/f/9//78AAP9//3//vwAA/3//f/+//38AAP///7//fwAA////v/9/AAD///+/AAD/f/9//78AAP9//3//vwAA/3//f/+//3///wAA/7//f///AAD/v/9///8AAP+//3//f////7//f/9/////v/9//3////+//38AAP///7//fwAA////v/9/AAD///+/////f/////////9//////////3///////3//f////7//f/9/////v/9//3////+//////wAA/7//////AAD/v/////8AAP+//3///wAA/7//f///AAD/v/9///8AAP+/////f/////////9//////////3//////")
+}]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_lwx2v"]
+points = PackedVector3Array(-6.73198, -0.95595, -1.0551, 7.47997, 2.15291, 1.16552, 7.47997, 2.15291, -1.17197, -7.47997, 2.15291, 1.16552, 6.7733, -0.96499, 1.0551, -7.47997, 2.15291, -1.17197, -6.7733, -0.96499, 1.0551, 6.73198, -0.95595, -1.0551)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1b8a6"]
+albedo_color = Color(1, 0.0980392, 0.121569, 1)
+albedo_texture = ExtResource("7_eaf8p")
+uv1_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_7jpiy"]
-size = Vector3(5.5, 1, 5)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_yvyfd"]
-size = Vector3(5.68335, 0.365662, 2.87207)
-
-[sub_resource type="Animation" id="Animation_lv35g"]
-resource_name = "start-finish"
-length = 4.0
-loop_mode = 2
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CollisionShape3D:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(3, 3),
-"points": PackedFloat32Array(-3.43329, -1, 0, 1, 0, 3.19804, -1, 0, 1, 0),
-"times": PackedFloat32Array(0, 4)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CollisionShape3D:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 4)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("CollisionShape3D:position:z")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 4)
-}
-tracks/3/type = "bezier"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("MeshInstance3D:position:x")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"handle_modes": PackedInt32Array(3, 3),
-"points": PackedFloat32Array(-3.43329, -1, 0, 1, 0, 3.19804, -1, 0, 1, 0),
-"times": PackedFloat32Array(0, 4)
-}
-tracks/4/type = "bezier"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("MeshInstance3D:position:y")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 4)
-}
-tracks/5/type = "bezier"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("MeshInstance3D:position:z")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 4)
-}
-tracks/6/type = "bezier"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Area3D:position:x")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"handle_modes": PackedInt32Array(3, 3),
-"points": PackedFloat32Array(-3.46731, -1, 0, 1, 0, 3.21851, -1, 0, 1, 0),
-"times": PackedFloat32Array(0, 4)
-}
-tracks/7/type = "bezier"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Area3D:position:y")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0.528452, -0.25, 0, 0.25, 0, 0.528452, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 4)
-}
-tracks/8/type = "bezier"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Area3D:position:z")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1.13826, -0.25, 0, 0.25, 0, 1.13826, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 4)
-}
-
-[sub_resource type="Animation" id="Animation_g8xsc"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CollisionShape3D:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-3.43329, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CollisionShape3D:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("CollisionShape3D:position:z")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/3/type = "bezier"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("MeshInstance3D:position:x")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-3.43329, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/4/type = "bezier"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("MeshInstance3D:position:y")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/5/type = "bezier"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("MeshInstance3D:position:z")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/6/type = "bezier"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Area3D:position:x")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-3.46731, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/7/type = "bezier"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Area3D:position:y")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0.528452, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/8/type = "bezier"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Area3D:position:z")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1.13826, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_j78qg"]
-_data = {
-&"RESET": SubResource("Animation_g8xsc"),
-&"start-finish": SubResource("Animation_lv35g")
-}
+size = Vector3(8, 5, 5)
 
 [node name="Level1" type="Node3D"]
 
@@ -1074,6 +884,38 @@ shape = SubResource("ConcavePolygonShape3D_mfu6t")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.75554, -35.749, 0.0980167)
 mesh = SubResource("ArrayMesh_mfu6t")
 
+[node name="LevelDesign" type="Node3D" parent="."]
+
+[node name="LevelMap" type="MeshInstance3D" parent="LevelDesign"]
+transform = Transform3D(0.858193, 0, 0, 0, 0.792, 0, 0, 0, 1.019, 6.25494, 1.93184, -0.00823593)
+mesh = SubResource("QuadMesh_woc6x")
+skeleton = NodePath("../..")
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("3_mfu6t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.1169, -25.5159, 1)
+collision_layer = 3
+collision_mask = 3
+platform_floor_layers = 4294901776
+moveSpeed = 6
+tiltAmount = 0.0
+gravity = 40.0
+jumpForce = 15.0
+wallJumpCorrectionWindow = 0.5
+wallHorizontalJumpForce = 15.0
+wallVerticalJumpForce = 15.0
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="CharacterBody3D"]
+remote_path = NodePath("../../CameraFollow")
+update_rotation = false
+update_scale = false
+
+[node name="CameraFollow" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.1169, -25.5159, 1)
+
+[node name="Camera3D" type="Camera3D" parent="CameraFollow"]
+transform = Transform3D(0.999976, 5.82067e-11, 0.00687654, -0.000652636, 0.995486, 0.0949054, -0.0068455, -0.0949076, 0.995463, -0.28513, 1.27481, 11.5539)
+
 [node name="StickWallSection1" type="Node3D" parent="."]
 
 [node name="StickableWall" parent="StickWallSection1" instance=ExtResource("3_woc6x")]
@@ -1104,35 +946,6 @@ wallSide = true
 [node name="StickableWall9" parent="StickWallSection1" instance=ExtResource("3_woc6x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.3711, -20.7447, 1.01388)
 wallSide = true
-
-[node name="LevelDesign" type="Node3D" parent="."]
-
-[node name="LevelMap" type="MeshInstance3D" parent="LevelDesign"]
-transform = Transform3D(0.858193, 0, 0, 0, 0.792, 0, 0, 0, 1.019, 6.25494, 1.93184, -0.00823593)
-mesh = SubResource("QuadMesh_woc6x")
-skeleton = NodePath("../..")
-
-[node name="CharacterBody3D" parent="." instance=ExtResource("3_mfu6t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.4512, -19.7761, 1.06675)
-collision_layer = 3
-collision_mask = 3
-platform_floor_layers = 4294901776
-moveSpeed = 6
-tiltAmount = 0.0
-jumpForce = 6.0
-wallJumpCorrectionWindow = 0.5
-
-[node name="RemoteTransform3D" type="RemoteTransform3D" parent="CharacterBody3D"]
-remote_path = NodePath("../../CameraFollow")
-update_rotation = false
-update_scale = false
-
-[node name="CameraFollow" type="Node3D" parent="."]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.4512, -19.7761, 1.06675)
-
-[node name="Camera3D" type="Camera3D" parent="CameraFollow"]
-transform = Transform3D(0.999976, 1.16413e-10, 0.00687654, -0.000652636, 0.995486, 0.0949053, -0.0068455, -0.0949076, 0.995463, -0.28513, 1.27481, 7.44945)
 
 [node name="StickWallSection2" type="Node3D" parent="."]
 
@@ -1200,34 +1013,350 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.7439, -10.2051, 1.01349)
 [node name="StickableWall18" parent="StickWallSection2" instance=ExtResource("3_woc6x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.7439, -9.20515, 1.01349)
 
-[node name="MovingPlataform" type="StaticBody3D" parent="."]
+[node name="StickWallSection3" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 73.2343, 20.5269, 0)
+
+[node name="StickableWall" parent="StickWallSection3" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -17.739, 1.01349)
+wallSide = true
+
+[node name="StickableWall2" parent="StickWallSection3" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -16.739, 1.01349)
+wallSide = true
+
+[node name="StickableWall3" parent="StickWallSection3" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -15.739, 1.01349)
+wallSide = true
+
+[node name="StickableWall4" parent="StickWallSection3" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -14.739, 1.01349)
+wallSide = true
+
+[node name="StickableWall5" parent="StickWallSection3" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -13.739, 1.01349)
+wallSide = true
+
+[node name="StickableWall6" parent="StickWallSection3" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -12.739, 1.01349)
+wallSide = true
+
+[node name="StickableWall7" parent="StickWallSection3" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -11.739, 1.01349)
+wallSide = true
+
+[node name="StickableWall8" parent="StickWallSection3" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -10.739, 1.01349)
+wallSide = true
+
+[node name="StickableWall9" parent="StickWallSection3" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -9.73899, 1.01349)
+wallSide = true
+
+[node name="StickableWall10" parent="StickWallSection3" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -8.73899, 1.01349)
+wallSide = true
+
+[node name="StickableWall11" parent="StickWallSection3" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.7439, -12.0461, 1.01349)
+
+[node name="StickableWall12" parent="StickWallSection3" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.7439, -11.0461, 1.01349)
+
+[node name="StickableWall13" parent="StickWallSection3" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.7439, -10.0461, 1.01349)
+
+[node name="StickableWall14" parent="StickWallSection3" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.7439, -9.04615, 1.01349)
+
+[node name="StickableWall15" parent="StickWallSection3" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.7439, -8.04615, 1.01349)
+
+[node name="StickableWall16" parent="StickWallSection3" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.7439, -7.04615, 1.01349)
+
+[node name="StickableWall17" parent="StickWallSection3" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.7439, -6.04615, 1.01349)
+
+[node name="StickableWall18" parent="StickWallSection3" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.7439, -5.0462, 1.01349)
+
+[node name="StickWallSection4" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.997, 37.4112, 3.8147e-06)
+
+[node name="StickableWall" parent="StickWallSection4" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -17.739, 1.01349)
+wallSide = true
+
+[node name="StickableWall2" parent="StickWallSection4" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -16.739, 1.01349)
+wallSide = true
+
+[node name="StickableWall3" parent="StickWallSection4" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -15.739, 1.01349)
+wallSide = true
+
+[node name="StickableWall4" parent="StickWallSection4" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -14.739, 1.01349)
+wallSide = true
+
+[node name="StickableWall5" parent="StickWallSection4" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -13.739, 1.01349)
+wallSide = true
+
+[node name="StickableWall6" parent="StickWallSection4" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -12.739, 1.01349)
+wallSide = true
+
+[node name="StickableWall7" parent="StickWallSection4" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -11.739, 1.01349)
+wallSide = true
+
+[node name="StickableWall8" parent="StickWallSection4" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -10.739, 1.01349)
+wallSide = true
+
+[node name="StickableWall9" parent="StickWallSection4" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -9.73899, 1.01349)
+wallSide = true
+
+[node name="StickableWall10" parent="StickWallSection4" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -8.73899, 1.01349)
+wallSide = true
+
+[node name="StickableWall14" parent="StickWallSection4" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.7069, -12.2176, 1.01349)
+
+[node name="StickableWall15" parent="StickWallSection4" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.7069, -11.2176, 1.01349)
+
+[node name="StickableWall16" parent="StickWallSection4" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.7069, -10.2176, 1.01349)
+
+[node name="StickableWall17" parent="StickWallSection4" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.7069, -9.21756, 1.01349)
+
+[node name="StickableWall18" parent="StickWallSection4" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.7069, -8.21761, 1.01349)
+
+[node name="StickWallSection5" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110.543, 35.4484, -1.44209)
+
+[node name="StickableWall6" parent="StickWallSection5" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.3545, -14.0609, 2.41512)
+wallSide = true
+
+[node name="StickableWall7" parent="StickWallSection5" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.3545, -13.0609, 2.41512)
+wallSide = true
+
+[node name="StickableWall8" parent="StickWallSection5" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.3545, -12.0609, 2.41512)
+wallSide = true
+
+[node name="StickableWall9" parent="StickWallSection5" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.3545, -11.0609, 2.41512)
+wallSide = true
+
+[node name="StickableWall10" parent="StickWallSection5" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.3545, -10.0609, 2.41512)
+wallSide = true
+
+[node name="StickableWall13" parent="StickWallSection5" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.1467, -8.32801, 2.41512)
+wallSide = true
+
+[node name="StickableWall22" parent="StickWallSection5" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.1467, -7.328, 2.41512)
+wallSide = true
+
+[node name="StickableWall23" parent="StickWallSection5" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.1467, -6.328, 2.41512)
+wallSide = true
+
+[node name="StickableWall14" parent="StickWallSection5" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.7069, -12.2176, 2.52808)
+
+[node name="StickableWall15" parent="StickWallSection5" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.7069, -11.2176, 2.52808)
+
+[node name="StickableWall16" parent="StickWallSection5" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.7069, -10.2176, 2.52808)
+
+[node name="StickableWall17" parent="StickWallSection5" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.7069, -9.21756, 2.52808)
+
+[node name="StickableWall18" parent="StickWallSection5" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.8881, -17.3367, 2.52808)
+
+[node name="StickableWall19" parent="StickWallSection5" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.8881, -16.3367, 2.52808)
+
+[node name="StickableWall20" parent="StickWallSection5" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.8881, -15.3367, 2.52808)
+
+[node name="StickableWall21" parent="StickWallSection5" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.8881, -14.3367, 2.52808)
+
+[node name="StickWallSection6" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00339127, 35.4484, -1.44209)
+
+[node name="StickableWall14" parent="StickWallSection6" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.5812, -6.09176, 2.47589)
+
+[node name="StickableWall15" parent="StickWallSection6" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.5812, -5.09176, 2.47589)
+
+[node name="StickableWall16" parent="StickWallSection6" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.5812, -4.09176, 2.47589)
+
+[node name="StickWallSection7" type="Node3D" parent="."]
+
+[node name="StickableWall12" parent="StickWallSection7" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.2296, -25.4223, 1.18765)
+
+[node name="StickableWall13" parent="StickWallSection7" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.1616, -21.3456, 1.18765)
+wallSide = true
+
+[node name="StickableWall14" parent="StickWallSection7" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.3738, -18.3645, 1.18765)
+
+[node name="StickableWall15" parent="StickWallSection7" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.9271, -18.8068, 1.18765)
+wallSide = true
+
+[node name="StickableWall16" parent="StickWallSection7" instance=ExtResource("3_woc6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.9271, -18.8068, 1.18765)
+wallSide = true
+
+[node name="MovingPlataformSection" type="Node3D" parent="."]
+
+[node name="MovingPlataform" parent="MovingPlataformSection" node_paths=PackedStringArray("startPositionMarker", "endPositionMarker") instance=ExtResource("5_o4wny")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5672, -19.864, 0)
-collision_layer = 2
-collision_mask = 2
-script = ExtResource("5_o4wny")
+startPositionMarker = NodePath("StartPositionMarker3D")
+endPositionMarker = NodePath("EndPositionMarker3D")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MovingPlataform"]
-physics_interpolation_mode = 1
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.43329, 0, 0)
-shape = SubResource("ConcavePolygonShape3D_e7t1m")
+[node name="StartPositionMarker3D" type="Marker3D" parent="MovingPlataformSection/MovingPlataform"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.69257, 0, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="MovingPlataform"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.43329, 0, 0)
+[node name="EndPositionMarker3D" type="Marker3D" parent="MovingPlataformSection/MovingPlataform"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.37008, 0, 0)
+
+[node name="MovingPlataform4" parent="MovingPlataformSection" node_paths=PackedStringArray("startPositionMarker", "endPositionMarker") instance=ExtResource("5_o4wny")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.17326, 25.6694, 0)
+startPositionMarker = NodePath("StartPositionMarker3D")
+endPositionMarker = NodePath("EndPositionMarker3D")
+
+[node name="StartPositionMarker3D" type="Marker3D" parent="MovingPlataformSection/MovingPlataform4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.92074, 0, 0)
+
+[node name="EndPositionMarker3D" type="Marker3D" parent="MovingPlataformSection/MovingPlataform4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.37008, 0, 0)
+
+[node name="MovingPlataform2" parent="MovingPlataformSection" node_paths=PackedStringArray("startPositionMarker", "endPositionMarker") instance=ExtResource("5_o4wny")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.7742, -26.7948, 0)
+startPositionMarker = NodePath("StartPositionMarker3D")
+endPositionMarker = NodePath("EndPositionMarker3D")
+
+[node name="StartPositionMarker3D" type="Marker3D" parent="MovingPlataformSection/MovingPlataform2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.113594, 6.22777, 0)
+
+[node name="EndPositionMarker3D" type="Marker3D" parent="MovingPlataformSection/MovingPlataform2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.153214, -4.21489, 0)
+
+[node name="MovingPlataform3" parent="MovingPlataformSection" node_paths=PackedStringArray("startPositionMarker", "endPositionMarker") instance=ExtResource("5_o4wny")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.9399, 19.7819, 0)
+startPositionMarker = NodePath("StartPositionMarker3D")
+endPositionMarker = NodePath("EndPositionMarker3D")
+
+[node name="StartPositionMarker3D" type="Marker3D" parent="MovingPlataformSection/MovingPlataform3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.818, 0)
+
+[node name="EndPositionMarker3D" type="Marker3D" parent="MovingPlataformSection/MovingPlataform3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.65049, 0)
+
+[node name="PlayerStartLocation" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.75, -34.0252, 1)
+
+[node name="Sprite3D" type="Sprite3D" parent="PlayerStartLocation"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.17292, 0)
+
+[node name="DeathAreaSection" type="Node3D" parent="."]
+
+[node name="DeathArea3D" parent="DeathAreaSection" instance=ExtResource("6_eaf8p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.7031, -34.1502, 0.795949)
+
+[node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="DeathAreaSection/DeathArea3D"]
+mesh = SubResource("ArrayMesh_1b8a6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DeathAreaSection/DeathArea3D"]
+shape = SubResource("ConvexPolygonShape3D_lwx2v")
+
+[node name="DeathArea3D3" type="Area3D" parent="DeathAreaSection"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.3253, -33.2722, 1)
+
+[node name="MaterialReference" type="CSGMesh3D" parent="DeathAreaSection/DeathArea3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.14043, -0.934322, -0.144583)
+material_override = ExtResource("6_4g030")
+material = SubResource("StandardMaterial3D_1b8a6")
+
+[node name="CSGMesh3D3" type="CSGMesh3D" parent="DeathAreaSection/DeathArea3D3/MaterialReference"]
+transform = Transform3D(2.65658, 0, 0, 0, 0.589774, 0, 0, 0, 0.422035, 0, 0.47171, 0)
+material_override = ExtResource("6_4g030")
 mesh = SubResource("BoxMesh_7jpiy")
+material = SubResource("StandardMaterial3D_1b8a6")
 
-[node name="Area3D" type="Area3D" parent="MovingPlataform"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.46731, 0.528452, 1.13826)
-collision_layer = 0
-collision_mask = 2
+[node name="DeathArea3D4" type="Area3D" parent="DeathAreaSection"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.4812, 1.17498, 1)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MovingPlataform/Area3D"]
-shape = SubResource("BoxShape3D_yvyfd")
+[node name="MaterialReference" type="CSGMesh3D" parent="DeathAreaSection/DeathArea3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.14043, -0.934322, -0.144583)
+material_override = ExtResource("6_4g030")
+material = SubResource("StandardMaterial3D_1b8a6")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="MovingPlataform"]
-libraries = {
-&"": SubResource("AnimationLibrary_j78qg")
-}
-autoplay = "start-finish"
+[node name="CSGMesh3D3" type="CSGMesh3D" parent="DeathAreaSection/DeathArea3D4/MaterialReference"]
+transform = Transform3D(1.68935, 0, 0, 0, 0.589774, 0, 0, 0, 0.422035, 0, 0, 0)
+material_override = ExtResource("6_4g030")
+mesh = SubResource("BoxMesh_7jpiy")
+material = SubResource("StandardMaterial3D_1b8a6")
 
-[connection signal="body_entered" from="MovingPlataform/Area3D" to="MovingPlataform" method="_on_area_3d_body_entered"]
-[connection signal="body_exited" from="MovingPlataform/Area3D" to="MovingPlataform" method="_on_area_3d_body_exited"]
+[node name="DeathArea3D5" type="Area3D" parent="DeathAreaSection"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.02731, 11.2642, 1)
+
+[node name="MaterialReference" type="CSGMesh3D" parent="DeathAreaSection/DeathArea3D5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.333092, 0, 0)
+material_override = ExtResource("6_4g030")
+material = SubResource("StandardMaterial3D_1b8a6")
+
+[node name="CSGMesh3D3" type="CSGMesh3D" parent="DeathAreaSection/DeathArea3D5/MaterialReference"]
+transform = Transform3D(2.34138, 0, 0, 0, 0.589774, 0, 0, 0, 0.422035, 0, 0, 0)
+material_override = ExtResource("6_4g030")
+mesh = SubResource("BoxMesh_7jpiy")
+material = SubResource("StandardMaterial3D_1b8a6")
+
+[node name="DeathArea3D6" type="Area3D" parent="DeathAreaSection"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.4666, 23.2344, 0.740439)
+
+[node name="MaterialReference" type="CSGMesh3D" parent="DeathAreaSection/DeathArea3D6"]
+material_override = ExtResource("6_4g030")
+material = SubResource("StandardMaterial3D_1b8a6")
+
+[node name="CSGMesh3D3" type="CSGMesh3D" parent="DeathAreaSection/DeathArea3D6/MaterialReference"]
+transform = Transform3D(2.34138, 0, 0, 0, 0.589774, 0, 0, 0, 0.422035, 0, 0, 0)
+material_override = ExtResource("6_4g030")
+mesh = SubResource("BoxMesh_7jpiy")
+material = SubResource("StandardMaterial3D_1b8a6")
+
+[node name="DeathArea3D7" type="Area3D" parent="DeathAreaSection"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.0835, -9.43201, 0.686809)
+
+[node name="MaterialReference" type="CSGMesh3D" parent="DeathAreaSection/DeathArea3D7"]
+material_override = ExtResource("6_4g030")
+material = SubResource("StandardMaterial3D_1b8a6")
+
+[node name="CSGMesh3D3" type="CSGMesh3D" parent="DeathAreaSection/DeathArea3D7/MaterialReference"]
+transform = Transform3D(1.57041, 0, 0, 0, 0.589774, 0, 0, 0, 0.422035, 1.18386, 0, 0)
+material_override = ExtResource("6_4g030")
+mesh = SubResource("BoxMesh_7jpiy")
+material = SubResource("StandardMaterial3D_1b8a6")

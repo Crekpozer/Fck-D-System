@@ -19,7 +19,6 @@ airMoveSpeed = 5.0
 gravity = 14.0
 jumpForce = 10.0
 wallStickTime = 2.0
-wallJumpForce = 7.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.252683, 0)
