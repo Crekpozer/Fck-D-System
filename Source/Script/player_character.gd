@@ -39,6 +39,11 @@ var cooldownStickTime : float
 # Tempo padrão que o jogador deve esperar antes de poder grudar na parede novamente
 var stickTimer : float = 0.2
 
+# CHAVES
+var hasBlueKey : bool
+var hasYellowKey : bool
+var hasRedKey : bool
+
 # REFERÊNCIAS
 # Referência ao nodo da câmera
 var cameraFollow : Node3D

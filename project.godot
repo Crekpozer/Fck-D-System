@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="FckDS - Fuck the Capitalism Game Jam"
+run/main_scene="uid://eutd8b3mxb0o"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 
 [autoload]

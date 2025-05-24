@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://wpo6i0eodhwe" path="res://Source/Script/player_character.gd" id="1_e8n8p"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_61d18"]
-radius = 0.20389
-height = 0.407781
+radius = 0.389607
+height = 0.779213
 
 [sub_resource type="SphereMesh" id="SphereMesh_pr1x3"]
 radius = 0.25
@@ -25,12 +25,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.252683, 0)
 shape = SubResource("CapsuleShape3D_61d18")
 
 [node name="CircleBody" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0.254385, 0)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0.254385, 0)
 mesh = SubResource("SphereMesh_pr1x3")
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.165908, 0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.317694, 0.441815, 0)
 target_position = Vector3(0.15, 0, 0)
 collision_mask = 2
 debug_shape_custom_color = Color(0.886275, 0, 0, 1)
