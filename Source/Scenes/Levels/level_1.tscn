@@ -299,7 +299,7 @@ resource_name = "OpenDoors"
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("RedDoor1:position:z")
+tracks/0/path = NodePath("YellowDoor1:position:z")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -313,7 +313,7 @@ length = 0.001
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("RedDoor1:position:z")
+tracks/0/path = NodePath("YellowDoor1:position:z")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -349,18 +349,18 @@ albedo_color = Color(0.0823529, 0.0823529, 0.921569, 1)
 material = SubResource("StandardMaterial3D_lv35g")
 size = Vector3(1, 1, 0.1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g8xsc"]
-albedo_color = Color(0.831373, 0.898039, 0.156863, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j78qg"]
+albedo_color = Color(0.65098, 0.835294, 0.0117647, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_xnujj"]
-material = SubResource("StandardMaterial3D_g8xsc")
+material = SubResource("StandardMaterial3D_j78qg")
 size = Vector3(1, 1, 0.1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8oq7w"]
-albedo_color = Color(0.85098, 0.113725, 0.156863, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g8xsc"]
+albedo_color = Color(0.831373, 0.101961, 0.156863, 1)
 
-[sub_resource type="BoxMesh" id="BoxMesh_ymdmp"]
-material = SubResource("StandardMaterial3D_8oq7w")
+[sub_resource type="BoxMesh" id="BoxMesh_8oq7w"]
+material = SubResource("StandardMaterial3D_g8xsc")
 size = Vector3(1, 1, 0.1)
 
 [node name="Level1" type="Node3D"]
@@ -1082,7 +1082,7 @@ mesh = SubResource("QuadMesh_woc6x")
 skeleton = NodePath("../..")
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("3_mfu6t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.4969, -33.1993, 0.993915)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.1009, -33.9908, 0.993915)
 collision_layer = 3
 collision_mask = 3
 platform_floor_layers = 4294901776
@@ -1101,7 +1101,7 @@ update_scale = false
 
 [node name="CameraFollow" type="Node3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.4969, -33.1993, 0.993915)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.1009, -33.9908, 0.993915)
 
 [node name="Camera3D" type="Camera3D" parent="CameraFollow"]
 transform = Transform3D(0.999976, 5.82067e-11, 0.00687654, -0.000652636, 0.995486, 0.0949054, -0.0068455, -0.0949076, 0.995463, -0.28513, 3.97905, 11.5539)
@@ -1765,7 +1765,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.568088, 1.12832)
 shape = SubResource("BoxShape3D_lv35g")
 
 [node name="YellowDoor1" type="Node3D" parent="YellowKeyHole"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1821, -6.70117, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.182, -6.701, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="YellowKeyHole/YellowDoor1"]
 mesh = SubResource("BoxMesh_j78qg")
@@ -1828,12 +1828,11 @@ colorYellow = true
 mesh = SubResource("BoxMesh_xnujj")
 
 [node name="RedKey" parent="." instance=ExtResource("11_wntwu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.4185, 4.74812, 0.972767)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.4871, 34.9238, 0.930809)
 colorRed = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RedKey"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.78379, 29.6417, 0)
-mesh = SubResource("BoxMesh_ymdmp")
+mesh = SubResource("BoxMesh_8oq7w")
 
 [connection signal="body_entered" from="FallingCrateSection/FallingCrate/ActivationArea3D" to="FallingCrateSection/FallingCrate" method="_on_activation_area_3d_body_entered"]
 [connection signal="body_entered" from="FallingCrateSection/FallingCrate2/ActivationArea3D" to="FallingCrateSection/FallingCrate2" method="_on_activation_area_3d_body_entered"]
