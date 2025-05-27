@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dx8vmqimc3nkc"]
 
 [ext_resource type="Texture2D" uid="uid://bxi5rniq6qlnw" path="res://Source/Resource/Materials/Textures/PolygonPrototype_Texture_Grid_07.png" id="1_mu4va"]
@@ -8,3 +9,5 @@ albedo_texture = ExtResource("1_mu4va")
 emission_enabled = true
 emission_energy_multiplier = 2.96
 uv1_triplanar = true
+=======
+>>>>>>> origin/importing-meshes-v2
