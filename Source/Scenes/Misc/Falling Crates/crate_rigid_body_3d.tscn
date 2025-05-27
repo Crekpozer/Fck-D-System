@@ -1,27 +1,26 @@
 [gd_scene load_steps=6 format=3 uid="uid://cyvvnlntd4kf6"]
 
 [ext_resource type="Script" uid="uid://donj0l1ah0uh4" path="res://Source/Scenes/Misc/Falling Crates/crate_rigid_body_3d.gd" id="1_2koqr"]
-[ext_resource type="Material" uid="uid://dx8vmqimc3nkc" path="res://Source/Resource/Materials/danger_standard_material_3d.tres" id="2_bhqyw"]
+[ext_resource type="PackedScene" uid="uid://bvc24gl334ual" path="res://Source/Scenes/Misc/Falling Crates/falling_box_mesh.tscn" id="2_bhqyw"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_e7t1m"]
-size = Vector3(2.2, 2.2, 2.2)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_lv35g"]
-points = PackedVector3Array(-1, -1, -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, -1, 1, 1, 1, -1, -1, -1, -1, 1, -1, 1, -1)
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_bhqyw"]
+points = PackedVector3Array(-1, -0.75, -1, -1, 0.75, -1, 1, -0.75, -1, -1, -0.75, 1, -1, 0.75, 1, 1, 0.75, -1, 1, -0.75, 1, 1, 0.75, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bhqyw"]
-size = Vector3(2.43848, 2.35938, 2.33032)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7nsff"]
+size = Vector3(2, 1.5, 2)
 
 [node name="FallingCrateRigidBody3D" type="RigidBody3D"]
 mass = 400.0
 script = ExtResource("1_2koqr")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-material_override = ExtResource("2_bhqyw")
-mesh = SubResource("BoxMesh_e7t1m")
+[node name="dangerous-falling-box" parent="." instance=ExtResource("2_bhqyw")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0.882908, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("ConvexPolygonShape3D_lv35g")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.853901, 0)
+shape = SubResource("ConvexPolygonShape3D_bhqyw")
 
 [node name="TimeBomb" type="Timer" parent="."]
 unique_name_in_owner = true
@@ -30,5 +29,10 @@ unique_name_in_owner = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("BoxShape3D_bhqyw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.853901, 0)
+visible = false
+mesh = SubResource("BoxMesh_7nsff")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

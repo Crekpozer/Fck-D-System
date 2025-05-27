@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvc24gl334ual"]
+
+[ext_resource type="PackedScene" uid="uid://buykp8p5e7t8q" path="res://Assets/FBX/dangerous-falling-box.fbx" id="1_1xso7"]
+[ext_resource type="Material" uid="uid://b3vvm3ja5s86q" path="res://Source/Resource/Materials/falling_crate_standard_material_3d.tres" id="2_d8ns7"]
+
+[node name="dangerous-falling-box" instance=ExtResource("1_1xso7")]
+
+[node name="danger_box" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_d8ns7")
