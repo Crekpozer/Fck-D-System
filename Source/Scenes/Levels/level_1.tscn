@@ -1,9 +1,12 @@
-[gd_scene load_steps=38 format=4 uid="uid://eutd8b3mxb0o"]
+[gd_scene load_steps=41 format=4 uid="uid://eutd8b3mxb0o"]
 
 [ext_resource type="Texture2D" uid="uid://ca8kgb6838p6k" path="res://Source/Resource/Materials/Textures/PolygonPrototype_Texture_Grid_02.png" id="2_mfu6t"]
 [ext_resource type="Texture2D" uid="uid://dgny17gglxjkc" path="res://Assets/Images/level_design_miro.png" id="2_woc6x"]
 [ext_resource type="PackedScene" uid="uid://c25if1tggla6x" path="res://Source/PlayerCharacter/character_body_3d.tscn" id="3_mfu6t"]
 [ext_resource type="PackedScene" uid="uid://d2md3evaysfe1" path="res://Source/Scenes/Misc/Special Wall/stickable_wall.tscn" id="3_woc6x"]
+[ext_resource type="PackedScene" uid="uid://c0p6vl3np5nse" path="res://Assets/FBX/Mechanic_Arm.fbx" id="5_4g030"]
+[ext_resource type="PackedScene" uid="uid://buykp8p5e7t8q" path="res://Assets/FBX/dangerous-falling-box.fbx" id="6_eaf8p"]
+[ext_resource type="PackedScene" uid="uid://cvfcayjvi0tje" path="res://Assets/FBX/fixed-ceiling-box.fbx" id="7_1b8a6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mfu6t"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -974,3 +977,30 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.7439, -10.2051, 1.01349)
 
 [node name="StickableWall18" parent="StickWallSection2" instance=ExtResource("3_woc6x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.7439, -9.20515, 1.01349)
+
+[node name="Mechanic_Arm" parent="." instance=ExtResource("5_4g030")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.8276, 25.375, 1.0713)
+
+[node name="Mechanic_Arm" parent="Mechanic_Arm" instance=ExtResource("5_4g030")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.76471, -0.0601616, -0.00407791)
+
+[node name="Mechanic_Arm" parent="Mechanic_Arm/Mechanic_Arm" instance=ExtResource("5_4g030")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.06818, -0.0601616, -0.014843)
+
+[node name="Mechanic_Arm2" parent="Mechanic_Arm" instance=ExtResource("5_4g030")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.66878, -42.1695, -0.281328)
+
+[node name="Mechanic_Arm" parent="Mechanic_Arm/Mechanic_Arm2" instance=ExtResource("5_4g030")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.76471, -0.0601616, -0.00407791)
+
+[node name="Mechanic_Arm" parent="Mechanic_Arm/Mechanic_Arm2/Mechanic_Arm" instance=ExtResource("5_4g030")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.06818, -0.0601616, -0.014843)
+
+[node name="dangerous-falling-box" parent="Mechanic_Arm" instance=ExtResource("6_eaf8p")]
+transform = Transform3D(2.28, 0, 0, 0, 2.28, 0, 0, 0, 2.28, 2.07186, -9.36475, -0.358436)
+
+[node name="fixed-ceiling-box" parent="." instance=ExtResource("7_1b8a6")]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -45.5611, 16.2288, -0.956254)
+
+[node name="fixed-ceiling-box" parent="fixed-ceiling-box" instance=ExtResource("7_1b8a6")]
+transform = Transform3D(0.974969, 0, 0, 0, 0.974969, 0, 0, 0, 0.974969, 1.5446, 0.0415969, -0.00826016)
