@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dx1cqunyvykvh"]
+[gd_scene load_steps=6 format=3 uid="uid://bu0ul7ygud58s"]
 
 [ext_resource type="Script" uid="uid://bcef27w3aptpj" path="res://Source/Scenes/Misc/Moving Plataform/moving_plataform.gd" id="1_mgbkt"]
 [ext_resource type="Material" uid="uid://c8kkb40dyj8hd" path="res://Source/Resource/Materials/moving_plataform_standard_material_3d.tres" id="2_qomb7"]
