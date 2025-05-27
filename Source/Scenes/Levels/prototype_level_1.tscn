@@ -195,7 +195,7 @@ size = Vector3(8, 5, 5)
 size = Vector3(3.29492, 19.4199, 3.37012)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_i0l8i"]
-size = Vector3(3.29492, 20.0917, 3.37012)
+size = Vector3(3.29492, 8.29526, 3.37012)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wntwu"]
 size = Vector3(3.29492, 8.14733, 3.37012)
@@ -1082,7 +1082,7 @@ mesh = SubResource("QuadMesh_woc6x")
 skeleton = NodePath("../..")
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("3_8fmr1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.1744, -34.0767, 0.993915)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.912, -6.95879, 0.993915)
 collision_layer = 3
 collision_mask = 3
 platform_floor_layers = 4294901776
@@ -1101,7 +1101,7 @@ update_scale = false
 
 [node name="CameraFollow" type="Node3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.1744, -34.0767, 0.993915)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.912, -6.95879, 0.993915)
 
 [node name="Camera3D" type="Camera3D" parent="CameraFollow"]
 transform = Transform3D(0.999976, 5.82067e-11, 0.00687654, -0.000652636, 0.995486, 0.0949054, -0.0068455, -0.0949076, 0.995463, -0.28513, 3.97905, 11.5539)
@@ -1626,7 +1626,7 @@ destroyCrateTime = 0.8
 [node name="ActivationArea3D" type="Area3D" parent="FallingCrateSection/FallingCrate2"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FallingCrateSection/FallingCrate2/ActivationArea3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.57367, 0.704481)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.74782, 0.704481)
 shape = SubResource("BoxShape3D_i0l8i")
 
 [node name="FallingCrate3" parent="FallingCrateSection" instance=ExtResource("10_n6i3n")]
