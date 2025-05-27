@@ -1,3 +1,4 @@
+class_name Player
 extends CharacterBody3D
 
 @export_category("Movement")
@@ -27,14 +28,21 @@ var canDoubleJump : bool = true
 @export var wallStickTime : float = 0.0
 var recentlyWallJumped : bool = false
 var wallJumpCorrectionTimer : Timer
-# Força do pulo na parede
-@export var wallJumpForce : float = 5.0
+# Força do pulo horizontal na parede
+@export var wallHorizontalJumpForce : float = 5.0
+# Força do pulo vertical na parede
+@export var wallVerticalJumpForce : float = 10.0
 # Marca se o personagem está grudado na parede ou não
 var isSticking : bool = false
 # Tempo que o jogador pode grudar na parede de novo
 var cooldownStickTime : float
 # Tempo padrão que o jogador deve esperar antes de poder grudar na parede novamente
 var stickTimer : float = 0.2
+
+# CHAVES
+var hasBlueKey : bool
+var hasYellowKey : bool
+var hasRedKey : bool
 
 # REFERÊNCIAS
 # Referência ao nodo da câmera
@@ -43,6 +51,8 @@ var cameraFollow : Node3D
 var rayCast : RayCast3D
 # Referência à parede que o personagem está grudado
 var collider : StaticBody3D
+# Referencia ao nodo de respawn do personagem
+var spawn : Node3D
 
 func _ready() -> void:
 	# Obtém a referência do nodo da CameraFollow
@@ -53,6 +63,7 @@ func _ready() -> void:
 	wallJumpCorrectionTimer = %wallJumpCorrectionTimer
 	wallJumpCorrectionTimer.wait_time = wallJumpCorrectionWindow
 	wallJumpCorrectionTimer.one_shot = true
+	spawn = %PlayerStartLocation
 
 func _physics_process(delta: float) -> void:
 	var direction = Vector3.ZERO
@@ -76,21 +87,21 @@ func _physics_process(delta: float) -> void:
 			cooldownStickTime = stickTimer
 			# Se houver também input direcional, prioriza-o
 			if Input.is_action_pressed("left"):
-				velocity.x = -wallJumpForce
+				velocity.x = -wallHorizontalJumpForce
 				transform.basis = Basis(Vector3(0, 1, 0), deg_to_rad(180))
 			elif Input.is_action_pressed("right"):
-				velocity.x = wallJumpForce
+				velocity.x = wallHorizontalJumpForce
 				transform.basis = Basis(Vector3(0, 1, 0), deg_to_rad(0))
 			else:
 				# Caso nenhum input direcional seja detectado, escolhe o impulso padrão
 				if collider.wallSide:
-					velocity.x = wallJumpForce
+					velocity.x = wallHorizontalJumpForce
 					transform.basis = Basis(Vector3(0, 1, 0), deg_to_rad(0))
 				else:
-					velocity.x = -wallJumpForce
+					velocity.x = -wallHorizontalJumpForce
 					transform.basis = Basis(Vector3(0, 1, 0), deg_to_rad(180))
 			# Impulso vertical para o wall jump
-			velocity.y = 10
+			velocity.y = wallVerticalJumpForce
 			isSticking = false
 			recentlyWallJumped = true
 			wallJumpCorrectionTimer.start()
@@ -153,3 +164,12 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 	rotation = rotation.lerp(Vector3(rotation.x, rotation.y, tilt), 1.0)
+
+func Death() -> void:
+	ResetPosition()
+
+func Damage() -> void:
+	pass
+
+func ResetPosition() -> void:
+	global_position = spawn.global_position

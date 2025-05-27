@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cy30qvr4h2mvs"]
+
+[ext_resource type="Script" uid="uid://cudk1imdjqlvu" path="res://Source/Scenes/Misc/Keys/key.gd" id="1_cd10h"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sek07"]
+size = Vector3(1.32788, 1.09277, 1)
+
+[node name="Key" type="Node3D"]
+script = ExtResource("1_cd10h")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00915527, 0.0463867, 0)
+shape = SubResource("BoxShape3D_sek07")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

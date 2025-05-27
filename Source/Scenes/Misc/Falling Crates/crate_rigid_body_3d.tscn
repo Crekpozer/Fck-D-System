@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://cyvvnlntd4kf6"]
+
+[ext_resource type="Script" uid="uid://donj0l1ah0uh4" path="res://Source/Scenes/Misc/Falling Crates/crate_rigid_body_3d.gd" id="1_2koqr"]
+[ext_resource type="Material" uid="uid://dx8vmqimc3nkc" path="res://Source/Resource/Materials/danger_standard_material_3d.tres" id="2_bhqyw"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_e7t1m"]
+size = Vector3(2.2, 2.2, 2.2)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_lv35g"]
+points = PackedVector3Array(-1, -1, -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, -1, 1, 1, 1, -1, -1, -1, -1, 1, -1, 1, -1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bhqyw"]
+size = Vector3(2.43848, 2.35938, 2.33032)
+
+[node name="FallingCrateRigidBody3D" type="RigidBody3D"]
+mass = 400.0
+script = ExtResource("1_2koqr")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+material_override = ExtResource("2_bhqyw")
+mesh = SubResource("BoxMesh_e7t1m")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_lv35g")
+
+[node name="TimeBomb" type="Timer" parent="."]
+unique_name_in_owner = true
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_bhqyw")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
