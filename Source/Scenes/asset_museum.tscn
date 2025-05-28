@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://cmqd3gsnrd4tl"]
+[gd_scene load_steps=12 format=3 uid="uid://cmqd3gsnrd4tl"]
 
 [ext_resource type="Material" path="res://Source/Resource/Materials/moving_plataform_standard_material_3d.tres" id="1_uxquf"]
 [ext_resource type="PackedScene" uid="uid://bimclf7l33uct" path="res://Assets/glTF/barra_imantada.glb" id="2_x57f7"]
 [ext_resource type="PackedScene" uid="uid://ch0am6f1ggxvk" path="res://Assets/FBX/mapa_fbx.fbx" id="3_n5ica"]
 [ext_resource type="PackedScene" uid="uid://blpp8chp1rpc8" path="res://Assets/FBX/Janela02.fbx" id="4_ptqox"]
 [ext_resource type="PackedScene" uid="uid://ccfi4khr1s4b6" path="res://Assets/FBX/Silo.fbx" id="5_yp0qy"]
+[ext_resource type="PackedScene" uid="uid://ddvbg3nv7ius0" path="res://Assets/FBX/Tonel_Unit.fbx" id="6_yp0qy"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_g1cnk"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -55,4 +56,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.321231, 0.531183, -0.520143
 
 [node name="Janela02" parent="Objetos" instance=ExtResource("4_ptqox")]
 
-[node name="Silo" parent="Objetos" instance=ExtResource("5_yp0qy")]
+[node name="Silo" parent="." instance=ExtResource("5_yp0qy")]
+transform = Transform3D(0.108026, 0, 0, 0, 0.108026, 0, 0, 0, 0.108026, -6.84564, 0.5, 12.0479)
+
+[node name="Tonel_Unit" parent="." instance=ExtResource("6_yp0qy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.8631, 0.5, 19.2116)
