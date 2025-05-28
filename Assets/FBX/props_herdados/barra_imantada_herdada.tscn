@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://4g2x4t3b7tku"]
+
+[ext_resource type="PackedScene" uid="uid://bimclf7l33uct" path="res://Assets/glTF/barra_imantada.glb" id="1_8s78h"]
+[ext_resource type="Material" uid="uid://d2jd1y0vaj41p" path="res://Source/Resource/Materials/stick_wall_material_3d.tres" id="2_8g36v"]
+
+[node name="barra_imantada2" instance=ExtResource("1_8s78h")]
+
+[node name="barra_imantada" parent="." index="0"]
+surface_material_override/1 = ExtResource("2_8g36v")
