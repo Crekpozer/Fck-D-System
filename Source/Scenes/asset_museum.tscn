@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cmqd3gsnrd4tl"]
+[gd_scene load_steps=8 format=3 uid="uid://cmqd3gsnrd4tl"]
 
-[ext_resource type="Material" uid="uid://c8kkb40dyj8hd" path="res://Source/Resource/Materials/moving_plataform_standard_material_3d.tres" id="1_uxquf"]
+[ext_resource type="Material" path="res://Source/Resource/Materials/moving_plataform_standard_material_3d.tres" id="1_uxquf"]
+[ext_resource type="PackedScene" uid="uid://buykp8p5e7t8q" path="res://Assets/FBX/dangerous-falling-box.fbx" id="2_g1cnk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_g1cnk"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -42,3 +43,6 @@ material_override = ExtResource("1_uxquf")
 mesh = SubResource("BoxMesh_yp0qy")
 
 [node name="Objetos" type="Node3D" parent="."]
+
+[node name="dangerous-falling-box" parent="." instance=ExtResource("2_g1cnk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1861, 1.26721, -0.141309)
