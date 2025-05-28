@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cmqd3gsnrd4tl"]
+[gd_scene load_steps=9 format=3 uid="uid://cmqd3gsnrd4tl"]
 
 [ext_resource type="Material" path="res://Source/Resource/Materials/moving_plataform_standard_material_3d.tres" id="1_uxquf"]
-[ext_resource type="PackedScene" uid="uid://buykp8p5e7t8q" path="res://Assets/FBX/dangerous-falling-box.fbx" id="2_g1cnk"]
+[ext_resource type="PackedScene" uid="uid://bimclf7l33uct" path="res://Assets/glTF/barra_imantada.glb" id="2_x57f7"]
+[ext_resource type="PackedScene" uid="uid://ch0am6f1ggxvk" path="res://Assets/FBX/mapa_fbx.fbx" id="3_n5ica"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_g1cnk"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -44,5 +45,8 @@ mesh = SubResource("BoxMesh_yp0qy")
 
 [node name="Objetos" type="Node3D" parent="."]
 
-[node name="dangerous-falling-box" parent="." instance=ExtResource("2_g1cnk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1861, 1.26721, -0.141309)
+[node name="barra_imantada2" parent="Objetos" instance=ExtResource("2_x57f7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.4655, 27.838, -0.807352)
+
+[node name="mapa_fbx" parent="Objetos" instance=ExtResource("3_n5ica")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.321231, 0.531183, -0.520143)
