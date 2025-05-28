@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://bu0ul7ygud58s"]
+
+[ext_resource type="Script" uid="uid://bcef27w3aptpj" path="res://Source/Scenes/Misc/Moving Plataform/moving_plataform.gd" id="1_mgbkt"]
+[ext_resource type="Material" uid="uid://c8kkb40dyj8hd" path="res://Source/Resource/Materials/moving_plataform_standard_material_3d.tres" id="2_qomb7"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_qomb7"]
+data = PackedVector3Array(-2.80672, 0.12803, -2.75693, -2.80672, -0.87197, -2.75693, 2.80672, -0.87197, -2.75693, -2.80672, 0.12803, 2.75693, -2.80672, -0.87197, 2.75693, -2.80672, -0.87197, -2.75693, -2.80672, -0.87197, 2.75693, 2.80672, -0.87197, 2.75693, -2.80672, -0.87197, -2.75693, -2.80672, 0.12803, -2.75693, -2.80672, 0.12803, 2.75693, -2.80672, -0.87197, -2.75693, -2.80672, 0.12803, 2.75693, -2.80672, 0.12803, -2.75693, 2.80672, 0.12803, -2.75693, -2.80672, 0.12803, 2.75693, 2.80672, 0.12803, 2.75693, -2.80672, -0.87197, 2.75693, 2.80672, -0.87197, 2.75693, 2.80672, -0.87197, -2.75693, -2.80672, -0.87197, -2.75693, 2.80672, 0.12803, -2.75693, 2.80672, -0.87197, -2.75693, 2.80672, -0.87197, 2.75693, 2.80672, 0.12803, 2.75693, 2.80672, -0.87197, 2.75693, -2.80672, -0.87197, 2.75693, 2.80672, 0.12803, -2.75693, -2.80672, 0.12803, -2.75693, 2.80672, -0.87197, -2.75693, 2.80672, 0.12803, 2.75693, -2.80672, 0.12803, 2.75693, 2.80672, 0.12803, -2.75693, 2.80672, 0.12803, 2.75693, 2.80672, 0.12803, -2.75693, 2.80672, -0.87197, 2.75693)
+
+[sub_resource type="BoxMesh" id="BoxMesh_qomb7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1qfvy"]
+size = Vector3(5.73413, 0.155273, 5.79102)
+
+[node name="MovingPlataform" type="StaticBody3D"]
+collision_mask = 5
+script = ExtResource("1_mgbkt")
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConcavePolygonShape3D_qomb7")
+
+[node name="CSGMeshMaterialReference" type="CSGMesh3D" parent="."]
+material = ExtResource("2_qomb7")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="CSGMeshMaterialReference"]
+transform = Transform3D(5.61344, 0, 0, 0, 1, 0, 0, 0, 5.51386, 0, -0.37197, 0)
+mesh = SubResource("BoxMesh_qomb7")
+material = ExtResource("2_qomb7")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.181092, 0)
+shape = SubResource("BoxShape3D_1qfvy")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
