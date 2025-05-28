@@ -54,7 +54,10 @@ var collider : StaticBody3D
 # Referencia ao nodo de respawn do personagem
 var spawn : Node3D
 
+var playedSound = false
+
 func _ready() -> void:
+	
 	# Obtém a referência do nodo da CameraFollow
 	cameraFollow = get_parent().get_node("CameraFollow")
 	# Obtém a referência do RayCast3D (certifique-se de que o caminho está correto)
@@ -68,10 +71,13 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	var direction = Vector3.ZERO
 	var tilt = 0.0
+	
 
+	
 	# Atualiza o cooldown quando não está grudado
 	if not isSticking and cooldownStickTime > 0:
 		cooldownStickTime -= delta
+		playedSound = false
 
 	# Detecta colisão com a parede usando o RayCast3D, se o cooldown permitir
 	if rayCast.is_colliding() and cooldownStickTime <= 0:
@@ -83,6 +89,7 @@ func _physics_process(delta: float) -> void:
 
 	# Apenas se o jogador pressionar o botão de pulo, sai do estado "sticking"
 	if isSticking:
+		
 		if Input.is_action_just_pressed("jump"):
 			cooldownStickTime = stickTimer
 			# Se houver também input direcional, prioriza-o
@@ -105,6 +112,10 @@ func _physics_process(delta: float) -> void:
 			isSticking = false
 			recentlyWallJumped = true
 			wallJumpCorrectionTimer.start()
+		
+		if not playedSound:
+			AudioManager.PlaySFX("grudar")
+			playedSound = true
 
 	# Durante a janela de correção, permite apenas ajustes na velocidade horizontal
 	if recentlyWallJumped and not wallJumpCorrectionTimer.is_stopped():
@@ -125,11 +136,13 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		canDoubleJump = true
 		if Input.is_action_pressed("left"):
+			AudioManager.StartWalk()
 			direction.x -= 1
 			tilt = -tiltAmount
 			transform.basis = Basis(Vector3(0, 1, 0), deg_to_rad(180))
 			cameraFollow.global_position = global_position
 		if Input.is_action_pressed("right"):
+			AudioManager.StartWalk()
 			direction.x += 1
 			tilt = -tiltAmount
 			transform.basis = Basis(Vector3(0, 1, 0), deg_to_rad(0))
@@ -142,6 +155,7 @@ func _physics_process(delta: float) -> void:
 
 	# Pulo normal no chão
 	if Input.is_action_just_pressed("jump") and is_on_floor():
+		AudioManager.PlaySFX("pulo")
 		velocity.y = jumpForce
 		velocity.x = jumpDirection.x * moveSpeed if jumpFromMoving else jumpDirection.x * airMoveSpeed
 
@@ -158,7 +172,10 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_pressed("right"):
 			velocity.x = airMoveSpeed
 			transform.basis = Basis(Vector3(0, 1, 0), deg_to_rad(0))
-
+	
+	if Input.is_action_just_released("left") or Input.is_action_just_released("right"):
+		AudioManager.StopWalk()
+	
 	if is_on_floor():
 		velocity.x = direction.x * moveSpeed
 

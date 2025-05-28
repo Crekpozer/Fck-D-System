@@ -1064,7 +1064,7 @@ transform = Transform3D(-4.74412e-08, 0, -2.36878, 0, 0.524682, 0, 1.08533, 0, -
 mesh = SubResource("BoxMesh_woc6x")
 material = SubResource("StandardMaterial3D_o4wny")
 
-[node name="CSGBakedMeshInstance3D2" type="MeshInstance3D" parent="."]
+[node name="CSGBakedMeshInstance3D2" type="MeshInstance3D" parent="." groups=["Floor"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.75554, -35.749, 0.0980167)
 mesh = SubResource("ArrayMesh_p3odm")
 
@@ -1082,7 +1082,8 @@ mesh = SubResource("QuadMesh_woc6x")
 skeleton = NodePath("../..")
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("3_8fmr1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.912, -6.95879, 0.993915)
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.832, -34.2902, 0.993918)
 collision_layer = 3
 collision_mask = 3
 platform_floor_layers = 4294901776
@@ -1101,7 +1102,7 @@ update_scale = false
 
 [node name="CameraFollow" type="Node3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.912, -6.95879, 0.993915)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.832, -34.2902, 0.993918)
 
 [node name="Camera3D" type="Camera3D" parent="CameraFollow"]
 transform = Transform3D(0.999976, 5.82067e-11, 0.00687654, -0.000652636, 0.995486, 0.0949054, -0.0068455, -0.0949076, 0.995463, -0.28513, 3.97905, 11.5539)
@@ -1611,7 +1612,7 @@ animation = true
 
 [node name="FallingCrate" parent="FallingCrateSection" instance=ExtResource("10_n6i3n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.3425, 13.6298, 0.524041)
-destroyCrateTime = 1.5
+destroyCrateTime = 1.1
 
 [node name="ActivationArea3D" type="Area3D" parent="FallingCrateSection/FallingCrate"]
 
@@ -1641,6 +1642,7 @@ shape = SubResource("BoxShape3D_wntwu")
 
 [node name="FallingCrate4" parent="FallingCrateSection" instance=ExtResource("10_n6i3n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.2956, 13.6298, 0.524041)
+destroyCrateTime = 0.8
 
 [node name="ActivationArea3D" type="Area3D" parent="FallingCrateSection/FallingCrate4"]
 
@@ -1834,6 +1836,8 @@ colorRed = true
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RedKey"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.78379, 29.6417, 0)
 mesh = SubResource("BoxMesh_ymdmp")
+
+[node name="Sons" type="Node3D" parent="."]
 
 [connection signal="body_entered" from="FallingCrateSection/FallingCrate/ActivationArea3D" to="FallingCrateSection/FallingCrate" method="_on_activation_area_3d_body_entered"]
 [connection signal="body_entered" from="FallingCrateSection/FallingCrate2/ActivationArea3D" to="FallingCrateSection/FallingCrate2" method="_on_activation_area_3d_body_entered"]

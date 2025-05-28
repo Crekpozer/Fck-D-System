@@ -11,12 +11,20 @@ config_version=5
 [application]
 
 config/name="FckDS - Fuck the Capitalism Game Jam"
-run/main_scene="uid://eutd8b3mxb0o"
+run/main_scene="uid://bbbl2ghkikmeo"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 
 [autoload]
 
 AudioManager="*res://Source/Script/AudioManager.gd"
+
+[editor_plugins]
+
+enabled=PackedStringArray()
+
+[global_group]
+
+Floor=""
 
 [input]
 
