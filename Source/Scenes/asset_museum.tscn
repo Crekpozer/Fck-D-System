@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://cmqd3gsnrd4tl"]
+
+[ext_resource type="Material" uid="uid://c8kkb40dyj8hd" path="res://Source/Resource/Materials/moving_plataform_standard_material_3d.tres" id="1_uxquf"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_g1cnk"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_x57f7"]
+sky_material = SubResource("ProceduralSkyMaterial_g1cnk")
+
+[sub_resource type="Environment" id="Environment_n5ica"]
+background_mode = 2
+sky = SubResource("Sky_x57f7")
+tonemap_mode = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ptqox"]
+size = Vector3(150, 1, 50)
+
+[sub_resource type="BoxMesh" id="BoxMesh_yp0qy"]
+material = ExtResource("1_uxquf")
+size = Vector3(150, 1, 50)
+
+[node name="AssetMuseum" type="Node3D"]
+
+[node name="Ambiente" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Ambiente"]
+environment = SubResource("Environment_n5ica")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Ambiente"]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="FloorStaticBody3D" type="StaticBody3D" parent="Ambiente"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ambiente/FloorStaticBody3D"]
+shape = SubResource("BoxShape3D_ptqox")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ambiente/FloorStaticBody3D"]
+material_override = ExtResource("1_uxquf")
+mesh = SubResource("BoxMesh_yp0qy")
+
+[node name="Objetos" type="Node3D" parent="."]
