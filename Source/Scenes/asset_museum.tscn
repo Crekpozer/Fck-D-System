@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ch0am6f1ggxvk" path="res://Assets/FBX/mapa_fbx.fbx" id="3_n5ica"]
 [ext_resource type="PackedScene" uid="uid://blpp8chp1rpc8" path="res://Assets/FBX/Janela02.fbx" id="4_ptqox"]
 [ext_resource type="PackedScene" uid="uid://cxg86inud6w47" path="res://Assets/FBX/MaquinaIndustrial01.fbx" id="5_ptqox"]
-[ext_resource type="PackedScene" uid="uid://dnqi7sadlnnup" path="res://Assets/FBX/barra_imantada3.glb" id="6_yp0qy"]
+[ext_resource type="PackedScene" uid="uid://b0jbwy501ib62" path="res://Assets/glTF/3cilinders_prop.glb" id="6_yp0qy"]
 [ext_resource type="PackedScene" uid="uid://4g2x4t3b7tku" path="res://Assets/FBX/props_herdados/barra_imantada_herdada.tscn" id="7_kgxrw"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_g1cnk"]
@@ -59,5 +59,5 @@ transform = Transform3D(0.970954, 0, 0, 0, 0.970954, 0, 0, 0, 0.970954, -27.8443
 [node name="MaquinaIndustrial01" parent="Objetos" instance=ExtResource("5_ptqox")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -11.515, 1.65211, -1.41286)
 
-[node name="barra_imantada3" parent="Objetos" instance=ExtResource("6_yp0qy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.6212, 1.97679, 0)
+[node name="3cilinders_prop" parent="Objetos" instance=ExtResource("6_yp0qy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.5897, 1.31016, 5.93938)
