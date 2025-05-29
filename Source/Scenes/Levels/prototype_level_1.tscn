@@ -1,6 +1,6 @@
 [gd_scene load_steps=92 format=4 uid="uid://bbbl2ghkikmeo"]
 
-[ext_resource type="Script" uid="uid://bhpmowj44i1kt" path="res://Source/Script/level_manager.gd" id="1_h2jux"]
+[ext_resource type="Script" path="res://Source/Script/level_manager.gd" id="1_h2jux"]
 [ext_resource type="Texture2D" uid="uid://ca8kgb6838p6k" path="res://Source/Resource/Materials/Textures/PolygonPrototype_Texture_Grid_02.png" id="1_uyft7"]
 [ext_resource type="Texture2D" uid="uid://dgny17gglxjkc" path="res://Assets/Images/level_design_miro.png" id="2_cxa5n"]
 [ext_resource type="PackedScene" uid="uid://c25if1tggla6x" path="res://Source/PlayerCharacter/character_body_3d.tscn" id="3_8fmr1"]

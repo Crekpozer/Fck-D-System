@@ -134,7 +134,7 @@ func _physics_process(delta: float) -> void:
 		if not playedSound:
 			AudioManager.PlaySFX("grudar")
 			playedSound = true
-
+	
 	# Durante a janela de correção, permite apenas ajustes na velocidade horizontal
 	if recentlyWallJumped and not wallJumpCorrectionTimer.is_stopped():
 		if Input.is_action_pressed("left"):

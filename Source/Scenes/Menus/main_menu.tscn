@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://c7xam1u7fg0cl"]
 
-[ext_resource type="Script" uid="uid://qqhnnwe3lww0" path="res://Source/Script/start_game_button.gd" id="1_mgv2m"]
-[ext_resource type="Script" uid="uid://dwme2r0xlacyg" path="res://Source/Script/credits_button.gd" id="2_d5lpy"]
+[ext_resource type="Script" path="res://Source/Script/start_game_button.gd" id="1_mgv2m"]
+[ext_resource type="Script" path="res://Source/Script/credits_button.gd" id="2_d5lpy"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ov5mg"]
 font_size = 60
