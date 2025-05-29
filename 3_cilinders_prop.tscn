@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0c8nuqg3lfn7"]
+
+[ext_resource type="PackedScene" uid="uid://b0jbwy501ib62" path="res://Assets/glTF/3cilinders_prop.glb" id="1_w5tgs"]
+
+[node name="3cilinders_prop" instance=ExtResource("1_w5tgs")]
