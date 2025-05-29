@@ -2,19 +2,19 @@ extends Node
 
 # Codigo imcompleto
 
-
 # Onready references to AudioStreamPlayers
 @onready var gameplayMusicPlayer: AudioStreamPlayer = AudioStreamPlayer.new()
-@onready var SFXBoxCrashPlayer: AudioStreamPlayer = AudioStreamPlayer.new()
+@onready var SFXBoxCrashPlayer : AudioStreamPlayer = AudioStreamPlayer.new()
 @onready var SFXJumpPlayer : AudioStreamPlayer = AudioStreamPlayer.new()
 @onready var SFXStickPlayer : AudioStreamPlayer = AudioStreamPlayer.new()
 @onready var SFXCharWalkingPlayer : AudioStreamPlayer = AudioStreamPlayer.new()
 
 # Load the audio files
 var SFXBoxCrashAudio = preload("res://Assets/Sounds/sfx_box_crash_v1.wav")
-var SFXJumpAudio = preload("res://Assets/Sounds/char_cyber_pulo_v1.wav")
-var SFXStickAudio = preload("res://Assets/Sounds/char_cyber_grudar_v1.wav")
-var SFXCharWalkingAudio = preload("res://Assets/Sounds/char_cyber_andar_v1.wav")
+var SFXJumpAudio = preload("res://Assets/Sounds/Char/char_cyber_pulo_v1.wav")
+var SFXStickAudio = preload("res://Assets/Sounds/Char/char_cyber_grudar_v1.wav")
+var SFXCharWalkingAudio = preload("res://Assets/Sounds/Char/char_cyber_andar_v1.wav")
+var gameplayMusicAudio = preload("res://Assets/Sounds/Music/mus_main_theme_v2.wav")
 
 # Function to initialize the AudioManager
 func _ready() -> void:
@@ -30,6 +30,7 @@ func _ready() -> void:
 	SFXBoxCrashPlayer.stream = SFXBoxCrashAudio
 	SFXStickPlayer.stream = SFXStickAudio
 	SFXCharWalkingPlayer.stream = SFXCharWalkingAudio
+	gameplayMusicPlayer.stream = gameplayMusicAudio
 	
 	# Configure where each player goes in audio bus
 	SetBus(gameplayMusicPlayer, "Music")
@@ -54,7 +55,6 @@ func PlaySFX(sfxName) -> void:
 func StartWalk() -> void:
 	if not SFXCharWalkingPlayer.is_playing():
 		SFXCharWalkingPlayer.play()
-
 
 func StopWalk() -> void:
 	if SFXCharWalkingPlayer.is_playing():

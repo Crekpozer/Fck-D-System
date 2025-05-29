@@ -1,6 +1,13 @@
 class_name Player
 extends CharacterBody3D
 
+# Vida
+@export_category("Life")
+# Vida total do personagem
+@export var totalLife : float = 100
+# Vida atual do personagem
+@export var actualLife : float = 100
+
 @export_category("Movement")
 # Define uma velocidade para o personagem
 @export var moveSpeed : int = 50
@@ -56,8 +63,9 @@ var spawn : Node3D
 
 var playedSound = false
 
+var levelScript
+
 func _ready() -> void:
-	
 	# Obtém a referência do nodo da CameraFollow
 	cameraFollow = get_parent().get_node("CameraFollow")
 	# Obtém a referência do RayCast3D (certifique-se de que o caminho está correto)
@@ -67,12 +75,22 @@ func _ready() -> void:
 	wallJumpCorrectionTimer.wait_time = wallJumpCorrectionWindow
 	wallJumpCorrectionTimer.one_shot = true
 	spawn = %PlayerStartLocation
+	levelScript = get_parent()
+
+func _process(_delta: float) -> void:
+	if hasBlueKey:
+		%ChipAzulPanel.visible = true
+	
+	if hasYellowKey:
+		%ChipAmarelhoPanel.visible = true
+	
+	if hasRedKey:
+		%ChipVermelhoPanel.visible = true
+
 
 func _physics_process(delta: float) -> void:
 	var direction = Vector3.ZERO
 	var tilt = 0.0
-	
-
 	
 	# Atualiza o cooldown quando não está grudado
 	if not isSticking and cooldownStickTime > 0:
@@ -134,30 +152,34 @@ func _physics_process(delta: float) -> void:
 
 	# Movimentação, inputs e ajustes no chão
 	if is_on_floor():
-		canDoubleJump = true
-		if Input.is_action_pressed("left"):
-			AudioManager.StartWalk()
-			direction.x -= 1
-			tilt = -tiltAmount
-			transform.basis = Basis(Vector3(0, 1, 0), deg_to_rad(180))
-			cameraFollow.global_position = global_position
-		if Input.is_action_pressed("right"):
-			AudioManager.StartWalk()
-			direction.x += 1
-			tilt = -tiltAmount
-			transform.basis = Basis(Vector3(0, 1, 0), deg_to_rad(0))
-		if direction.x != 0:
-			jumpDirection.x = direction.x * 0.1
-			jumpFromMoving = true
-		else:
-			jumpFromMoving = false
-		jumpFromMoving = direction.x != 0
+		if not levelScript.isGameOver:
+			canDoubleJump = true
+			if Input.is_action_pressed("left"):
+				direction.x -= 1
+				AudioManager.StartWalk()
+				transform.basis = Basis(Vector3(0, 1, 0), deg_to_rad(180))
+				cameraFollow.global_position = global_position
+			
+			if Input.is_action_pressed("right"):
+				direction.x += 1
+				transform.basis = Basis(Vector3(0, 1, 0), deg_to_rad(0))
+				AudioManager.StartWalk()
+			
+			if direction.x != 0:
+				jumpDirection.x = direction.x * 0.1
+				jumpFromMoving = true
+			else:
+				jumpFromMoving = false
+			jumpFromMoving = direction.x != 0
+	else:
+		AudioManager.StopWalk()
 
 	# Pulo normal no chão
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		AudioManager.PlaySFX("pulo")
-		velocity.y = jumpForce
-		velocity.x = jumpDirection.x * moveSpeed if jumpFromMoving else jumpDirection.x * airMoveSpeed
+	if not levelScript.isGameOver:
+		if Input.is_action_just_pressed("jump") and is_on_floor():
+			AudioManager.PlaySFX("pulo")
+			velocity.y = jumpForce
+			velocity.x = jumpDirection.x * moveSpeed if jumpFromMoving else jumpDirection.x * airMoveSpeed
 
 	# Duplo pulo no ar
 	if Input.is_action_just_pressed("jump") and not is_on_floor() and canDoubleJump:
@@ -178,12 +200,16 @@ func _physics_process(delta: float) -> void:
 	
 	if is_on_floor():
 		velocity.x = direction.x * moveSpeed
-
+	
 	move_and_slide()
 	rotation = rotation.lerp(Vector3(rotation.x, rotation.y, tilt), 1.0)
 
 func Death() -> void:
-	ResetPosition()
+	actualLife -= 15
+	%TextureProgressBar.value = actualLife
+	print("O jogador perdeu 15 de vida", actualLife)
+	if not levelScript.isGameOver:
+		ResetPosition()
 
 func Damage() -> void:
 	pass

@@ -1,0 +1,376 @@
+[gd_scene load_steps=26 format=3 uid="uid://b67tiwq8xqvu0"]
+
+[ext_resource type="Script" uid="uid://cowedsxmkhr7p" path="res://Source/Scenes/Menus/back_to_main_menu_button.gd" id="1_5gcne"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_q3gec"]
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_5gcne"]
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_2fjw0"]
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_m77y7"]
+font_size = 15
+
+[sub_resource type="LabelSettings" id="LabelSettings_lur3v"]
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_5ek3k"]
+font_size = 15
+
+[sub_resource type="LabelSettings" id="LabelSettings_wfc2g"]
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_5q6ne"]
+line_spacing = 1.0
+font_size = 15
+
+[sub_resource type="LabelSettings" id="LabelSettings_83avp"]
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_fjb4j"]
+line_spacing = 1.0
+font_size = 15
+
+[sub_resource type="LabelSettings" id="LabelSettings_ibpqg"]
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_6teoa"]
+font_size = 15
+
+[sub_resource type="LabelSettings" id="LabelSettings_je7yn"]
+font_size = 15
+
+[sub_resource type="LabelSettings" id="LabelSettings_o7nmw"]
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_s21cn"]
+font_size = 15
+
+[sub_resource type="LabelSettings" id="LabelSettings_jgbuy"]
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_3yswo"]
+font_size = 15
+
+[sub_resource type="LabelSettings" id="LabelSettings_cpmno"]
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_ydhee"]
+font_size = 15
+
+[sub_resource type="LabelSettings" id="LabelSettings_p50ot"]
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_mcy88"]
+font_size = 15
+
+[sub_resource type="LabelSettings" id="LabelSettings_j3wi7"]
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_qbwry"]
+font_size = 15
+
+[sub_resource type="LabelSettings" id="LabelSettings_m58o2"]
+font_size = 17
+
+[node name="Credits" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CreditsTextLabel" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -101.0
+offset_top = 56.0
+offset_right = 101.0
+offset_bottom = 125.0
+grow_horizontal = 2
+text = "Créditos"
+label_settings = SubResource("LabelSettings_q3gec")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AgradecimentosLabel" type="Label" parent="CanvasLayer/Panel/CreditsTextLabel"]
+visible = false
+layout_mode = 0
+offset_left = -381.0
+offset_top = 98.0
+offset_right = -6.0
+offset_bottom = 140.0
+text = "Agradecimentos Especiais:"
+label_settings = SubResource("LabelSettings_5gcne")
+
+[node name="AgradecimentosLabel" type="Label" parent="CanvasLayer/Panel/CreditsTextLabel/AgradecimentosLabel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -191.5
+offset_top = 4.0
+offset_right = 191.5
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 0
+label_settings = SubResource("LabelSettings_5gcne")
+
+[node name="ArteLabel" type="Label" parent="CanvasLayer/Panel/CreditsTextLabel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -393.0
+offset_top = 115.5
+offset_right = -351.0
+offset_bottom = 143.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Arte"
+label_settings = SubResource("LabelSettings_2fjw0")
+
+[node name="DiracaoDeArteLabel" type="Label" parent="CanvasLayer/Panel/CreditsTextLabel/ArteLabel"]
+layout_mode = 1
+offset_top = 25.0
+offset_right = 164.0
+offset_bottom = 47.0
+text = "Mush - Direção de arte"
+label_settings = SubResource("LabelSettings_m77y7")
+
+[node name="Arte2DLabel" type="Label" parent="CanvasLayer/Panel/CreditsTextLabel/ArteLabel"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 63.0
+offset_right = 74.0
+offset_bottom = 91.0
+text = "Arte 2D"
+label_settings = SubResource("LabelSettings_lur3v")
+
+[node name="Arte2DLabel" type="Label" parent="CanvasLayer/Panel/CreditsTextLabel/ArteLabel/Arte2DLabel"]
+layout_mode = 0
+offset_top = 27.0
+offset_right = 135.0
+offset_bottom = 49.0
+text = "Wendy - Artista 2D"
+label_settings = SubResource("LabelSettings_5ek3k")
+
+[node name="Arte3DLabel" type="Label" parent="CanvasLayer/Panel/CreditsTextLabel/ArteLabel"]
+layout_mode = 0
+offset_top = 128.0
+offset_right = 73.0
+offset_bottom = 156.0
+text = "Arte 3D"
+label_settings = SubResource("LabelSettings_wfc2g")
+
+[node name="3DGeneralistaLabel" type="Label" parent="CanvasLayer/Panel/CreditsTextLabel/ArteLabel/Arte3DLabel"]
+layout_mode = 0
+offset_top = 26.0
+offset_right = 172.0
+offset_bottom = 71.0
+text = "Eduardo - Artista 3D
+Flávio Costa - Artista 3D"
+label_settings = SubResource("LabelSettings_5q6ne")
+
+[node name="AudioLabel" type="Label" parent="CanvasLayer/Panel/CreditsTextLabel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -63.0
+offset_top = 150.0
+offset_right = -6.0
+offset_bottom = 178.0
+grow_horizontal = 2
+text = "Audio"
+label_settings = SubResource("LabelSettings_83avp")
+
+[node name="SonoplastaLabel" type="Label" parent="CanvasLayer/Panel/CreditsTextLabel/AudioLabel"]
+layout_mode = 0
+offset_top = 25.0
+offset_right = 124.0
+offset_bottom = 47.0
+text = "Shai - Sound designer / Composer"
+label_settings = SubResource("LabelSettings_fjb4j")
+
+[node name="DesignLabel" type="Label" parent="CanvasLayer/Panel/CreditsTextLabel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -63.0
+offset_top = 243.5
+offset_right = 65.0
+offset_bottom = 271.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Game Design"
+label_settings = SubResource("LabelSettings_ibpqg")
+
+[node name="ErickGameDesignLabel" type="Label" parent="CanvasLayer/Panel/CreditsTextLabel/DesignLabel"]
+layout_mode = 1
+offset_top = 25.0
+offset_right = 143.0
+offset_bottom = 47.0
+text = "Erick Ribeiro Araujo"
+label_settings = SubResource("LabelSettings_6teoa")
+
+[node name="ShaiGameDesignLabel2" type="Label" parent="CanvasLayer/Panel/CreditsTextLabel/DesignLabel"]
+layout_mode = 1
+offset_top = 47.0
+offset_right = 31.0
+offset_bottom = 69.0
+text = "Shai"
+label_settings = SubResource("LabelSettings_je7yn")
+
+[node name="LevelDesignLabel" type="Label" parent="CanvasLayer/Panel/CreditsTextLabel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = 322.5
+offset_right = 57.0
+offset_bottom = 350.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Level Design"
+label_settings = SubResource("LabelSettings_o7nmw")
+
+[node name="WendyGameDesignLabel" type="Label" parent="CanvasLayer/Panel/CreditsTextLabel/LevelDesignLabel"]
+layout_mode = 1
+offset_left = 1.0
+offset_top = 25.0
+offset_right = 51.0
+offset_bottom = 47.0
+text = "Wendy"
+label_settings = SubResource("LabelSettings_s21cn")
+
+[node name="ShaiGameDesignLabel" type="Label" parent="CanvasLayer/Panel/CreditsTextLabel/LevelDesignLabel"]
+layout_mode = 1
+offset_left = 1.0
+offset_top = 45.0
+offset_right = 32.0
+offset_bottom = 67.0
+text = "Shai"
+label_settings = SubResource("LabelSettings_s21cn")
+
+[node name="DirecaoLabel" type="Label" parent="CanvasLayer/Panel/CreditsTextLabel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = 177.5
+offset_right = 11.0
+offset_bottom = 205.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Direção"
+label_settings = SubResource("LabelSettings_jgbuy")
+
+[node name="DirecaoLabel" type="Label" parent="CanvasLayer/Panel/CreditsTextLabel/DirecaoLabel"]
+layout_mode = 0
+offset_top = 27.0
+offset_right = 143.0
+offset_bottom = 49.0
+text = "Erick Ribeiro Araujo"
+label_settings = SubResource("LabelSettings_3yswo")
+
+[node name="ProduçãoLabel" type="Label" parent="CanvasLayer/Panel/CreditsTextLabel"]
+layout_mode = 0
+offset_left = 342.0
+offset_top = 150.0
+offset_right = 435.0
+offset_bottom = 178.0
+text = "Produção"
+label_settings = SubResource("LabelSettings_cpmno")
+
+[node name="ProduçãoLabel" type="Label" parent="CanvasLayer/Panel/CreditsTextLabel/ProduçãoLabel"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 25.0
+offset_right = 144.0
+offset_bottom = 47.0
+text = "Erick Ribeiro Araujo"
+label_settings = SubResource("LabelSettings_ydhee")
+
+[node name="ProgramacaoLabel" type="Label" parent="CanvasLayer/Panel/CreditsTextLabel"]
+layout_mode = 0
+offset_left = 342.0
+offset_top = 213.0
+offset_right = 471.0
+offset_bottom = 241.0
+text = "Programação"
+label_settings = SubResource("LabelSettings_p50ot")
+
+[node name="ProgramacaoLabel" type="Label" parent="CanvasLayer/Panel/CreditsTextLabel/ProgramacaoLabel"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 25.0
+offset_right = 144.0
+offset_bottom = 47.0
+text = "Erick Ribeiro Araujo"
+label_settings = SubResource("LabelSettings_mcy88")
+
+[node name="RoteiroLabel" type="Label" parent="CanvasLayer/Panel/CreditsTextLabel"]
+layout_mode = 0
+offset_left = 342.0
+offset_top = 278.0
+offset_right = 413.0
+offset_bottom = 306.0
+text = "Roteiro"
+label_settings = SubResource("LabelSettings_j3wi7")
+
+[node name="RoteiroLabel" type="Label" parent="CanvasLayer/Panel/CreditsTextLabel/RoteiroLabel"]
+layout_mode = 0
+offset_top = 25.0
+offset_right = 93.0
+offset_bottom = 47.0
+text = "Cadu Simões"
+label_settings = SubResource("LabelSettings_qbwry")
+
+[node name="BackToMainMenuButton" type="Button" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 493.0
+offset_top = 537.0
+offset_right = 653.0
+offset_bottom = 562.0
+script = ExtResource("1_5gcne")
+
+[node name="MainMenuLabel" type="Label" parent="CanvasLayer/Panel/BackToMainMenuButton"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -80.0
+offset_top = -25.0
+offset_right = 78.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Back to Main Menu"
+label_settings = SubResource("LabelSettings_m58o2")
+
+[connection signal="pressed" from="CanvasLayer/Panel/BackToMainMenuButton" to="CanvasLayer/Panel/BackToMainMenuButton" method="_on_pressed"]

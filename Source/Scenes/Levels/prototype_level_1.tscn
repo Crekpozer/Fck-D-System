@@ -1,5 +1,6 @@
-[gd_scene load_steps=84 format=4 uid="uid://bbbl2ghkikmeo"]
+[gd_scene load_steps=92 format=4 uid="uid://bbbl2ghkikmeo"]
 
+[ext_resource type="Script" uid="uid://bhpmowj44i1kt" path="res://Source/Script/level_manager.gd" id="1_h2jux"]
 [ext_resource type="Texture2D" uid="uid://ca8kgb6838p6k" path="res://Source/Resource/Materials/Textures/PolygonPrototype_Texture_Grid_02.png" id="1_uyft7"]
 [ext_resource type="Texture2D" uid="uid://dgny17gglxjkc" path="res://Assets/Images/level_design_miro.png" id="2_cxa5n"]
 [ext_resource type="PackedScene" uid="uid://c25if1tggla6x" path="res://Source/PlayerCharacter/character_body_3d.tscn" id="3_8fmr1"]
@@ -12,6 +13,10 @@
 [ext_resource type="PackedScene" uid="uid://c3wx5bcyaa76c" path="res://Source/Scenes/Misc/Falling Crates/falling_crate.tscn" id="10_n6i3n"]
 [ext_resource type="Script" uid="uid://h650wapasn6h" path="res://Source/Scenes/Misc/Keys/key_hole.gd" id="11_oas3c"]
 [ext_resource type="PackedScene" uid="uid://cy30qvr4h2mvs" path="res://Source/Scenes/Misc/Keys/key.tscn" id="12_fbu8r"]
+[ext_resource type="Texture2D" uid="uid://nmyruthvj2fv" path="res://Assets/Images/Interface/hud_vida_1.png" id="13_cxa5n"]
+[ext_resource type="AudioStream" uid="uid://xro2i7k1p84r" path="res://Assets/Sounds/SFX/sfx_gear_esteira_v1.wav" id="14_s2b3k"]
+[ext_resource type="Texture2D" uid="uid://cmdesemaxvslq" path="res://Assets/Images/Interface/hud_vida_2.2.png" id="15_s2b3k"]
+[ext_resource type="Texture2D" uid="uid://btr8s4tlwb0ot" path="res://Assets/Images/Interface/hud_vida_3.2.png" id="16_u47u2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mfu6t"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -363,7 +368,17 @@ albedo_color = Color(0.85098, 0.113725, 0.156863, 1)
 material = SubResource("StandardMaterial3D_8oq7w")
 size = Vector3(1, 1, 0.1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8wsfg"]
+bg_color = Color(0.0901961, 0.0784314, 0.447059, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h2jux"]
+bg_color = Color(0.972549, 0.74902, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s2b3k"]
+bg_color = Color(0.6, 0.0431373, 0.054902, 1)
+
 [node name="Level1" type="Node3D"]
+script = ExtResource("1_h2jux")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_o4wny")
@@ -1838,6 +1853,99 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.78379, 29.6417, 0)
 mesh = SubResource("BoxMesh_ymdmp")
 
 [node name="Sons" type="Node3D" parent="."]
+
+[node name="GearStreamPlayer3D" type="AudioStreamPlayer3D" parent="Sons"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.1235, -31.7543, 0)
+stream = ExtResource("14_s2b3k")
+unit_size = 8.0
+autoplay = true
+max_distance = 50.0
+
+[node name="HUD" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+follow_viewport_enabled = true
+
+[node name="HealthControl" type="Control" parent="HUD"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 114.0
+offset_top = 86.0
+offset_right = 2356.0
+offset_bottom = 1286.0
+scale = Vector2(0.12, 0.12)
+
+[node name="ChipAzulPanel" type="Panel" parent="HUD/HealthControl"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 978.0
+offset_top = 715.0
+offset_right = 1020.0
+offset_bottom = 757.0
+scale = Vector2(5, 5)
+theme_override_styles/panel = SubResource("StyleBoxFlat_8wsfg")
+
+[node name="ChipAmarelhoPanel" type="Panel" parent="HUD/HealthControl"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 1213.0
+offset_top = 713.0
+offset_right = 1413.0
+offset_bottom = 921.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_h2jux")
+
+[node name="ChipVermelhoPanel" type="Panel" parent="HUD/HealthControl"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 1437.5
+offset_top = 712.5
+offset_right = 1662.5
+offset_bottom = 932.5
+theme_override_styles/panel = SubResource("StyleBoxFlat_s2b3k")
+
+[node name="HudVida" type="Sprite2D" parent="HUD/HealthControl"]
+position = Vector2(1525, 712.5)
+texture = ExtResource("13_cxa5n")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="HUD/HealthControl"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 937.5
+offset_top = -362.5
+offset_right = 1291.5
+offset_bottom = -165.5
+scale = Vector2(8, 8)
+value = 100.0
+texture_over = ExtResource("15_s2b3k")
+texture_progress = ExtResource("16_u47u2")
+
+[node name="GameOver" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="Panel" type="Panel" parent="GameOver"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="GameOver"]
+self_modulate = Color(1, 0.0705882, 0.0901961, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.0
+offset_top = -11.5
+offset_right = 44.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "GAMEOVER"
 
 [connection signal="body_entered" from="FallingCrateSection/FallingCrate/ActivationArea3D" to="FallingCrateSection/FallingCrate" method="_on_activation_area_3d_body_entered"]
 [connection signal="body_entered" from="FallingCrateSection/FallingCrate2/ActivationArea3D" to="FallingCrateSection/FallingCrate2" method="_on_activation_area_3d_body_entered"]

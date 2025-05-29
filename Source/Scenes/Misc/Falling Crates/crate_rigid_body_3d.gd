@@ -6,7 +6,7 @@ extends RigidBody3D
 var isMoving : bool
 var canBeDestoyed : bool
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if linear_velocity.length() > 1:
 		print(linear_velocity.length())
 		isMoving = true
