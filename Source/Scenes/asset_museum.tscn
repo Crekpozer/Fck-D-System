@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://cmqd3gsnrd4tl"]
 
-[ext_resource type="Material" path="res://Source/Resource/Materials/moving_plataform_standard_material_3d.tres" id="1_uxquf"]
+[ext_resource type="Material" uid="uid://c8kkb40dyj8hd" path="res://Source/Resource/Materials/moving_plataform_standard_material_3d.tres" id="1_uxquf"]
 [ext_resource type="PackedScene" uid="uid://b0jbwy501ib62" path="res://Assets/glTF/3cilinders_prop.glb" id="6_yp0qy"]
 [ext_resource type="PackedScene" uid="uid://cidh46tfy5u0g" path="res://Assets/glTF/mapa_glTF.glb" id="7_0smsj"]
 [ext_resource type="PackedScene" uid="uid://urt2h44f7uv6" path="res://Assets/glTF/wall_glTF.glb" id="7_cxw7v"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=84 format=4 uid="uid://bbbl2ghkikmeo"]
+[gd_scene load_steps=85 format=4 uid="uid://bbbl2ghkikmeo"]
 
 [ext_resource type="Texture2D" uid="uid://ca8kgb6838p6k" path="res://Source/Resource/Materials/Textures/PolygonPrototype_Texture_Grid_02.png" id="1_uyft7"]
+[ext_resource type="Material" uid="uid://chxgu5p1d4r80" path="res://Source/Resource/Materials/Material.007.tres" id="2_8fmr1"]
 [ext_resource type="Texture2D" uid="uid://dgny17gglxjkc" path="res://Assets/Images/level_design_miro.png" id="2_cxa5n"]
 [ext_resource type="PackedScene" uid="uid://c25if1tggla6x" path="res://Source/PlayerCharacter/character_body_3d.tscn" id="3_8fmr1"]
 [ext_resource type="PackedScene" uid="uid://d2md3evaysfe1" path="res://Source/Scenes/Misc/Special Wall/stickable_wall.tscn" id="4_8wsfg"]
@@ -371,6 +372,7 @@ environment = SubResource("Environment_o4wny")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 shadow_enabled = true
+sky_mode = 2
 
 [node name="Malha de fora" type="CSGMesh3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.75554, -35.749, 0.0980167)
@@ -1066,6 +1068,7 @@ material = SubResource("StandardMaterial3D_o4wny")
 
 [node name="CSGBakedMeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.75554, -35.749, 0.0980167)
+material_override = ExtResource("2_8fmr1")
 mesh = SubResource("ArrayMesh_p3odm")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="CSGBakedMeshInstance3D2"]
