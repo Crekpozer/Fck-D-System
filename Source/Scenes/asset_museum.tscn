@@ -61,7 +61,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -11.51
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.5897, 1.31016, 5.93938)
 
 [node name="wall_glTF" parent="Objetos" instance=ExtResource("7_cxw7v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.548103, 4.21718, -0.748281)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.548103, 0.866582, -0.748281)
 
 [node name="mapa_glTF" parent="Objetos" instance=ExtResource("7_0smsj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.328785, 0.531184, -0.417257)
