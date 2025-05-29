@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://cmqd3gsnrd4tl"]
+[gd_scene load_steps=13 format=3 uid="uid://cmqd3gsnrd4tl"]
 
 [ext_resource type="Material" path="res://Source/Resource/Materials/moving_plataform_standard_material_3d.tres" id="1_uxquf"]
-[ext_resource type="PackedScene" uid="uid://ch0am6f1ggxvk" path="res://Assets/FBX/mapa_fbx.fbx" id="3_n5ica"]
 [ext_resource type="PackedScene" uid="uid://blpp8chp1rpc8" path="res://Assets/FBX/Janela02.fbx" id="4_ptqox"]
 [ext_resource type="PackedScene" uid="uid://cxg86inud6w47" path="res://Assets/FBX/MaquinaIndustrial01.fbx" id="5_ptqox"]
 [ext_resource type="PackedScene" uid="uid://b0jbwy501ib62" path="res://Assets/glTF/3cilinders_prop.glb" id="6_yp0qy"]
+[ext_resource type="PackedScene" uid="uid://cidh46tfy5u0g" path="res://Assets/glTF/mapa_glTF.glb" id="7_0smsj"]
+[ext_resource type="PackedScene" uid="uid://urt2h44f7uv6" path="res://Assets/glTF/wall_glTF.glb" id="7_cxw7v"]
 [ext_resource type="PackedScene" uid="uid://4g2x4t3b7tku" path="res://Assets/FBX/props_herdados/barra_imantada_herdada.tscn" id="7_kgxrw"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_g1cnk"]
@@ -48,9 +49,6 @@ mesh = SubResource("BoxMesh_yp0qy")
 
 [node name="Objetos" type="Node3D" parent="."]
 
-[node name="mapa_fbx" parent="Objetos" instance=ExtResource("3_n5ica")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.321231, 0.531183, -0.520143)
-
 [node name="Janela02" parent="Objetos" instance=ExtResource("4_ptqox")]
 
 [node name="barra_imantada4" parent="Objetos" instance=ExtResource("7_kgxrw")]
@@ -61,3 +59,9 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -11.51
 
 [node name="3cilinders_prop" parent="Objetos" instance=ExtResource("6_yp0qy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.5897, 1.31016, 5.93938)
+
+[node name="wall_glTF" parent="Objetos" instance=ExtResource("7_cxw7v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.548103, 4.21718, -0.748281)
+
+[node name="mapa_glTF" parent="Objetos" instance=ExtResource("7_0smsj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.328785, 0.531184, -0.417257)
