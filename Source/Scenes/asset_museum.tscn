@@ -1,12 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://cmqd3gsnrd4tl"]
+[gd_scene load_steps=10 format=3 uid="uid://cmqd3gsnrd4tl"]
 
 [ext_resource type="Material" path="res://Source/Resource/Materials/moving_plataform_standard_material_3d.tres" id="1_uxquf"]
-[ext_resource type="PackedScene" uid="uid://blpp8chp1rpc8" path="res://Assets/FBX/Janela02.fbx" id="4_ptqox"]
-[ext_resource type="PackedScene" uid="uid://cxg86inud6w47" path="res://Assets/FBX/MaquinaIndustrial01.fbx" id="5_ptqox"]
 [ext_resource type="PackedScene" uid="uid://b0jbwy501ib62" path="res://Assets/glTF/3cilinders_prop.glb" id="6_yp0qy"]
 [ext_resource type="PackedScene" uid="uid://cidh46tfy5u0g" path="res://Assets/glTF/mapa_glTF.glb" id="7_0smsj"]
 [ext_resource type="PackedScene" uid="uid://urt2h44f7uv6" path="res://Assets/glTF/wall_glTF.glb" id="7_cxw7v"]
-[ext_resource type="PackedScene" uid="uid://4g2x4t3b7tku" path="res://Assets/FBX/props_herdados/barra_imantada_herdada.tscn" id="7_kgxrw"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_g1cnk"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -48,14 +45,6 @@ material_override = ExtResource("1_uxquf")
 mesh = SubResource("BoxMesh_yp0qy")
 
 [node name="Objetos" type="Node3D" parent="."]
-
-[node name="Janela02" parent="Objetos" instance=ExtResource("4_ptqox")]
-
-[node name="barra_imantada4" parent="Objetos" instance=ExtResource("7_kgxrw")]
-transform = Transform3D(0.970954, 0, 0, 0, 0.970954, 0, 0, 0, 0.970954, -27.8443, 12.6913, -0.821111)
-
-[node name="MaquinaIndustrial01" parent="Objetos" instance=ExtResource("5_ptqox")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -11.515, 1.65211, -1.41286)
 
 [node name="3cilinders_prop" parent="Objetos" instance=ExtResource("6_yp0qy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.5897, 1.31016, 5.93938)
