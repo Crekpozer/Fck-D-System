@@ -31,6 +31,7 @@ shape = SubResource("CapsuleShape3D_61d18")
 
 [node name="CircleBody" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0.254385, 0)
+gi_mode = 2
 mesh = SubResource("SphereMesh_pr1x3")
 
 [node name="Sprite3D" type="Sprite3D" parent="CircleBody"]
@@ -54,3 +55,9 @@ one_shot = true
 
 [node name="wallJumpCorrectionTimer" type="Timer" parent="Timers"]
 unique_name_in_owner = true
+
+[node name="DashTimer" type="Timer" parent="Timers"]
+unique_name_in_owner = true
+process_callback = 0
+
+[connection signal="timeout" from="Timers/DashTimer" to="." method="_on_dash_timer_timeout"]

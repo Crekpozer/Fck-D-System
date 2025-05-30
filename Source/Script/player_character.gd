@@ -45,7 +45,9 @@ var isSticking : bool = false
 var cooldownStickTime : float
 # Tempo padrão que o jogador deve esperar antes de poder grudar na parede novamente
 var stickTimer : float = 0.2
-
+# Dash
+#var dashForce : float = 1000
+#var dashing : bool = false
 # CHAVES
 var hasBlueKey : bool
 var hasYellowKey : bool
@@ -96,7 +98,7 @@ func _physics_process(delta: float) -> void:
 	if not isSticking and cooldownStickTime > 0:
 		cooldownStickTime -= delta
 		playedSound = false
-
+	
 	# Detecta colisão com a parede usando o RayCast3D, se o cooldown permitir
 	if rayCast.is_colliding() and cooldownStickTime <= 0:
 		collider = rayCast.get_collider()
@@ -104,7 +106,7 @@ func _physics_process(delta: float) -> void:
 		if abs(collisionNormal.x) > 0.8:
 			velocity.y = 0
 			isSticking = true
-
+	
 	# Apenas se o jogador pressionar o botão de pulo, sai do estado "sticking"
 	if isSticking:
 		if not playedSound:
@@ -148,10 +150,8 @@ func _physics_process(delta: float) -> void:
 	# Ao final da janela de correção, reseta o estado
 	if wallJumpCorrectionTimer.is_stopped():
 		recentlyWallJumped = false
-
-	# Aplica a gravidade
-	velocity.y -= gravity * delta
-
+	
+	
 	# Movimentação, inputs e ajustes no chão
 	if is_on_floor():
 		if not levelScript.isGameOver:
@@ -166,7 +166,7 @@ func _physics_process(delta: float) -> void:
 				direction.x += 1
 				transform.basis = Basis(Vector3(0, 1, 0), deg_to_rad(0))
 				AudioManager.StartWalk()
-			
+		
 	else:
 		AudioManager.StopWalk()
 
@@ -175,14 +175,14 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_just_pressed("jump") and is_on_floor():
 			AudioManager.PlaySFX("pulo")
 			velocity.y = jumpForce
-			velocity.x = jumpDirection.x * moveSpeed # if jumpFromMoving else jumpDirection.x * airMoveSpeed
+			velocity.x = jumpDirection.x * moveSpeed
 
 	# Duplo pulo no ar
 	if Input.is_action_just_pressed("jump") and not is_on_floor() and canDoubleJump:
 		velocity.y = jumpForce
 		canDoubleJump = false
 
-	# Movimentação reduzida no ar (quando o pulo não é iniciado via movimento)
+	# Movimentação reduzida no ar 
 	if not is_on_floor():
 		if Input.is_action_pressed("left"):
 			velocity.x = -moveSpeed
@@ -193,6 +193,17 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_released("left") or Input.is_action_just_released("right"):
 		AudioManager.StopWalk()
+	
+	#if Input.is_action_just_pressed("dash"):
+		#if velocity.x > 0:
+			#velocity.x = dashForce * delta
+			#%DashTimer.start()
+		#else:
+			#velocity.x = -dashForce * delta
+			#%DashTimer.start()
+	
+	# Aplica a gravidade
+	velocity.y -= gravity * delta
 	
 	if is_on_floor():
 		velocity.x = direction.x * moveSpeed
