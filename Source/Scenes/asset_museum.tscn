@@ -1,7 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://cmqd3gsnrd4tl"]
+[gd_scene load_steps=9 format=3 uid="uid://cmqd3gsnrd4tl"]
 
-[ext_resource type="Material" uid="uid://c8kkb40dyj8hd" path="res://Source/Resource/Materials/moving_plataform_standard_material_3d.tres" id="1_uxquf"]
-[ext_resource type="PackedScene" uid="uid://b0jbwy501ib62" path="res://Assets/glTF/3cilinders_prop.glb" id="6_yp0qy"]
+[ext_resource type="Material" path="res://Source/Resource/Materials/moving_plataform_standard_material_3d.tres" id="1_uxquf"]
 [ext_resource type="PackedScene" uid="uid://cidh46tfy5u0g" path="res://Assets/glTF/mapa_glTF.glb" id="7_0smsj"]
 [ext_resource type="PackedScene" uid="uid://urt2h44f7uv6" path="res://Assets/glTF/wall_glTF.glb" id="7_cxw7v"]
 
@@ -45,9 +44,6 @@ material_override = ExtResource("1_uxquf")
 mesh = SubResource("BoxMesh_yp0qy")
 
 [node name="Objetos" type="Node3D" parent="."]
-
-[node name="3cilinders_prop" parent="Objetos" instance=ExtResource("6_yp0qy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.5897, 1.31016, 5.93938)
 
 [node name="wall_glTF" parent="Objetos" instance=ExtResource("7_cxw7v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.548103, 0.866582, -0.748281)

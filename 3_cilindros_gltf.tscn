@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://co63wm6rhx7ui"]
 
-[ext_resource type="PackedScene" uid="uid://d10txgjld12g7" path="res://Assets/glTF/3cilindros_glTF.glb" id="1_wiw8s"]
+[ext_resource type="PackedScene" uid="uid://lhgbkuofwn3l" path="res://Assets/glTF/Images/3cilindros_glTF.glb" id="1_wiw8s"]
 [ext_resource type="Texture2D" uid="uid://bdvwoycglkpe7" path="res://Assets/glTF/Images/3cilindros_glTF_3cilinders_red.png" id="2_8hnop"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fpa75"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8hnop"]
 albedo_texture = ExtResource("2_8hnop")
 
 [node name="3cilindros_glTF" instance=ExtResource("1_wiw8s")]
 
 [node name="cylindertank_trio_001" parent="." index="0"]
-transform = Transform3D(1.78814e-07, 0, -1, 0, 1, 0, 1, 0, 1.78814e-07, 0.0971308, 0.04444, 0.0311949)
-material_override = SubResource("StandardMaterial3D_fpa75")
+transform = Transform3D(1.78814e-07, 0, -1, 0, 1, 0, 1, 0, 1.78814e-07, -0.711313, -0.15254, -0.16705)
+material_override = SubResource("StandardMaterial3D_8hnop")
