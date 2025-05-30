@@ -9,11 +9,11 @@ var opened : bool
 func _ready() -> void:
 	if startOpen:
 		if colorRed:
-			%RedKeyHoleAnimationPlayer.play("OpenDoors")
+			%KeyLogicAnimationPlayer.play("OpenRedDoor")
 		elif colorYellow:
-			%YellowKeyHoleAnimationPlayer.play("OpenDoors")
+			%KeyLogicAnimationPlayer.play("OpenYellowDoor")
 		else:
-			%BlueKeyHoleAnimationPlayer.play("OpenDoors")
+			%KeyLogicAnimationPlayer.play("OpenBlueDoors")
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if not opened:
@@ -22,18 +22,18 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 				if body.hasRedKey:
 					print("O jogador usou a chave vermelha")
 					opened = true
-					%RedKeyHoleAnimationPlayer.play("OpenDoors")
+					%KeyLogicAnimationPlayer.play("OpenRedDoor")
 		elif colorYellow:
 			print("Chave amarela")
 			if body is Player:
 				if body.hasYellowKey:
 					print("O jogador usou a chave amarela")
 					opened = true
-					%YellowKeyHoleAnimationPlayer.play("OpenDoors")
+					%KeyLogicAnimationPlayer.play("OpenYellowDoor")
 		else:
 			print("Chave azul")
 			if body is Player:
 				if body.hasBlueKey:
 					print("O jogador usou a chave azul")
 					opened = true
-					%BlueKeyHoleAnimationPlayer.play("OpenDoors")
+					%KeyLogicAnimationPlayer.play("OpenBlueDoors")

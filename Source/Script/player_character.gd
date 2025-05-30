@@ -107,6 +107,9 @@ func _physics_process(delta: float) -> void:
 
 	# Apenas se o jogador pressionar o botão de pulo, sai do estado "sticking"
 	if isSticking:
+		if not playedSound:
+			AudioManager.PlaySFX("grudar")
+			playedSound = true
 		
 		if Input.is_action_just_pressed("jump"):
 			cooldownStickTime = stickTimer
@@ -131,17 +134,16 @@ func _physics_process(delta: float) -> void:
 			recentlyWallJumped = true
 			wallJumpCorrectionTimer.start()
 		
-		if not playedSound:
-			AudioManager.PlaySFX("grudar")
-			playedSound = true
+	else:
+		playedSound = false
 	
 	# Durante a janela de correção, permite apenas ajustes na velocidade horizontal
 	if recentlyWallJumped and not wallJumpCorrectionTimer.is_stopped():
 		if Input.is_action_pressed("left"):
-			velocity.x = -airMoveSpeed
+			velocity.x = -moveSpeed
 			transform.basis = Basis(Vector3(0, 1, 0), deg_to_rad(180))
 		elif Input.is_action_pressed("right"):
-			velocity.x = airMoveSpeed
+			velocity.x = moveSpeed
 			transform.basis = Basis(Vector3(0, 1, 0), deg_to_rad(0))
 	# Ao final da janela de correção, reseta o estado
 	if wallJumpCorrectionTimer.is_stopped():
@@ -165,12 +167,6 @@ func _physics_process(delta: float) -> void:
 				transform.basis = Basis(Vector3(0, 1, 0), deg_to_rad(0))
 				AudioManager.StartWalk()
 			
-			if direction.x != 0:
-				jumpDirection.x = direction.x * 0.1
-				jumpFromMoving = true
-			else:
-				jumpFromMoving = false
-			jumpFromMoving = direction.x != 0
 	else:
 		AudioManager.StopWalk()
 
@@ -179,7 +175,7 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_just_pressed("jump") and is_on_floor():
 			AudioManager.PlaySFX("pulo")
 			velocity.y = jumpForce
-			velocity.x = jumpDirection.x * moveSpeed if jumpFromMoving else jumpDirection.x * airMoveSpeed
+			velocity.x = jumpDirection.x * moveSpeed # if jumpFromMoving else jumpDirection.x * airMoveSpeed
 
 	# Duplo pulo no ar
 	if Input.is_action_just_pressed("jump") and not is_on_floor() and canDoubleJump:
@@ -187,12 +183,12 @@ func _physics_process(delta: float) -> void:
 		canDoubleJump = false
 
 	# Movimentação reduzida no ar (quando o pulo não é iniciado via movimento)
-	if not is_on_floor() and not jumpFromMoving:
+	if not is_on_floor():
 		if Input.is_action_pressed("left"):
-			velocity.x = -airMoveSpeed
+			velocity.x = -moveSpeed
 			transform.basis = Basis(Vector3(0, 1, 0), deg_to_rad(180))
 		if Input.is_action_pressed("right"):
-			velocity.x = airMoveSpeed
+			velocity.x = moveSpeed
 			transform.basis = Basis(Vector3(0, 1, 0), deg_to_rad(0))
 	
 	if Input.is_action_just_released("left") or Input.is_action_just_released("right"):

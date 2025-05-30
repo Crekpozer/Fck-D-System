@@ -1,4 +1,4 @@
-[gd_scene load_steps=93 format=4 uid="uid://bbbl2ghkikmeo"]
+[gd_scene load_steps=92 format=4 uid="uid://bbbl2ghkikmeo"]
 
 [ext_resource type="Script" uid="uid://bhpmowj44i1kt" path="res://Source/Script/level_manager.gd" id="1_h2jux"]
 [ext_resource type="Texture2D" uid="uid://ca8kgb6838p6k" path="res://Source/Resource/Materials/Textures/PolygonPrototype_Texture_Grid_02.png" id="1_uyft7"]
@@ -209,6 +209,15 @@ size = Vector3(3.29492, 8.14733, 3.37012)
 [sub_resource type="BoxShape3D" id="BoxShape3D_5kxbj"]
 size = Vector3(3.29492, 12.707, 3.37012)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8wsfg"]
+bg_color = Color(0.0901961, 0.0784314, 0.447059, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h2jux"]
+bg_color = Color(0.972549, 0.74902, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s2b3k"]
+bg_color = Color(0.6, 0.0431373, 0.054902, 1)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5kxbj"]
 albedo_color = Color(0.105882, 0.145098, 1, 1)
 
@@ -229,63 +238,6 @@ size = Vector3(1, 8, 6)
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_g8xsc"]
 points = PackedVector3Array(-0.56338, -4.06349, -3.0629, 0.579253, 4.06349, 3.03115, -0.56338, 4.06349, 3.03115, 0.579253, -4.06349, 3.03115, 0.579253, 4.06349, -3.0629, -0.56338, 4.06349, -3.0629, -0.56338, -4.06349, 3.03115, 0.579253, -4.06349, -3.0629)
 
-[sub_resource type="Animation" id="Animation_j78qg"]
-resource_name = "OpenDoors"
-length = 1.5
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Door1:position:z")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -4, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 1.5)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Door2:position:z")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -4, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 1.5)
-}
-
-[sub_resource type="Animation" id="Animation_81mo6"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Door1:position:z")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Door2:position:z")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.0005, 0, 0.0005, 0),
-"times": PackedFloat32Array(0)
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_b6cis"]
-_data = {
-&"OpenDoors": SubResource("Animation_j78qg"),
-&"RESET": SubResource("Animation_81mo6")
-}
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sek07"]
 albedo_color = Color(0.886275, 0.85098, 0.113725, 1)
 
@@ -299,40 +251,6 @@ albedo_color = Color(0.870588, 0.839216, 0.145098, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_j78qg"]
 material = SubResource("StandardMaterial3D_huqg2")
 size = Vector3(1, 8, 6)
-
-[sub_resource type="Animation" id="Animation_wntwu"]
-resource_name = "OpenDoors"
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("RedDoor1:position:z")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -4, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 1)
-}
-
-[sub_resource type="Animation" id="Animation_5kxbj"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("RedDoor1:position:z")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_sek07"]
-_data = {
-&"OpenDoors": SubResource("Animation_wntwu"),
-&"RESET": SubResource("Animation_5kxbj")
-}
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e7t1m"]
 albedo_color = Color(0.886275, 0.0705882, 0.113725, 1)
@@ -369,14 +287,94 @@ albedo_color = Color(0.85098, 0.113725, 0.156863, 1)
 material = SubResource("StandardMaterial3D_8oq7w")
 size = Vector3(1, 1, 0.1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8wsfg"]
-bg_color = Color(0.0901961, 0.0784314, 0.447059, 1)
+[sub_resource type="Animation" id="Animation_t0jq5"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BlueKeyHole/Door2:position:z")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BlueKeyHole/Door1:position:z")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("YellowKeyHole/YellowDoor1:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h2jux"]
-bg_color = Color(0.972549, 0.74902, 0, 1)
+[sub_resource type="Animation" id="Animation_n6i3n"]
+resource_name = "OpenRedDoor"
+length = 2.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s2b3k"]
-bg_color = Color(0.6, 0.0431373, 0.054902, 1)
+[sub_resource type="Animation" id="Animation_o1fda"]
+resource_name = "OpenYellowDoor"
+length = 2.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("YellowKeyHole/YellowDoor1:position:z")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -4, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2)
+}
+
+[sub_resource type="Animation" id="Animation_u47u2"]
+resource_name = "OpenBlueDoors"
+length = 2.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BlueKeyHole/Door2:position:z")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(0, 0, 0, 0.666667, 0, -4, -0.666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 2)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BlueKeyHole/Door1:position:z")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(3, 2),
+"points": PackedFloat32Array(0, -0.5, 0, 0.5, 0, -4, -0.666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 2)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t0jq5"]
+_data = {
+&"OpenBlueDoors": SubResource("Animation_u47u2"),
+&"OpenRedDoor": SubResource("Animation_n6i3n"),
+&"OpenYellowDoor": SubResource("Animation_o1fda"),
+&"RESET": SubResource("Animation_t0jq5")
+}
 
 [node name="Level1" type="Node3D"]
 script = ExtResource("1_h2jux")
@@ -1724,134 +1722,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.31243, 37.3937, -0.589949)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.85349, 0.704481)
 shape = SubResource("BoxShape3D_5kxbj")
 
-[node name="BlueKeyHole" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.1785, -8.43601, 0)
-script = ExtResource("11_oas3c")
-colorBlue = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="BlueKeyHole"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.404136, 0.0803629)
-mesh = SubResource("BoxMesh_e7t1m")
-
-[node name="Area3D" type="Area3D" parent="BlueKeyHole"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="BlueKeyHole/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.568088, 1.12832)
-shape = SubResource("BoxShape3D_lv35g")
-
-[node name="Door1" type="Node3D" parent="BlueKeyHole"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.7869, 1.04784, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="BlueKeyHole/Door1"]
-mesh = SubResource("BoxMesh_lv35g")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="BlueKeyHole/Door1"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="BlueKeyHole/Door1/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_g8xsc")
-
-[node name="Door2" type="Node3D" parent="BlueKeyHole"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.5151, -15.2433, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="BlueKeyHole/Door2"]
-mesh = SubResource("BoxMesh_lv35g")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="BlueKeyHole/Door2"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="BlueKeyHole/Door2/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_g8xsc")
-
-[node name="BlueKeyHoleAnimationPlayer" type="AnimationPlayer" parent="BlueKeyHole"]
-unique_name_in_owner = true
-libraries = {
-&"": SubResource("AnimationLibrary_b6cis")
-}
-
-[node name="YellowKeyHole" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.9807, -30.2307, 0)
-script = ExtResource("11_oas3c")
-colorYellow = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="YellowKeyHole"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.404136, 0.0803629)
-mesh = SubResource("BoxMesh_g8xsc")
-
-[node name="Area3D" type="Area3D" parent="YellowKeyHole"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="YellowKeyHole/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.568088, 1.12832)
-shape = SubResource("BoxShape3D_lv35g")
-
-[node name="YellowDoor1" type="Node3D" parent="YellowKeyHole"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.5035, 25.973, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="YellowKeyHole/YellowDoor1"]
-mesh = SubResource("BoxMesh_j78qg")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="YellowKeyHole/YellowDoor1"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="YellowKeyHole/YellowDoor1/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_g8xsc")
-
-[node name="YellowKeyHoleAnimationPlayer" type="AnimationPlayer" parent="YellowKeyHole"]
-unique_name_in_owner = true
-libraries = {
-&"": SubResource("AnimationLibrary_sek07")
-}
-
-[node name="RedKeyHole" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.6257, 34.3432, -0.138018)
-script = ExtResource("11_oas3c")
-colorRed = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RedKeyHole"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.404136, 0.0803629)
-mesh = SubResource("BoxMesh_b6cis")
-
-[node name="Area3D" type="Area3D" parent="RedKeyHole"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RedKeyHole/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.568088, 1.12832)
-shape = SubResource("BoxShape3D_lv35g")
-
-[node name="RedDoor1" type="Node3D" parent="RedKeyHole"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85.547, -13.111, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RedKeyHole/RedDoor1"]
-mesh = SubResource("BoxMesh_81mo6")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="RedKeyHole/RedDoor1"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RedKeyHole/RedDoor1/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_g8xsc")
-
-[node name="RedKeyHoleAnimationPlayer" type="AnimationPlayer" parent="RedKeyHole"]
-unique_name_in_owner = true
-libraries = {
-&"": SubResource("AnimationLibrary_sek07")
-}
-
-[node name="BlueKey" parent="." instance=ExtResource("12_fbu8r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.87298, -9.77255, 0.972767)
-colorBlue = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="BlueKey"]
-mesh = SubResource("BoxMesh_t2v0c")
-
-[node name="YellowKey" parent="." instance=ExtResource("12_fbu8r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.336, 2.03881, 0.930809)
-colorYellow = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="YellowKey"]
-mesh = SubResource("BoxMesh_xnujj")
-
-[node name="RedKey" parent="." instance=ExtResource("12_fbu8r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.9984, 1.9445, 0.972767)
-colorRed = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RedKey"]
-mesh = SubResource("BoxMesh_ymdmp")
-
 [node name="Sons" type="Node3D" parent="."]
 
 [node name="EsteiraStreamPlayer3D" type="AudioStreamPlayer3D" parent="Sons"]
@@ -1966,6 +1836,124 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "GAMEOVER"
 
+[node name="KeyLogic" type="Node3D" parent="."]
+
+[node name="BlueKeyHole" type="Node3D" parent="KeyLogic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.1785, -8.43601, 0)
+script = ExtResource("11_oas3c")
+colorBlue = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="KeyLogic/BlueKeyHole"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.404136, 0.0803629)
+mesh = SubResource("BoxMesh_e7t1m")
+
+[node name="Area3D" type="Area3D" parent="KeyLogic/BlueKeyHole"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KeyLogic/BlueKeyHole/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.568088, 1.12832)
+shape = SubResource("BoxShape3D_lv35g")
+
+[node name="Door1" type="Node3D" parent="KeyLogic/BlueKeyHole"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.7869, 1.04784, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="KeyLogic/BlueKeyHole/Door1"]
+mesh = SubResource("BoxMesh_lv35g")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="KeyLogic/BlueKeyHole/Door1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KeyLogic/BlueKeyHole/Door1/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_g8xsc")
+
+[node name="Door2" type="Node3D" parent="KeyLogic/BlueKeyHole"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.5151, -15.2433, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="KeyLogic/BlueKeyHole/Door2"]
+mesh = SubResource("BoxMesh_lv35g")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="KeyLogic/BlueKeyHole/Door2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KeyLogic/BlueKeyHole/Door2/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_g8xsc")
+
+[node name="YellowKeyHole" type="Node3D" parent="KeyLogic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.9807, -30.2307, 0)
+script = ExtResource("11_oas3c")
+colorYellow = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="KeyLogic/YellowKeyHole"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.404136, 0.0803629)
+mesh = SubResource("BoxMesh_g8xsc")
+
+[node name="Area3D" type="Area3D" parent="KeyLogic/YellowKeyHole"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KeyLogic/YellowKeyHole/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.568088, 1.12832)
+shape = SubResource("BoxShape3D_lv35g")
+
+[node name="YellowDoor1" type="Node3D" parent="KeyLogic/YellowKeyHole"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.503, 25.973, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="KeyLogic/YellowKeyHole/YellowDoor1"]
+mesh = SubResource("BoxMesh_j78qg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="KeyLogic/YellowKeyHole/YellowDoor1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KeyLogic/YellowKeyHole/YellowDoor1/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_g8xsc")
+
+[node name="RedKeyHole" type="Node3D" parent="KeyLogic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.6257, 34.3432, -0.138018)
+script = ExtResource("11_oas3c")
+colorRed = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="KeyLogic/RedKeyHole"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.404136, 0.0803629)
+mesh = SubResource("BoxMesh_b6cis")
+
+[node name="Area3D" type="Area3D" parent="KeyLogic/RedKeyHole"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KeyLogic/RedKeyHole/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.568088, 1.12832)
+shape = SubResource("BoxShape3D_lv35g")
+
+[node name="RedDoor1" type="Node3D" parent="KeyLogic/RedKeyHole"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85.547, -13.111, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="KeyLogic/RedKeyHole/RedDoor1"]
+mesh = SubResource("BoxMesh_81mo6")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="KeyLogic/RedKeyHole/RedDoor1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KeyLogic/RedKeyHole/RedDoor1/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_g8xsc")
+
+[node name="BlueKey" parent="KeyLogic" instance=ExtResource("12_fbu8r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.87298, -9.77255, 0.972767)
+colorBlue = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="KeyLogic/BlueKey"]
+mesh = SubResource("BoxMesh_t2v0c")
+
+[node name="YellowKey" parent="KeyLogic" instance=ExtResource("12_fbu8r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.336, 2.03881, 0.930809)
+colorYellow = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="KeyLogic/YellowKey"]
+mesh = SubResource("BoxMesh_xnujj")
+
+[node name="RedKey" parent="KeyLogic" instance=ExtResource("12_fbu8r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.9984, 1.9445, 0.972767)
+colorRed = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="KeyLogic/RedKey"]
+mesh = SubResource("BoxMesh_ymdmp")
+
+[node name="KeyLogicAnimationPlayer" type="AnimationPlayer" parent="KeyLogic"]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_t0jq5")
+}
+
 [connection signal="body_entered" from="FallingCrateSection/FallingCrate/ActivationArea3D" to="FallingCrateSection/FallingCrate" method="_on_activation_area_3d_body_entered"]
 [connection signal="body_entered" from="FallingCrateSection/FallingCrate2/ActivationArea3D" to="FallingCrateSection/FallingCrate2" method="_on_activation_area_3d_body_entered"]
 [connection signal="body_entered" from="FallingCrateSection/FallingCrate3/ActivationArea3D" to="FallingCrateSection/FallingCrate3" method="_on_activation_area_3d_body_entered"]
@@ -1976,6 +1964,6 @@ text = "GAMEOVER"
 [connection signal="body_entered" from="FallingCrateSection/FallingCrate9/ActivationArea3D" to="FallingCrateSection/FallingCrate9" method="_on_activation_area_3d_body_entered"]
 [connection signal="body_entered" from="FallingCrateSection/FallingCrate10/ActivationArea3D" to="FallingCrateSection/FallingCrate10" method="_on_activation_area_3d_body_entered"]
 [connection signal="body_entered" from="FallingCrateSection/FallingCrate11/ActivationArea3D" to="FallingCrateSection/FallingCrate11" method="_on_activation_area_3d_body_entered"]
-[connection signal="body_entered" from="BlueKeyHole/Area3D" to="BlueKeyHole" method="_on_area_3d_body_entered"]
-[connection signal="body_entered" from="YellowKeyHole/Area3D" to="YellowKeyHole" method="_on_area_3d_body_entered"]
-[connection signal="body_entered" from="RedKeyHole/Area3D" to="RedKeyHole" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="KeyLogic/BlueKeyHole/Area3D" to="KeyLogic/BlueKeyHole" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="KeyLogic/YellowKeyHole/Area3D" to="KeyLogic/YellowKeyHole" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="KeyLogic/RedKeyHole/Area3D" to="KeyLogic/RedKeyHole" method="_on_area_3d_body_entered"]

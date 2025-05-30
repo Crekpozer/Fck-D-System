@@ -6,12 +6,14 @@ extends Node
 @onready var gameplayMusicPlayer: AudioStreamPlayer = AudioStreamPlayer.new()
 @onready var SFXBoxCrashPlayer : AudioStreamPlayer = AudioStreamPlayer.new()
 @onready var SFXJumpPlayer : AudioStreamPlayer = AudioStreamPlayer.new()
+@onready var SFXDoubleJumpPlayer : AudioStreamPlayer = AudioStreamPlayer.new()
 @onready var SFXStickPlayer : AudioStreamPlayer = AudioStreamPlayer.new()
 @onready var SFXCharWalkingPlayer : AudioStreamPlayer = AudioStreamPlayer.new()
 
 # Load the audio files
 var SFXBoxCrashAudio = preload("res://Assets/Sounds/sfx_box_crash_v1.wav")
 var SFXJumpAudio = preload("res://Assets/Sounds/Char/char_cyber_pulo_v1.wav")
+var SFXDoubleJumpAudio = preload("res://Assets/Sounds/Char/char_cyber_puloduplo_v1.wav")
 var SFXStickAudio = preload("res://Assets/Sounds/Char/char_cyber_grudar_v1.wav")
 var SFXCharWalkingAudio = preload("res://Assets/Sounds/Char/char_cyber_andar_v1.wav")
 var gameplayMusicAudio = preload("res://Assets/Sounds/Music/mus_main_theme_v2.wav")
@@ -22,11 +24,13 @@ func _ready() -> void:
 	add_child(gameplayMusicPlayer)
 	add_child(SFXBoxCrashPlayer)
 	add_child(SFXJumpPlayer)
+	add_child(SFXDoubleJumpPlayer)
 	add_child(SFXStickPlayer)
 	add_child(SFXCharWalkingPlayer)
 	
 	# Initialize the audio streams
 	SFXJumpPlayer.stream = SFXJumpAudio
+	SFXDoubleJumpPlayer.stream = SFXDoubleJumpAudio
 	SFXBoxCrashPlayer.stream = SFXBoxCrashAudio
 	SFXStickPlayer.stream = SFXStickAudio
 	SFXCharWalkingPlayer.stream = SFXCharWalkingAudio
@@ -36,6 +40,7 @@ func _ready() -> void:
 	SetBus(gameplayMusicPlayer, "Music")
 	SetBus(SFXBoxCrashPlayer, "SFX")
 	SetBus(SFXJumpPlayer, "SFX")
+	SetBus(SFXDoubleJumpPlayer, "SFX")
 	SetBus(SFXStickPlayer, "SFX")
 	SetBus(SFXCharWalkingPlayer, "SFX")
 
@@ -47,6 +52,8 @@ func PlaySFX(sfxName) -> void:
 	match sfxName:
 		"pulo":
 			SFXJumpPlayer.play()
+		"pulo duplo":
+			SFXDoubleJumpPlayer.play()
 		"caixa quebrando":
 			SFXBoxCrashPlayer.play()
 		"grudar":
