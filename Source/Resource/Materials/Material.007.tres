@@ -1,8 +1,8 @@
 [gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://chxgu5p1d4r80"]
 
-[ext_resource type="Texture2D" uid="uid://dxh6txneih1l4" path="res://Assets/glTF/Images/mapa_glTF_industrial-tile1-albedo.png" id="1_yklwi"]
-[ext_resource type="Texture2D" uid="uid://drrcqhbl0a5ju" path="res://Assets/glTF/Images/mapa_glTF_industrial-tile1-roughness.png" id="2_46rnl"]
-[ext_resource type="Texture2D" uid="uid://b6kkwvkh0s2t" path="res://Assets/glTF/Images/mapa_glTF_industrial-tile1-normal-ogl.png" id="3_kuwpd"]
+[ext_resource type="Texture2D" uid="uid://b41w3j3emfdjo" path="res://Assets/glTF/Images/mapa_glTF_industrial-tile1-albedo.png" id="1_yklwi"]
+[ext_resource type="Texture2D" uid="uid://b6j7o3b66cltc" path="res://Assets/glTF/Images/mapa_glTF_industrial-tile1-roughness.png" id="2_46rnl"]
+[ext_resource type="Texture2D" uid="uid://dgtcfauyhjys2" path="res://Assets/glTF/Images/mapa_glTF_industrial-tile1-normal-ogl.png" id="3_kuwpd"]
 
 [resource]
 resource_name = "Material.007"
