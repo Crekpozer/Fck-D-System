@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=4 uid="uid://bbbl2ghkikmeo"]
+[gd_scene load_steps=92 format=4 uid="uid://bbbl2ghkikmeo"]
 
 [ext_resource type="Script" uid="uid://bhpmowj44i1kt" path="res://Source/Script/level_manager.gd" id="1_h2jux"]
 [ext_resource type="Texture2D" uid="uid://ca8kgb6838p6k" path="res://Source/Resource/Materials/Textures/PolygonPrototype_Texture_Grid_02.png" id="1_uyft7"]
@@ -376,9 +376,7 @@ script = ExtResource("1_h2jux")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
-light_color = Color(0.675151, 0.776312, 1, 1)
 shadow_enabled = true
-sky_mode = 2
 
 [node name="Malha de fora" type="CSGMesh3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.75554, -35.749, 0.0980167)
