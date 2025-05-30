@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://c3wx5bcyaa76c"]
+[gd_scene load_steps=5 format=3 uid="uid://c3wx5bcyaa76c"]
 
 [ext_resource type="Script" uid="uid://ma5pwkalnc3" path="res://Source/Scenes/Misc/Falling Crates/falling_crate.gd" id="1_ib5oh"]
+[ext_resource type="AudioStream" uid="uid://jf12j6qbwep4" path="res://Assets/Sounds/SFX/sfx_box_hit_Clanck_v2.wav" id="2_t800m"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ib5oh"]
 size = Vector3(3, 1, 3)
@@ -27,5 +28,10 @@ mesh = SubResource("BoxMesh_ib5oh")
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.587165, 0.7138)
 mesh = SubResource("BoxMesh_t800m")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("2_t800m")
+volume_db = 7.724
 
 [connection signal="timeout" from="DispenserTimer" to="." method="_on_dispenser_timer_timeout"]

@@ -7,8 +7,7 @@ extends Node3D
 var isGameOver : bool
 
 func _ready() -> void:
-	pass
-	# AudioManager.PlayBackgroundMusic()
+	AudioManager.PlayBackgroundMusic()
 
 func _process(_delta: float) -> void:
 	if lifeProgressbar.value == 0:

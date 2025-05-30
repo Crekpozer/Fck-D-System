@@ -1,6 +1,6 @@
-[gd_scene load_steps=92 format=4 uid="uid://bbbl2ghkikmeo"]
+[gd_scene load_steps=93 format=4 uid="uid://bbbl2ghkikmeo"]
 
-[ext_resource type="Script" path="res://Source/Script/level_manager.gd" id="1_h2jux"]
+[ext_resource type="Script" uid="uid://bhpmowj44i1kt" path="res://Source/Script/level_manager.gd" id="1_h2jux"]
 [ext_resource type="Texture2D" uid="uid://ca8kgb6838p6k" path="res://Source/Resource/Materials/Textures/PolygonPrototype_Texture_Grid_02.png" id="1_uyft7"]
 [ext_resource type="Texture2D" uid="uid://dgny17gglxjkc" path="res://Assets/Images/level_design_miro.png" id="2_cxa5n"]
 [ext_resource type="PackedScene" uid="uid://c25if1tggla6x" path="res://Source/PlayerCharacter/character_body_3d.tscn" id="3_8fmr1"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://nmyruthvj2fv" path="res://Assets/Images/Interface/hud_vida_1.png" id="13_cxa5n"]
 [ext_resource type="AudioStream" uid="uid://xro2i7k1p84r" path="res://Assets/Sounds/SFX/sfx_gear_esteira_v1.wav" id="14_s2b3k"]
 [ext_resource type="Texture2D" uid="uid://cmdesemaxvslq" path="res://Assets/Images/Interface/hud_vida_2.2.png" id="15_s2b3k"]
+[ext_resource type="AudioStream" uid="uid://dm33382ckhvxh" path="res://Assets/Sounds/SFX/sfx_plataforme1_v3.wav" id="15_u47u2"]
 [ext_resource type="Texture2D" uid="uid://btr8s4tlwb0ot" path="res://Assets/Images/Interface/hud_vida_3.2.png" id="16_u47u2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mfu6t"]
@@ -1098,7 +1099,7 @@ skeleton = NodePath("../..")
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("3_8fmr1")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.832, -34.2902, 0.993918)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.1608, -33.7395, 0.993918)
 collision_layer = 3
 collision_mask = 3
 platform_floor_layers = 4294901776
@@ -1117,7 +1118,7 @@ update_scale = false
 
 [node name="CameraFollow" type="Node3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.832, -34.2902, 0.993918)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.1608, -33.7395, 0.993918)
 
 [node name="Camera3D" type="Camera3D" parent="CameraFollow"]
 transform = Transform3D(0.999976, 5.82067e-11, 0.00687654, -0.000652636, 0.995486, 0.0949054, -0.0068455, -0.0949076, 0.995463, -0.28513, 3.97905, 11.5539)
@@ -1627,7 +1628,7 @@ animation = true
 
 [node name="FallingCrate" parent="FallingCrateSection" instance=ExtResource("10_n6i3n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.3425, 13.6298, 0.524041)
-destroyCrateTime = 1.1
+destroyCrateTime = 1.04
 
 [node name="ActivationArea3D" type="Area3D" parent="FallingCrateSection/FallingCrate"]
 
@@ -1724,7 +1725,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.85349, 0.704481)
 shape = SubResource("BoxShape3D_5kxbj")
 
 [node name="BlueKeyHole" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89837, -9.57523, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.1785, -8.43601, 0)
 script = ExtResource("11_oas3c")
 colorBlue = true
 
@@ -1739,7 +1740,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.568088, 1.12832)
 shape = SubResource("BoxShape3D_lv35g")
 
 [node name="Door1" type="Node3D" parent="BlueKeyHole"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.364, 2.56806, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.7869, 1.04784, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="BlueKeyHole/Door1"]
 mesh = SubResource("BoxMesh_lv35g")
@@ -1750,7 +1751,7 @@ mesh = SubResource("BoxMesh_lv35g")
 shape = SubResource("ConvexPolygonShape3D_g8xsc")
 
 [node name="Door2" type="Node3D" parent="BlueKeyHole"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.63585, -13.7231, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.5151, -15.2433, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="BlueKeyHole/Door2"]
 mesh = SubResource("BoxMesh_lv35g")
@@ -1767,7 +1768,7 @@ libraries = {
 }
 
 [node name="YellowKeyHole" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5753, 2.26029, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.9807, -30.2307, 0)
 script = ExtResource("11_oas3c")
 colorYellow = true
 
@@ -1782,7 +1783,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.568088, 1.12832)
 shape = SubResource("BoxShape3D_lv35g")
 
 [node name="YellowDoor1" type="Node3D" parent="YellowKeyHole"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1821, -6.70117, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.5035, 25.973, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="YellowKeyHole/YellowDoor1"]
 mesh = SubResource("BoxMesh_j78qg")
@@ -1799,7 +1800,7 @@ libraries = {
 }
 
 [node name="RedKeyHole" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.7751, 1.9857, -0.127353)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.6257, 34.3432, -0.138018)
 script = ExtResource("11_oas3c")
 colorRed = true
 
@@ -1814,7 +1815,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.568088, 1.12832)
 shape = SubResource("BoxShape3D_lv35g")
 
 [node name="RedDoor1" type="Node3D" parent="RedKeyHole"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100.689, 18.9105, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85.547, -13.111, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RedKeyHole/RedDoor1"]
 mesh = SubResource("BoxMesh_81mo6")
@@ -1831,35 +1832,53 @@ libraries = {
 }
 
 [node name="BlueKey" parent="." instance=ExtResource("12_fbu8r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.2128, -8.64003, 0.972767)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.87298, -9.77255, 0.972767)
 colorBlue = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="BlueKey"]
 mesh = SubResource("BoxMesh_t2v0c")
 
 [node name="YellowKey" parent="." instance=ExtResource("12_fbu8r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.0622, -30.8551, 0.930809)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.336, 2.03881, 0.930809)
 colorYellow = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="YellowKey"]
 mesh = SubResource("BoxMesh_xnujj")
 
 [node name="RedKey" parent="." instance=ExtResource("12_fbu8r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.4185, 4.74812, 0.972767)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.9984, 1.9445, 0.972767)
 colorRed = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RedKey"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.78379, 29.6417, 0)
 mesh = SubResource("BoxMesh_ymdmp")
 
 [node name="Sons" type="Node3D" parent="."]
 
-[node name="GearStreamPlayer3D" type="AudioStreamPlayer3D" parent="Sons"]
+[node name="EsteiraStreamPlayer3D" type="AudioStreamPlayer3D" parent="Sons"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.1235, -31.7543, 0)
 stream = ExtResource("14_s2b3k")
-unit_size = 8.0
 autoplay = true
 max_distance = 50.0
+
+[node name="PlataformaStreamPlayer3D" type="AudioStreamPlayer3D" parent="Sons"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.3335, -22.5345, 0)
+stream = ExtResource("15_u47u2")
+max_distance = 14.0
+
+[node name="PlataformaStreamPlayer3D2" type="AudioStreamPlayer3D" parent="Sons"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.0869, -24.926, 0)
+stream = ExtResource("15_u47u2")
+volume_db = 16.0
+
+[node name="PlataformaStreamPlayer3D3" type="AudioStreamPlayer3D" parent="Sons"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.23854, 25.9919, 0)
+stream = ExtResource("15_u47u2")
+volume_db = 16.0
+
+[node name="PlataformaStreamPlayer3D4" type="AudioStreamPlayer3D" parent="Sons"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.5472, 18.6545, 0.269953)
+stream = ExtResource("15_u47u2")
+volume_db = 16.0
 
 [node name="HUD" type="CanvasLayer" parent="."]
 unique_name_in_owner = true

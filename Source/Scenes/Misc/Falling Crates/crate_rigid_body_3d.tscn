@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://donj0l1ah0uh4" path="res://Source/Scenes/Misc/Falling Crates/crate_rigid_body_3d.gd" id="1_2koqr"]
 [ext_resource type="PackedScene" uid="uid://bvc24gl334ual" path="res://Source/Scenes/Misc/Falling Crates/falling_box_mesh.tscn" id="2_bhqyw"]
-[ext_resource type="AudioStream" uid="uid://60qpowclm3fg" path="res://Assets/Sounds/sfx_box_crash_v1.wav" id="3_7nsff"]
+[ext_resource type="AudioStream" uid="uid://cn8rpi7lvab0e" path="res://Assets/Sounds/SFX/sfx_box_crash_v2.wav" id="3_7nsff"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_bhqyw"]
 points = PackedVector3Array(-1, -0.75, -1, -1, 0.75, -1, 1, -0.75, -1, -1, -0.75, 1, -1, 0.75, 1, 1, 0.75, -1, 1, -0.75, 1, 1, 0.75, 1)
