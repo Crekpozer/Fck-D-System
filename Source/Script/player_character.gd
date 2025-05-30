@@ -198,17 +198,16 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction.x * moveSpeed
 	
 	move_and_slide()
-	rotation = rotation.lerp(Vector3(rotation.x, rotation.y, tilt), 1.0)
 
-func Death() -> void:
+func Death(respawn : Marker3D) -> void:
 	actualLife -= 15
 	%TextureProgressBar.value = actualLife
 	print("O jogador perdeu 15 de vida", actualLife)
 	if not levelScript.isGameOver:
-		ResetPosition()
+		ResetPosition(respawn)
 
 func Damage() -> void:
 	pass
 
-func ResetPosition() -> void:
-	global_position = spawn.global_position
+func ResetPosition(respawn : Marker3D) -> void:
+	global_position = respawn.global_position

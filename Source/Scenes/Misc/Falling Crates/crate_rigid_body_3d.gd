@@ -1,6 +1,8 @@
 class_name Crate
 extends RigidBody3D
 
+var respawnPoint : Marker3D
+
 @onready var audioStreamPlayer : AudioStreamPlayer3D = %AudioStreamPlayer3D
 
 var isMoving : bool
@@ -18,7 +20,7 @@ func _physics_process(_delta: float) -> void:
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body is Player:
-		body.Death()
+		body.Death(respawnPoint)
 
 func Kabum() -> void:
 	print("Kabum!")

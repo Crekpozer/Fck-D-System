@@ -48,8 +48,3 @@ jump={
 [physics]
 
 3d/default_gravity_vector=Vector3(0, -3, 0)
-
-[rendering]
-
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=4 uid="uid://bbbl2ghkikmeo"]
+[gd_scene load_steps=91 format=4 uid="uid://bbbl2ghkikmeo"]
 
 [ext_resource type="Script" uid="uid://bhpmowj44i1kt" path="res://Source/Script/level_manager.gd" id="1_h2jux"]
 [ext_resource type="Texture2D" uid="uid://ca8kgb6838p6k" path="res://Source/Resource/Materials/Textures/PolygonPrototype_Texture_Grid_02.png" id="1_uyft7"]
@@ -18,18 +18,6 @@
 [ext_resource type="Texture2D" uid="uid://cmdesemaxvslq" path="res://Assets/Images/Interface/hud_vida_2.2.png" id="15_s2b3k"]
 [ext_resource type="AudioStream" uid="uid://dm33382ckhvxh" path="res://Assets/Sounds/SFX/sfx_plataforme1_v3.wav" id="15_u47u2"]
 [ext_resource type="Texture2D" uid="uid://btr8s4tlwb0ot" path="res://Assets/Images/Interface/hud_vida_3.2.png" id="16_u47u2"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mfu6t"]
-sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
-ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
-
-[sub_resource type="Sky" id="Sky_woc6x"]
-sky_material = SubResource("ProceduralSkyMaterial_mfu6t")
-
-[sub_resource type="Environment" id="Environment_o4wny"]
-background_mode = 2
-sky = SubResource("Sky_woc6x")
-tonemap_mode = 2
 
 [sub_resource type="BoxMesh" id="BoxMesh_p3odm"]
 size = Vector3(130, 3, 5)
@@ -209,6 +197,12 @@ size = Vector3(3.29492, 8.14733, 3.37012)
 [sub_resource type="BoxShape3D" id="BoxShape3D_5kxbj"]
 size = Vector3(3.29492, 12.707, 3.37012)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_u47u2"]
+size = Vector3(3.295, 18, 3.37)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t0jq5"]
+size = Vector3(3.295, 10, 3.37)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8wsfg"]
 bg_color = Color(0.0901961, 0.0784314, 0.447059, 1)
 
@@ -287,6 +281,51 @@ albedo_color = Color(0.85098, 0.113725, 0.156863, 1)
 material = SubResource("StandardMaterial3D_8oq7w")
 size = Vector3(1, 1, 0.1)
 
+[sub_resource type="Animation" id="Animation_u47u2"]
+resource_name = "OpenBlueDoors"
+length = 2.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BlueKeyHole/Door2:position:z")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(0, 0, 0, 0.666667, 0, -4, -0.666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 2)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BlueKeyHole/Door1:position:z")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(3, 2),
+"points": PackedFloat32Array(0, -0.5, 0, 0.5, 0, -4, -0.666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 2)
+}
+
+[sub_resource type="Animation" id="Animation_n6i3n"]
+resource_name = "OpenRedDoor"
+length = 2.0
+
+[sub_resource type="Animation" id="Animation_o1fda"]
+resource_name = "OpenYellowDoor"
+length = 2.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("YellowKeyHole/YellowDoor1:position:z")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -4, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2)
+}
+
 [sub_resource type="Animation" id="Animation_t0jq5"]
 length = 0.001
 tracks/0/type = "bezier"
@@ -323,51 +362,6 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0)
 }
 
-[sub_resource type="Animation" id="Animation_n6i3n"]
-resource_name = "OpenRedDoor"
-length = 2.0
-
-[sub_resource type="Animation" id="Animation_o1fda"]
-resource_name = "OpenYellowDoor"
-length = 2.0
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("YellowKeyHole/YellowDoor1:position:z")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -4, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 2)
-}
-
-[sub_resource type="Animation" id="Animation_u47u2"]
-resource_name = "OpenBlueDoors"
-length = 2.0
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("BlueKeyHole/Door2:position:z")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(2, 2),
-"points": PackedFloat32Array(0, 0, 0, 0.666667, 0, -4, -0.666667, 0, 0, 0),
-"times": PackedFloat32Array(0, 2)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("BlueKeyHole/Door1:position:z")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(3, 2),
-"points": PackedFloat32Array(0, -0.5, 0, 0.5, 0, -4, -0.666667, 0, 0, 0),
-"times": PackedFloat32Array(0, 2)
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_t0jq5"]
 _data = {
 &"OpenBlueDoors": SubResource("Animation_u47u2"),
@@ -379,11 +373,9 @@ _data = {
 [node name="Level1" type="Node3D"]
 script = ExtResource("1_h2jux")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_o4wny")
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+light_color = Color(0.0210012, 0, 0.502148, 1)
 shadow_enabled = true
 
 [node name="Malha de fora" type="CSGMesh3D" parent="."]
@@ -1097,7 +1089,7 @@ skeleton = NodePath("../..")
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("3_8fmr1")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.1608, -33.7395, 0.993918)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1733, 17.8001, 0.993918)
 collision_layer = 3
 collision_mask = 3
 platform_floor_layers = 4294901776
@@ -1116,7 +1108,7 @@ update_scale = false
 
 [node name="CameraFollow" type="Node3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.1608, -33.7395, 0.993918)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1733, 17.8001, 0.993918)
 
 [node name="Camera3D" type="Camera3D" parent="CameraFollow"]
 transform = Transform3D(0.999976, 5.82067e-11, 0.00687654, -0.000652636, 0.995486, 0.0949054, -0.0068455, -0.0949076, 0.995463, -0.28513, 3.97905, 11.5539)
@@ -1246,68 +1238,68 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.7439, -9.20515, 1.01349)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 73.2343, 20.5269, 0)
 
 [node name="StickableWall" parent="StickWallSection3" instance=ExtResource("4_8wsfg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -17.739, 1.01349)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -17.739, 0.994)
 wallSide = true
 
 [node name="StickableWall2" parent="StickWallSection3" instance=ExtResource("4_8wsfg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -16.739, 1.01349)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -16.739, 0.994)
 wallSide = true
 
 [node name="StickableWall3" parent="StickWallSection3" instance=ExtResource("4_8wsfg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -15.739, 1.01349)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -15.739, 0.994)
 wallSide = true
 
 [node name="StickableWall4" parent="StickWallSection3" instance=ExtResource("4_8wsfg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -14.739, 1.01349)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -14.739, 0.994)
 wallSide = true
 
 [node name="StickableWall5" parent="StickWallSection3" instance=ExtResource("4_8wsfg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -13.739, 1.01349)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -13.739, 0.994)
 wallSide = true
 
 [node name="StickableWall6" parent="StickWallSection3" instance=ExtResource("4_8wsfg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -12.739, 1.01349)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -12.739, 0.994)
 wallSide = true
 
 [node name="StickableWall7" parent="StickWallSection3" instance=ExtResource("4_8wsfg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -11.739, 1.01349)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -11.739, 0.994)
 wallSide = true
 
 [node name="StickableWall8" parent="StickWallSection3" instance=ExtResource("4_8wsfg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -10.739, 1.01349)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -10.739, 0.994)
 wallSide = true
 
 [node name="StickableWall9" parent="StickWallSection3" instance=ExtResource("4_8wsfg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -9.73899, 1.01349)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -9.73899, 0.994)
 wallSide = true
 
 [node name="StickableWall10" parent="StickWallSection3" instance=ExtResource("4_8wsfg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -8.73899, 1.01349)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3081, -8.73899, 0.994)
 wallSide = true
 
 [node name="StickableWall11" parent="StickWallSection3" instance=ExtResource("4_8wsfg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.7439, -12.0461, 1.01349)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.7439, -12.0461, 0.994)
 
 [node name="StickableWall12" parent="StickWallSection3" instance=ExtResource("4_8wsfg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.7439, -11.0461, 1.01349)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.7439, -11.0461, 0.994)
 
 [node name="StickableWall13" parent="StickWallSection3" instance=ExtResource("4_8wsfg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.7439, -10.0461, 1.01349)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.7439, -10.0461, 0.994)
 
 [node name="StickableWall14" parent="StickWallSection3" instance=ExtResource("4_8wsfg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.7439, -9.04615, 1.01349)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.7439, -9.04615, 0.994)
 
 [node name="StickableWall15" parent="StickWallSection3" instance=ExtResource("4_8wsfg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.7439, -8.04615, 1.01349)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.7439, -8.04615, 0.994)
 
 [node name="StickableWall16" parent="StickWallSection3" instance=ExtResource("4_8wsfg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.7439, -7.04615, 1.01349)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.7439, -7.04615, 0.994)
 
 [node name="StickableWall17" parent="StickWallSection3" instance=ExtResource("4_8wsfg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.7439, -6.04615, 1.01349)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.7439, -6.04615, 0.994)
 
 [node name="StickableWall18" parent="StickWallSection3" instance=ExtResource("4_8wsfg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.7439, -5.0462, 1.01349)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.7439, -5.0462, 0.994)
 
 [node name="StickWallSection4" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.997, 37.4112, 3.8147e-06)
@@ -1537,6 +1529,9 @@ mesh = SubResource("ArrayMesh_1b8a6")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DeathAreaSection/DeathArea3D"]
 shape = SubResource("ConvexPolygonShape3D_lwx2v")
 
+[node name="RespawnPoint" type="Marker3D" parent="DeathAreaSection/DeathArea3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.413, 6.021, 0.994)
+
 [node name="DeathArea3D2" parent="DeathAreaSection" instance=ExtResource("6_s2b3k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.0557, -34.1502, 0.795949)
 
@@ -1545,6 +1540,9 @@ mesh = SubResource("ArrayMesh_1b8a6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DeathAreaSection/DeathArea3D2"]
 shape = SubResource("ConvexPolygonShape3D_lwx2v")
+
+[node name="RespawnPoint" type="Marker3D" parent="DeathAreaSection/DeathArea3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.436, 13.346, 0.994)
 
 [node name="DeathArea3D3" parent="DeathAreaSection" instance=ExtResource("6_s2b3k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.7817, -0.222996, 0.795949)
@@ -1555,6 +1553,9 @@ mesh = SubResource("ArrayMesh_1b8a6")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DeathAreaSection/DeathArea3D3"]
 shape = SubResource("ConvexPolygonShape3D_lwx2v")
 
+[node name="RespawnPoint" type="Marker3D" parent="DeathAreaSection/DeathArea3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.834, 11.492, 0.994)
+
 [node name="DeathArea3D4" parent="DeathAreaSection" instance=ExtResource("6_s2b3k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.8792, -10.5099, 0.795949)
 
@@ -1563,6 +1564,9 @@ mesh = SubResource("ArrayMesh_1b8a6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DeathAreaSection/DeathArea3D4"]
 shape = SubResource("ConvexPolygonShape3D_lwx2v")
+
+[node name="RespawnPoint" type="Marker3D" parent="DeathAreaSection/DeathArea3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.873, 3.69, 0.994)
 
 [node name="DeathArea3D6" parent="DeathAreaSection" instance=ExtResource("6_s2b3k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.3544, 21.5334, 0.795949)
@@ -1575,6 +1579,9 @@ mesh = SubResource("ArrayMesh_lwx2v")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0854149, 0.274246, -0.145)
 shape = SubResource("ConvexPolygonShape3D_i0l8i")
 
+[node name="RespawnPoint" type="Marker3D" parent="DeathAreaSection/DeathArea3D6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.902, 7.143, 0.994)
+
 [node name="DeathArea3D5" parent="DeathAreaSection" instance=ExtResource("6_s2b3k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.47314, 10.4447, 0.795949)
 
@@ -1585,6 +1592,9 @@ mesh = SubResource("ArrayMesh_eaf8p")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DeathAreaSection/DeathArea3D5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.290081)
 shape = SubResource("ConvexPolygonShape3D_wntwu")
+
+[node name="RespawnPoint" type="Marker3D" parent="DeathAreaSection/DeathArea3D5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.507, 7.205, 0.994)
 
 [node name="MaterialReference" type="CSGMesh3D" parent="DeathAreaSection"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.47314, 10.4447, 1.08603)
@@ -1599,34 +1609,44 @@ material = SubResource("StandardMaterial3D_1b8a6")
 
 [node name="GasOutletSection" type="Node3D" parent="."]
 
-[node name="GasOutlet" parent="GasOutletSection" instance=ExtResource("9_o1fda")]
+[node name="GasOutlet" parent="GasOutletSection" node_paths=PackedStringArray("respawnPoint") instance=ExtResource("9_o1fda")]
 transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -5.99925, 7.97774, 1.88701)
+respawnPoint = NodePath("../Marker3D")
 
-[node name="GasOutlet2" parent="GasOutletSection" instance=ExtResource("9_o1fda")]
+[node name="GasOutlet2" parent="GasOutletSection" node_paths=PackedStringArray("respawnPoint") instance=ExtResource("9_o1fda")]
 transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.552939, 7.94278, 1.88637)
+respawnPoint = NodePath("../Marker3D")
 animation = true
 
-[node name="GasOutlet3" parent="GasOutletSection" instance=ExtResource("9_o1fda")]
+[node name="GasOutlet3" parent="GasOutletSection" node_paths=PackedStringArray("respawnPoint") instance=ExtResource("9_o1fda")]
 transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 4.55503, 7.97774, 1.88701)
+respawnPoint = NodePath("../Marker3D")
 
 [node name="GasOutlet5" parent="GasOutletSection" instance=ExtResource("9_o1fda")]
 transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 58.8342, -14.2325, 1.88701)
 
-[node name="GasOutlet6" parent="GasOutletSection" instance=ExtResource("9_o1fda")]
-transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 65.661, 37.4125, 1.88701)
+[node name="GasOutlet6" parent="GasOutletSection" node_paths=PackedStringArray("respawnPoint") instance=ExtResource("9_o1fda")]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 65.661, 37.4125, 1.45249)
+respawnPoint = NodePath("../../DeathAreaSection/DeathArea3D6/RespawnPoint")
 
-[node name="GasOutlet7" parent="GasOutletSection" instance=ExtResource("9_o1fda")]
+[node name="GasOutlet7" parent="GasOutletSection" node_paths=PackedStringArray("respawnPoint") instance=ExtResource("9_o1fda")]
 transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 8.95456, 34.7151, 1.4338)
+respawnPoint = NodePath("../../DeathAreaSection/DeathArea3D5/RespawnPoint")
 
-[node name="GasOutlet4" parent="GasOutletSection" instance=ExtResource("9_o1fda")]
+[node name="GasOutlet4" parent="GasOutletSection" node_paths=PackedStringArray("respawnPoint") instance=ExtResource("9_o1fda")]
 transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 10.0013, 7.94278, 1.88637)
+respawnPoint = NodePath("../Marker3D")
 animation = true
+
+[node name="Marker3D" type="Marker3D" parent="GasOutletSection"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.198, 0, 0.994)
 
 [node name="FallingCrateSection" type="Node3D" parent="."]
 
-[node name="FallingCrate" parent="FallingCrateSection" instance=ExtResource("10_n6i3n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.3425, 13.6298, 0.524041)
+[node name="FallingCrate" parent="FallingCrateSection" node_paths=PackedStringArray("respawnPoint") instance=ExtResource("10_n6i3n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.3425, 13.6298, 0)
 destroyCrateTime = 1.04
+respawnPoint = NodePath("../../DeathAreaSection/DeathArea3D4/RespawnPoint")
 
 [node name="ActivationArea3D" type="Area3D" parent="FallingCrateSection/FallingCrate"]
 
@@ -1634,9 +1654,10 @@ destroyCrateTime = 1.04
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.20996, 0.704481)
 shape = SubResource("BoxShape3D_lwx2v")
 
-[node name="FallingCrate2" parent="FallingCrateSection" instance=ExtResource("10_n6i3n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.93, 13.6298, 0.524041)
+[node name="FallingCrate2" parent="FallingCrateSection" node_paths=PackedStringArray("respawnPoint") instance=ExtResource("10_n6i3n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.93, 13.6298, 0)
 destroyCrateTime = 0.8
+respawnPoint = NodePath("../../DeathAreaSection/DeathArea3D4/RespawnPoint")
 
 [node name="ActivationArea3D" type="Area3D" parent="FallingCrateSection/FallingCrate2"]
 
@@ -1644,9 +1665,10 @@ destroyCrateTime = 0.8
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.74782, 0.704481)
 shape = SubResource("BoxShape3D_i0l8i")
 
-[node name="FallingCrate3" parent="FallingCrateSection" instance=ExtResource("10_n6i3n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.7155, 13.6298, 0.524041)
+[node name="FallingCrate3" parent="FallingCrateSection" node_paths=PackedStringArray("respawnPoint") instance=ExtResource("10_n6i3n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.7155, 13.6298, 0)
 destroyCrateTime = 0.8
+respawnPoint = NodePath("../../DeathAreaSection/DeathArea3D4/RespawnPoint")
 
 [node name="ActivationArea3D" type="Area3D" parent="FallingCrateSection/FallingCrate3"]
 
@@ -1654,9 +1676,10 @@ destroyCrateTime = 0.8
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.57367, 0.704481)
 shape = SubResource("BoxShape3D_wntwu")
 
-[node name="FallingCrate4" parent="FallingCrateSection" instance=ExtResource("10_n6i3n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.2956, 13.6298, 0.524041)
+[node name="FallingCrate4" parent="FallingCrateSection" node_paths=PackedStringArray("respawnPoint") instance=ExtResource("10_n6i3n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.2956, 13.6298, 0)
 destroyCrateTime = 0.8
+respawnPoint = NodePath("../../DeathAreaSection/DeathArea3D4/RespawnPoint")
 
 [node name="ActivationArea3D" type="Area3D" parent="FallingCrateSection/FallingCrate4"]
 
@@ -1664,9 +1687,10 @@ destroyCrateTime = 0.8
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.85349, 0.704481)
 shape = SubResource("BoxShape3D_5kxbj")
 
-[node name="FallingCrate6" parent="FallingCrateSection" instance=ExtResource("10_n6i3n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.3989, 37.3627, 0.524041)
+[node name="FallingCrate6" parent="FallingCrateSection" node_paths=PackedStringArray("respawnPoint") instance=ExtResource("10_n6i3n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.3989, 37.3627, 0)
 destroyCrateTime = 0.8
+respawnPoint = NodePath("../../DeathAreaSection/DeathArea3D6/RespawnPoint")
 
 [node name="ActivationArea3D" type="Area3D" parent="FallingCrateSection/FallingCrate6"]
 
@@ -1674,9 +1698,10 @@ destroyCrateTime = 0.8
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.57367, 0.704481)
 shape = SubResource("BoxShape3D_i0l8i")
 
-[node name="FallingCrate7" parent="FallingCrateSection" instance=ExtResource("10_n6i3n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.1844, 37.3627, 0.524041)
+[node name="FallingCrate7" parent="FallingCrateSection" node_paths=PackedStringArray("respawnPoint") instance=ExtResource("10_n6i3n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.1844, 37.3627, 0)
 destroyCrateTime = 0.8
+respawnPoint = NodePath("../../DeathAreaSection/DeathArea3D6/RespawnPoint")
 
 [node name="ActivationArea3D" type="Area3D" parent="FallingCrateSection/FallingCrate7"]
 
@@ -1684,8 +1709,31 @@ destroyCrateTime = 0.8
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.57367, 0.704481)
 shape = SubResource("BoxShape3D_wntwu")
 
-[node name="FallingCrate8" parent="FallingCrateSection" instance=ExtResource("10_n6i3n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.7645, 37.3627, 0.524041)
+[node name="FallingCrate12" parent="FallingCrateSection" node_paths=PackedStringArray("respawnPoint") instance=ExtResource("10_n6i3n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.4936, 16.6077, 0)
+destroyCrateTime = 0.8
+respawnPoint = NodePath("../../DeathAreaSection/DeathArea3D3/RespawnPoint")
+
+[node name="ActivationArea3D" type="Area3D" parent="FallingCrateSection/FallingCrate12"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FallingCrateSection/FallingCrate12/ActivationArea3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.57367, 0.704481)
+shape = SubResource("BoxShape3D_i0l8i")
+
+[node name="FallingCrate13" parent="FallingCrateSection" node_paths=PackedStringArray("respawnPoint") instance=ExtResource("10_n6i3n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.7081, 16.6077, 0)
+destroyCrateTime = 0.8
+respawnPoint = NodePath("../../DeathAreaSection/DeathArea3D3/RespawnPoint")
+
+[node name="ActivationArea3D" type="Area3D" parent="FallingCrateSection/FallingCrate13"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FallingCrateSection/FallingCrate13/ActivationArea3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.57367, 0.704481)
+shape = SubResource("BoxShape3D_wntwu")
+
+[node name="FallingCrate8" parent="FallingCrateSection" node_paths=PackedStringArray("respawnPoint") instance=ExtResource("10_n6i3n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.7645, 37.3627, 0)
+respawnPoint = NodePath("../../DeathAreaSection/DeathArea3D6/RespawnPoint")
 
 [node name="ActivationArea3D" type="Area3D" parent="FallingCrateSection/FallingCrate8"]
 
@@ -1693,28 +1741,30 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.7645, 37.3627, 0.524041)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.85349, 0.704481)
 shape = SubResource("BoxShape3D_5kxbj")
 
-[node name="FallingCrate9" parent="FallingCrateSection" instance=ExtResource("10_n6i3n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.678, 37.3937, -0.589949)
-destroyCrateTime = 2.0
+[node name="FallingCrate9" parent="FallingCrateSection" node_paths=PackedStringArray("respawnPoint") instance=ExtResource("10_n6i3n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.678, 37.3937, 0)
+respawnPoint = NodePath("../../DeathAreaSection/DeathArea3D5/RespawnPoint")
 
 [node name="ActivationArea3D" type="Area3D" parent="FallingCrateSection/FallingCrate9"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FallingCrateSection/FallingCrate9/ActivationArea3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.54587, 0.704481)
-shape = SubResource("BoxShape3D_i0l8i")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10.4071, 0.704481)
+shape = SubResource("BoxShape3D_u47u2")
 
-[node name="FallingCrate10" parent="FallingCrateSection" instance=ExtResource("10_n6i3n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.89253, 37.3937, -0.589949)
+[node name="FallingCrate10" parent="FallingCrateSection" node_paths=PackedStringArray("respawnPoint") instance=ExtResource("10_n6i3n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.89253, 37.3937, 0)
 destroyCrateTime = 0.8
+respawnPoint = NodePath("../../DeathAreaSection/DeathArea3D5/RespawnPoint")
 
 [node name="ActivationArea3D" type="Area3D" parent="FallingCrateSection/FallingCrate10"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FallingCrateSection/FallingCrate10/ActivationArea3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.57367, 0.704481)
-shape = SubResource("BoxShape3D_wntwu")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115846, -6.1956, 0.704481)
+shape = SubResource("BoxShape3D_t0jq5")
 
-[node name="FallingCrate11" parent="FallingCrateSection" instance=ExtResource("10_n6i3n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.31243, 37.3937, -0.589949)
+[node name="FallingCrate11" parent="FallingCrateSection" node_paths=PackedStringArray("respawnPoint") instance=ExtResource("10_n6i3n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.31243, 37.3937, 0)
+respawnPoint = NodePath("../../DeathAreaSection/DeathArea3D5/RespawnPoint")
 
 [node name="ActivationArea3D" type="Area3D" parent="FallingCrateSection/FallingCrate11"]
 
@@ -1960,6 +2010,8 @@ libraries = {
 [connection signal="body_entered" from="FallingCrateSection/FallingCrate4/ActivationArea3D" to="FallingCrateSection/FallingCrate4" method="_on_activation_area_3d_body_entered"]
 [connection signal="body_entered" from="FallingCrateSection/FallingCrate6/ActivationArea3D" to="FallingCrateSection/FallingCrate6" method="_on_activation_area_3d_body_entered"]
 [connection signal="body_entered" from="FallingCrateSection/FallingCrate7/ActivationArea3D" to="FallingCrateSection/FallingCrate7" method="_on_activation_area_3d_body_entered"]
+[connection signal="body_entered" from="FallingCrateSection/FallingCrate12/ActivationArea3D" to="FallingCrateSection/FallingCrate12" method="_on_activation_area_3d_body_entered"]
+[connection signal="body_entered" from="FallingCrateSection/FallingCrate13/ActivationArea3D" to="FallingCrateSection/FallingCrate13" method="_on_activation_area_3d_body_entered"]
 [connection signal="body_entered" from="FallingCrateSection/FallingCrate8/ActivationArea3D" to="FallingCrateSection/FallingCrate8" method="_on_activation_area_3d_body_entered"]
 [connection signal="body_entered" from="FallingCrateSection/FallingCrate9/ActivationArea3D" to="FallingCrateSection/FallingCrate9" method="_on_activation_area_3d_body_entered"]
 [connection signal="body_entered" from="FallingCrateSection/FallingCrate10/ActivationArea3D" to="FallingCrateSection/FallingCrate10" method="_on_activation_area_3d_body_entered"]

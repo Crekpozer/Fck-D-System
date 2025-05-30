@@ -13,7 +13,7 @@ points = PackedVector3Array(-1, -0.75, -1, -1, 0.75, -1, 1, -0.75, -1, -1, -0.75
 size = Vector3(2, 1.5, 2)
 
 [node name="FallingCrateRigidBody3D" type="RigidBody3D"]
-mass = 400.0
+mass = 800.0
 script = ExtResource("1_2koqr")
 
 [node name="dangerous-falling-box" parent="." instance=ExtResource("2_bhqyw")]
