@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://b6kkwvkh0s2t"
+path.s3tc="res://.godot/imported/mapa_glTF_industrial-tile1-normal-ogl.png-6a1bdbba5483efb1e0018152d51de03f.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "e5b885211c3207164d26baca97bdf01d"
+}
+
+[deps]
+
+source_file="res://Assets/glTF/Images/mapa_glTF_industrial-tile1-normal-ogl.png"
+dest_files=["res://.godot/imported/mapa_glTF_industrial-tile1-normal-ogl.png-6a1bdbba5483efb1e0018152d51de03f.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=1
+roughness/src_normal="res://Assets/glTF/mapa_glTF_industrial-tile1-normal-ogl.png"
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

@@ -1,6 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cmqd3gsnrd4tl"]
+[gd_scene load_steps=9 format=3 uid="uid://cmqd3gsnrd4tl"]
 
-[ext_resource type="Material" uid="uid://c8kkb40dyj8hd" path="res://Source/Resource/Materials/moving_plataform_standard_material_3d.tres" id="1_uxquf"]
+[ext_resource type="Material" path="res://Source/Resource/Materials/moving_plataform_standard_material_3d.tres" id="1_uxquf"]
+[ext_resource type="PackedScene" uid="uid://cidh46tfy5u0g" path="res://Assets/glTF/mapa_glTF.glb" id="7_0smsj"]
+[ext_resource type="PackedScene" uid="uid://urt2h44f7uv6" path="res://Assets/glTF/wall_glTF.glb" id="7_cxw7v"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_g1cnk"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -42,3 +44,9 @@ material_override = ExtResource("1_uxquf")
 mesh = SubResource("BoxMesh_yp0qy")
 
 [node name="Objetos" type="Node3D" parent="."]
+
+[node name="wall_glTF" parent="Objetos" instance=ExtResource("7_cxw7v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.548103, 0.866582, -0.748281)
+
+[node name="mapa_glTF" parent="Objetos" instance=ExtResource("7_0smsj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.328785, 0.531184, -0.417257)
