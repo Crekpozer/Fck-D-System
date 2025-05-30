@@ -1,0 +1,115 @@
+[gd_scene load_steps=7 format=3 uid="uid://bcanrugn1id51"]
+
+[ext_resource type="Script" uid="uid://ggcgk1cpptr1" path="res://Source/Scenes/Autoload/LoadingScreen/loading_screen.gd" id="1_ymt6x"]
+
+[sub_resource type="Animation" id="Animation_2bg4i"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(960, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_2r2c8"]
+resource_name = "end_load"
+length = 1.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1161, -0.25, 0, 0.18735, -909.165),
+"times": PackedFloat32Array(0, 0.8)
+}
+
+[sub_resource type="Animation" id="Animation_cmtpn"]
+resource_name = "start_load"
+length = 1.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1155, -0.25, 0, 0.18735, -909.165, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.9)
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.938366),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"loading_screen_has_full_coverage"],
+"method": &"emit_signal"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8nxht"]
+_data = {
+&"RESET": SubResource("Animation_2bg4i"),
+&"end_load": SubResource("Animation_2r2c8"),
+&"start_load": SubResource("Animation_cmtpn")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t8hx7"]
+bg_color = Color(0.00566115, 0.00566115, 0.00566114, 1)
+
+[node name="LoadingScreen" type="CanvasLayer"]
+layer = 10
+script = ExtResource("1_ymt6x")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_8nxht")
+}
+autoplay = "start_load"
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1161.0
+offset_right = 1161.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_t8hx7")
+
+[node name="ProgressBar" type="ProgressBar" parent="Panel"]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -157.0
+offset_top = -13.0
+offset_right = 157.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Timer" type="Timer" parent="Panel"]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Panel/Timer" to="." method="_on_timer_timeout"]

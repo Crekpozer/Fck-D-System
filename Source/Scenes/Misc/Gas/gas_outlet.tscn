@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=4 uid="uid://bpsx763ccn3ou"]
+[gd_scene load_steps=13 format=4 uid="uid://bpsx763ccn3ou"]
 
 [ext_resource type="Material" uid="uid://bym3bat07lkey" path="res://Source/Resource/Materials/gas_pipe_standard_material_3d.tres" id="1_q3378"]
 [ext_resource type="Script" uid="uid://uwn3w1hxr74m" path="res://Source/Scenes/Misc/Gas/gas_outlet.gd" id="1_wo1b5"]
 [ext_resource type="Material" uid="uid://bc5s30j3sskm0" path="res://Source/Resource/Materials/gas_standard_material_3d.tres" id="2_wo1b5"]
+[ext_resource type="AudioStream" uid="uid://3o21tsepqlug" path="res://Assets/Sounds/SFX/sfx_fumaça_v1.wav" id="4_nj7ag"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_nj7ag"]
 _surfaces = [{
@@ -62,30 +63,43 @@ tracks/1/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer3D:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.433333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_wo1b5"]
 resource_name = "Default_2"
 length = 4.0
 loop_mode = 1
-tracks/0/type = "bezier"
+tracks/0/type = "value"
 tracks/0/imported = false
-tracks/0/enabled = false
-tracks/0/path = NodePath("GasArea3D:position:y")
+tracks/0/enabled = true
+tracks/0/path = NodePath("GasArea3D:monitoring")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0),
-"points": PackedFloat32Array(-0.595377, -0.25, 0, 0.25, 0, 6.57418, -0.25, 0, 0.25, 0, 6.57418, -0.25, 0, 0.25, 0, -0.595377, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.5, 2, 2.46667)
+"times": PackedFloat32Array(0, 1.96),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("GasArea3D:monitoring")
+tracks/1/path = NodePath("GasArea3D:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.5, 2.46),
+"times": PackedFloat32Array(0, 1.96),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -93,33 +107,34 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("GasArea3D:visible")
+tracks/2/path = NodePath("AudioStreamPlayer3D:playing")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.5, 2.46),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(1.73333),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false, true]
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_74rnc"]
 length = 0.001
-tracks/0/type = "bezier"
+tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("GasArea3D:position:y")
+tracks/0/path = NodePath("GasArea3D:monitoring")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(6.57418, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("GasArea3D:monitoring")
+tracks/1/path = NodePath("GasArea3D:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -131,7 +146,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("GasArea3D:visible")
+tracks/2/path = NodePath("AudioStreamPlayer3D:playing")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -175,5 +190,8 @@ unique_name_in_owner = true
 libraries = {
 &"": SubResource("AnimationLibrary_ynlmg")
 }
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_nj7ag")
 
 [connection signal="body_entered" from="GasArea3D" to="." method="_on_gas_area_3d_body_entered"]

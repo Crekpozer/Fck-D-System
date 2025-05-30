@@ -1,12 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://c25if1tggla6x"]
+[gd_scene load_steps=6 format=3 uid="uid://c25if1tggla6x"]
 
 [ext_resource type="Script" uid="uid://wpo6i0eodhwe" path="res://Source/Script/player_character.gd" id="1_e8n8p"]
+[ext_resource type="Texture2D" uid="uid://c6l7726syoof7" path="res://Source/PlayerCharacter/Images/olho_frente_concept.png" id="2_6noqu"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_61d18"]
 radius = 0.389607
 height = 0.779213
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vhpti"]
+albedo_color = Color(0.128101, 0.128101, 0.128101, 1)
+
 [sub_resource type="SphereMesh" id="SphereMesh_pr1x3"]
+material = SubResource("StandardMaterial3D_vhpti")
 radius = 0.25
 height = 0.5
 
@@ -26,7 +31,12 @@ shape = SubResource("CapsuleShape3D_61d18")
 
 [node name="CircleBody" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0.254385, 0)
+gi_mode = 2
 mesh = SubResource("SphereMesh_pr1x3")
+
+[node name="Sprite3D" type="Sprite3D" parent="CircleBody"]
+transform = Transform3D(-3.02841e-09, -0.04, 0.069282, -1.74846e-09, 0.069282, 0.04, -0.08, 0, -3.49691e-09, 0.243398, 0.153629, 0)
+texture = ExtResource("2_6noqu")
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
 unique_name_in_owner = true
@@ -45,3 +55,9 @@ one_shot = true
 
 [node name="wallJumpCorrectionTimer" type="Timer" parent="Timers"]
 unique_name_in_owner = true
+
+[node name="DashTimer" type="Timer" parent="Timers"]
+unique_name_in_owner = true
+process_callback = 0
+
+[connection signal="timeout" from="Timers/DashTimer" to="." method="_on_dash_timer_timeout"]

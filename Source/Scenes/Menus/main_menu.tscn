@@ -1,3 +1,116 @@
-[gd_scene format=3 uid="uid://c7xam1u7fg0cl"]
+[gd_scene load_steps=5 format=3 uid="uid://c7xam1u7fg0cl"]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource type="Script" path="res://Source/Script/start_game_button.gd" id="1_mgv2m"]
+[ext_resource type="Script" path="res://Source/Script/credits_button.gd" id="2_d5lpy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ov5mg"]
+font_size = 60
+
+[sub_resource type="LabelSettings" id="LabelSettings_mgv2m"]
+font_size = 30
+
+[node name="MainMenu" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Background" type="Panel" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleLabel" type="Label" parent="CanvasLayer/Background"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 88.0
+offset_top = -181.0
+offset_right = 412.0
+offset_bottom = -98.0
+grow_vertical = 2
+text = "we, robots"
+label_settings = SubResource("LabelSettings_ov5mg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartGameButton" type="Button" parent="CanvasLayer/Background/TitleLabel"]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 132.0
+offset_right = 251.0
+offset_bottom = 165.0
+script = ExtResource("1_mgv2m")
+
+[node name="StartGameLabel" type="Label" parent="CanvasLayer/Background/TitleLabel/StartGameButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -79.5
+offset_top = -24.5
+offset_right = 78.5
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "start game"
+label_settings = SubResource("LabelSettings_mgv2m")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OptionsLabel" type="Label" parent="CanvasLayer/Background/TitleLabel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 89.0
+offset_top = 132.5
+offset_right = 191.0
+offset_bottom = 174.5
+grow_vertical = 2
+text = "opções"
+label_settings = SubResource("LabelSettings_mgv2m")
+vertical_alignment = 1
+
+[node name="CreditsButton" type="Button" parent="CanvasLayer/Background/TitleLabel"]
+layout_mode = 0
+offset_left = 87.0
+offset_top = 228.0
+offset_right = 210.0
+offset_bottom = 267.0
+script = ExtResource("2_d5lpy")
+
+[node name="CreditsLabel" type="Label" parent="CanvasLayer/Background/TitleLabel/CreditsButton"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 1.0
+offset_top = -23.5
+offset_right = 122.0
+offset_bottom = 18.5
+grow_vertical = 2
+text = "creditos"
+label_settings = SubResource("LabelSettings_mgv2m")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="QuitLabel" type="Label" parent="CanvasLayer/Background/TitleLabel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 89.0
+offset_top = 227.5
+offset_right = 247.0
+offset_bottom = 269.5
+grow_vertical = 2
+text = "sair"
+label_settings = SubResource("LabelSettings_mgv2m")
+vertical_alignment = 1
+
+[connection signal="pressed" from="CanvasLayer/Background/TitleLabel/StartGameButton" to="CanvasLayer/Background/TitleLabel/StartGameButton" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Background/TitleLabel/CreditsButton" to="CanvasLayer/Background/TitleLabel/CreditsButton" method="_on_pressed"]
