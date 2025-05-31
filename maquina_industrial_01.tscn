@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwq8xxk2qs03p"]
+
+[ext_resource type="PackedScene" uid="uid://cxg86inud6w47" path="res://Assets/FBX/MaquinaIndustrial01.fbx" id="1_pl1e5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ogriq"]
+metallic = 1.0
+
+[node name="MaquinaIndustrial01" instance=ExtResource("1_pl1e5")]
+
+[node name="Cube" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ogriq")
