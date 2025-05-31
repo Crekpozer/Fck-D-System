@@ -28,8 +28,8 @@
 [ext_resource type="Texture2D" uid="uid://dw02uig5omfan" path="res://Assets/glTF/Images/eletricidade_painel_1_roughness.png" id="26_h85j6"]
 [ext_resource type="Texture2D" uid="uid://brr3utttqynwb" path="res://Assets/glTF/Images/eletricidade_painel_1_normal.png" id="27_uckk5"]
 [ext_resource type="PackedScene" uid="uid://bcfu185rdr1a" path="res://Assets/glTF/cone_glTF.glb" id="28_4b1lb"]
-[ext_resource type="PackedScene" uid="uid://cxg86inud6w47" path="res://Assets/FBX/MaquinaIndustrial01.fbx" id="29_uckk5"]
-[ext_resource type="PackedScene" uid="uid://bqq5dinj4hbcn" path="res://Assets/FBX/MaquinaIndustrial02.fbx" id="30_4b1lb"]
+[ext_resource type="PackedScene" uid="uid://xn5pimqsrhpo" path="res://Assets/glTF/forno_industrial_traseiro_glTF.glb" id="29_uckk5"]
+[ext_resource type="PackedScene" uid="uid://bhck8xpqdedsu" path="res://Assets/glTF/forno_industrial_frente_glTF.glb" id="30_4b1lb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_g1cnk"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -644,12 +644,6 @@ mesh = SubResource("ArrayMesh_0g6t7")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_h85j6")
 
-[node name="brasa2" type="MeshInstance3D" parent="Objetos/brasa2"]
-transform = Transform3D(-5.23418e-08, 0, 0.380433, 0, 1.24397, 0, -1.19744, 0, -1.66292e-08, 0.0437647, 0.320896, -8.47658)
-mesh = SubResource("ArrayMesh_0g6t7")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_h85j6")
-
 [node name="eletric_panel_2" type="MeshInstance3D" parent="Objetos"]
 transform = Transform3D(1.78814e-07, 0, 1, 0, 1, 0, -1, 0, 1.78814e-07, -2.85396, 6.73844, -2.03054)
 mesh = SubResource("ArrayMesh_pjixt")
@@ -659,8 +653,14 @@ surface_material_override/0 = SubResource("StandardMaterial3D_2beek")
 [node name="cone_glTF" parent="Objetos" instance=ExtResource("28_4b1lb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.46548, 5.98284, -3.87644)
 
-[node name="MaquinaIndustrial01" parent="Objetos" instance=ExtResource("29_uckk5")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -14.7458, 2.00519, -0.860363)
+[node name="brasa3" type="MeshInstance3D" parent="Objetos"]
+transform = Transform3D(1.19744, 0, 6.65169e-08, 0, 1.24397, 0, -2.09367e-07, 0, 0.380433, -10.5552, 2.05755, -0.965844)
+mesh = SubResource("ArrayMesh_0g6t7")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_h85j6")
 
-[node name="MaquinaIndustrial02" parent="Objetos" instance=ExtResource("30_4b1lb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4638, 1.9043, -0.773734)
+[node name="forno_industrial_traseiro_glTF" parent="Objetos" instance=ExtResource("29_uckk5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.118701, 0.5, -0.654885)
+
+[node name="forno_industrial_frente_glTF" parent="Objetos" instance=ExtResource("30_4b1lb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.627267, 0.440906, -0.867936)
