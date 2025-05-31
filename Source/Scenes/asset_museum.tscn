@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=4 uid="uid://cmqd3gsnrd4tl"]
+[gd_scene load_steps=82 format=4 uid="uid://cmqd3gsnrd4tl"]
 
 [ext_resource type="Material" path="res://Source/Resource/Materials/moving_plataform_standard_material_3d.tres" id="1_uxquf"]
 [ext_resource type="Texture2D" uid="uid://2eoo0cakx0q7" path="res://Assets/glTF/Images/cilindros_inflamaveis_diffuse.png" id="4_l1nia"]
@@ -29,7 +29,9 @@
 [ext_resource type="Texture2D" uid="uid://brr3utttqynwb" path="res://Assets/glTF/Images/eletricidade_painel_1_normal.png" id="27_uckk5"]
 [ext_resource type="PackedScene" uid="uid://bcfu185rdr1a" path="res://Assets/glTF/cone_glTF.glb" id="28_4b1lb"]
 [ext_resource type="PackedScene" uid="uid://xn5pimqsrhpo" path="res://Assets/glTF/forno_industrial_traseiro_glTF.glb" id="29_uckk5"]
-[ext_resource type="PackedScene" uid="uid://bhck8xpqdedsu" path="res://Assets/glTF/forno_industrial_frente_glTF.glb" id="30_4b1lb"]
+[ext_resource type="Texture2D" uid="uid://cr7ujl5ey246h" path="res://Assets/glTF/Images/diffuse_forno.png" id="30_pjixt"]
+[ext_resource type="Texture2D" uid="uid://cqeen558nye6v" path="res://Assets/glTF/Images/roughness_forno_frente.png" id="31_2beek"]
+[ext_resource type="Texture2D" uid="uid://clhsn8p7ed8cx" path="res://Assets/glTF/Images/normal_forno.png" id="32_blpqk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_g1cnk"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -562,6 +564,53 @@ roughness_texture = ExtResource("26_h85j6")
 normal_enabled = true
 normal_texture = ExtResource("27_uckk5")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_101hi"]
+resource_name = "Metal Plates"
+cull_mode = 2
+metallic_texture_channel = 2
+roughness_texture_channel = 1
+normal_enabled = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_xxhxu"]
+_surfaces = [{
+"aabb": AABB(-1, 0, -2.01002, 2, 4.85051, 4.3455),
+"format": 34896613377,
+"index_count": 234,
+"index_data": PackedByteArray("AAABAAIAAwACAAEAAwAEAAIAAQAFAAMABgACAAQABgAEAAcACAACAAYACAAAAAIACQAGAAcACQAHAAoACwAIAAYACwAGAAkADAAAAAgADAANAAAADgAMAAgADgAIAAsADwAJAAoADQAQAAAAAAAQAAEADQARABAAEgAOAAsACQASAAsACQAPABMACQATABQACQAUABIADwAVABMAFAATABUADwAFABUABQAWABUAFAAVABYAAQAWAAUAAQAXABYAEAAXAAEAGAAUABYAGQAUABgAGQASABQAGAAWABoAGwASABkAGAAcABkAGQAcABsAGAAaABwAGgAWAB0AFgAXAB0AHAAaAB4AGgAdAB4AHAAfABsAGwAfABIAHgAgABwAHgAdACAAHAAgAB8AIQAdABcAIgAgAB0AIgAdACEAIQAjACIAIgAjACQAIQAlACMAIgAkACYAJgAgACIAJgAkACcAKAAnACUAKAAlACEAJgAnACgAIQAXACgAKAApACYAKAAXACkAJgApACAAEAApABcAEAAgACkAEAAfACAAEAAqAB8AKgAQABEAHwAqACsALAArACoAHwArACwALAAqAC0AHwAsABIADgAsAC0ADgASACwA"),
+"name": "Metal Plates",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 46,
+"vertex_data": PackedByteArray("//+NaQAAAAAAAI1puIEAAAAAjWkAAAAAAAAAALiBAAAAAAAAAAAAAAAAAAD//wAAWSUnWgAAAABZJTkAAAAAAKXaJ1oAAAAAWSUnWriBAABZJTkAuIEAAKXaJ1q4gQAApdo5AAAAAAD//wAAAAAAAKXaOQC4gQAAWSU5AP//AAD//41puIEAAP//AAC4gQAApdrIcB2iAABZJacr//8AAFklyHAdogAAAACMLP//AAAAAKlwHaIAAAAA//+4gQAARCVVeR2iAAC62lV5HaIAAL0UR3kdogAAQetHeR2iAABB63H3HaIAAAAA//8dogAAvRRx9x2iAAD//6lwHaIAAP////8dogAA8Qz//yicAAAN8///KJwAAA3zTK8onAAADfNMr62HAADxDEyvKJwAAA3z//+thwAA8QxMr62HAADxDP//rYcAAP////+4gQAA//8AAP//AAD//4ws//8AAKXapyv//wAApdo5AP//AAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_tf3nm"]
+resource_name = "forno_industrial_frente_glTF_Cube_001"
+_surfaces = [{
+"aabb": AABB(-1, 0, -2.01002, 2, 4.85051, 4.3455),
+"attribute_data": PackedByteArray("as+YDaSeTEOknpgNas9MQxbRynmh8xZEofPKeRbRFkQbNd6Iz2qluRs1pbnPat6I1QDeiLIn7bzVAHSdGzUp/7InKf9q/FZgTPUzh0z1VmBq/DOHemzeiC6ipbl6bKW5LqLeiHTW3oiXr+28dNZ0nZevKf8uoin/hDbtUhJgOR0SYO1ShDY5HYZqVmCVSjOHhDYzhyn/jhsL+GtCC/iOGyn/a0LenOU4MmwDQFBz5Tj4nANAMmw9D1BzWxb4nD0P3pxbFvicr0EybDOHMmyvQficM4eh88p5FtEzhxbRynmh8zOHYyp/UdUAM4fVAH9RYyozh9UAOR3nFDkd2DQWRL6l+UiXoj+Dl6LzSMKlBkWknvdETMgGRaSeM4dQyPlIas/3RHbLP4NqzzOHdsvzSDTnptGu71ysru+m0TTnXKwf2LmKPd80nx/Yyp49356KBujKnungnooG6LmK6eA0nxHjV6OJ5abREeMuzx/YptGJ5d+gl9ouz5faV6Mf2N+gFtGTFmD2a0IW0WtCYPaTFlrxptHU+Vys1Pmm0VrxXKwf2FHTaf0p/x/YKf9p/VHT"),
+"format": 34896613399,
+"index_count": 234,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkACgAMAAgACgANAAwADAANAA4ACgAPAA0ADQAPABAAEQASABMAEQAUABIAFQAWABcAFQAYABYAGQAWABgAFgAZABoAGgAZABsAFgAaABwAFgAcAB0AHgAfACAAHgAhAB8AIgAeACAAHgAiACMAHgAjACQAJQAmACcAJQAoACYAKQAqACsAKQAsACoAKwAqAC0AKwAtAC4ALgAtAC8ALgAvADAAMQAyADMAMQA0ADIANQA2ADcANQA4ADYAOQA6ADsAOQA8ADoAPQA5ADsAOQA9AD4AOQA+AD8AQABBAEIAQgBDAEAAQgBEAEMAQQBEAEIAQABDAEUAQQBGAEQAQABFAEcARwBBAEAARwBFAEgASQBGAEEASQBKAEYARwBLAEEAQQBLAEkARwBIAEsASwBKAEkASwBIAEoATABNAE4ATABPAE0AUABRAFIAUABTAFEAVABVAFYAVABXAFUAWABZAFoAWgBZAFsAWABcAFkAWgBbAF0AXgBcAFgAXQBbAF8AXgBfAFwAXQBfAF4AYABhAGIAYABjAGEAZABlAGYAZABnAGUAaABpAGoAaABrAGkA"),
+"material": SubResource("StandardMaterial3D_101hi"),
+"name": "Metal Plates",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 108,
+"vertex_data": PackedByteArray("//+NaQAA/78AAI1puIH/vwAAjWkAAP+///+NabiB/7+l2idauIH//1klJ1oAAP//WSUnWriB//+l2idaAAD//wAAAAC4gf//AACNaQAA//8AAI1puIH//wAAAAAAAP//AAAAAP////8AAKlwHaL//wAAjCz/////AAD//7iB//8AAP//HaL/////qXAdoh6kpdqnK///KKSl2shwHaIepP//jCz//yqk//8AAAAA/////41puIH/////jWkAAP////8AALiB/////wAA////////qXAdov////+MLP//////////HaL///////+4gf//pdo5ALiBVNWl2idaAABU1aXaJ1q4gVTVpdo5AAAAVNWl2shwHaJU1aXapyv//1TVpdo5AP//VNVZJchwHaIepAAAjCz//yikAACpcB2iHqRZJacr//8qpKXaOQAAAP////+NaQAA//+l2idaAAD/////AAAAAP//AACNaQAA//9ZJSdaAAD//wAAAAAAAP//WSU5AAAA/////41puIH//wAA//+4gf//AACNabiB////////uIH//1klJ1q4gf//pdrIcB2i//+l2idauIH//1klyHAdov//WSUnWriBVNVZJTkAAABU1VklOQC4gVTVWSUnWgAAVNVZJTkA//9U1Vklpyv//1TVWSXIcB2iVNW62lV5HaL//0Hrcfcdov//QetHeR2i//+l2shwHaL/////qXAdov//WSXIcB2i////////HaL//0QlVXkdov//AACpcB2i//+9FHH3HaL//wAA//8dov//vRRHeR2i//8N8///KJz//w3zTK+th///DfP//62H//8N80yvKJz//1klOQD/////AACMLP////9ZJacr/////wAAAAD/////pdqnK////////wAA/////6XaOQD///////+MLP/////xDP//rYdU1f////+4gVTVDfP//62HVNX/////HaJU1QAA//+4gVTVDfP//yicVNXxDP//KJxU1QAA//8dolTV8Qz//yic//8N80yvKJz//w3z//8onP//8QxMryic///xDP//rYf///EMTK8onP//8Qz//yic///xDEyvrYf//w3z//+th/+/8QxMr62H/7/xDP//rYf/vw3zTK+th/+/////f////3////9/////f/9//z//f/8//3//P/9//z//P/9//z//f/8//3//P/9//z//f/8//3//P/9//z//f/8//39g/aiDgf/lhST9aYO9/yOG/7//f/+//3//v/9//7//f/+//3//v/9//7//f/+//3//v/9/VNVU1VTVVNVU1VTVVNVU1VTVVNVU1VTVVNVU1VX8YX0W+oR/lfwkfdr5vX//v/8//7//P/+//z//v/8//7//P/8//7//P/+//z//v////3////9/////f////3//fwBW/38AVv9/AFb/fwBWqiqqKqoqqiqqKqoqqiqqKqoqqiqqKqoqqiqqKv9//3//f/9//3//f/9//3//f/9//3//f/9//3//f/9//3//f/9//3//f/9//3//f/8//3//P/9//z//f/8//3//f/9//3//f/9//3//f/9//3//f/9//3//f/9//3//f1TVqipU1aoqVNWqKlTVqipU1aoqVNWqKlTVqipU1aoq/z//v/8//7//P/+//z//v/+//3//v/9//7//f/+//3//f/9//3//f/9//3//f/9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_xxhxu")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qr4v8"]
+albedo_texture = ExtResource("30_pjixt")
+metallic = 1.0
+metallic_texture = ExtResource("31_2beek")
+roughness_texture = ExtResource("31_2beek")
+normal_enabled = true
+normal_texture = ExtResource("32_blpqk")
+
 [node name="AssetMuseum" type="Node3D"]
 
 [node name="Ambiente" type="Node3D" parent="."]
@@ -662,5 +711,8 @@ surface_material_override/0 = SubResource("StandardMaterial3D_h85j6")
 [node name="forno_industrial_traseiro_glTF" parent="Objetos" instance=ExtResource("29_uckk5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.118701, 0.5, -0.654885)
 
-[node name="forno_industrial_frente_glTF" parent="Objetos" instance=ExtResource("30_4b1lb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.627267, 0.440906, -0.867936)
+[node name="forno_front" type="MeshInstance3D" parent="Objetos/forno_industrial_traseiro_glTF"]
+transform = Transform3D(1.78814e-07, 0, -1, 0, 1, 0, 1, 0, 1.78814e-07, -14.9798, 1.34227, -0.363309)
+mesh = SubResource("ArrayMesh_tf3nm")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_qr4v8")
