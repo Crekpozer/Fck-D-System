@@ -1,20 +1,19 @@
-[gd_scene load_steps=14 format=4 uid="uid://d2md3evaysfe1"]
+[gd_scene load_steps=12 format=4 uid="uid://doj6f0wi4ctkn"]
 
-[ext_resource type="Script" uid="uid://cg76pv7w3xf3o" path="res://Source/Scenes/Misc/Special Wall/stickable_wall.gd" id="1_n1c2n"]
-[ext_resource type="Texture2D" uid="uid://dbyisjtdg1568" path="res://Assets/glTF/Images/diffuse.png" id="2_5iqla"]
-[ext_resource type="Texture2D" uid="uid://c3ok25ol7w6aq" path="res://Assets/glTF/Images/roughness (2).png" id="3_uyyk4"]
-[ext_resource type="Texture2D" uid="uid://cttdth8ihqvu5" path="res://Assets/glTF/Images/normal.png" id="4_0cqts"]
-[ext_resource type="Texture2D" uid="uid://beh7wiasohxqc" path="res://Assets/glTF/barra_imantada_glTF_rusty_metal_02_diff_8k.jpg" id="5_2fbgj"]
-[ext_resource type="Texture2D" uid="uid://ddwgytr1mr0ct" path="res://Assets/glTF/barra_imantada_glTF_rusty_metal_02_rough_8k.png" id="6_xvtou"]
-[ext_resource type="Texture2D" uid="uid://x38mob6wewbp" path="res://Assets/glTF/barra_imantada_glTF_rusty_metal_02_nor_4k.png" id="7_m76qn"]
+[ext_resource type="Texture2D" uid="uid://dbyisjtdg1568" path="res://Assets/glTF/Images/diffuse.png" id="2_krlnc"]
+[ext_resource type="Texture2D" uid="uid://c3ok25ol7w6aq" path="res://Assets/glTF/Images/roughness (2).png" id="3_pk0ev"]
+[ext_resource type="Texture2D" uid="uid://beh7wiasohxqc" path="res://Assets/glTF/barra_imantada_glTF_rusty_metal_02_diff_8k.jpg" id="4_58t7d"]
+[ext_resource type="Texture2D" uid="uid://cttdth8ihqvu5" path="res://Assets/glTF/Images/normal.png" id="4_7280i"]
+[ext_resource type="Texture2D" uid="uid://ddwgytr1mr0ct" path="res://Assets/glTF/barra_imantada_glTF_rusty_metal_02_rough_8k.png" id="5_gpooh"]
+[ext_resource type="Texture2D" uid="uid://x38mob6wewbp" path="res://Assets/glTF/barra_imantada_glTF_rusty_metal_02_nor_4k.png" id="6_s413k"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4mosq"]
-albedo_texture = ExtResource("2_5iqla")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sbskq"]
+albedo_texture = ExtResource("2_krlnc")
 metallic = 1.0
-metallic_texture = ExtResource("3_uyyk4")
-roughness_texture = ExtResource("3_uyyk4")
+metallic_texture = ExtResource("3_pk0ev")
+roughness_texture = ExtResource("3_pk0ev")
 normal_enabled = true
-normal_texture = ExtResource("4_0cqts")
+normal_texture = ExtResource("4_7280i")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m8jdi"]
 resource_name = "danger_box_texture"
@@ -24,13 +23,13 @@ albedo_color = Color(0.906332, 0.906332, 0.906332, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_agbr7"]
 resource_name = "rusty_metal_02"
 cull_mode = 2
-albedo_texture = ExtResource("5_2fbgj")
-metallic_texture = ExtResource("6_xvtou")
+albedo_texture = ExtResource("4_58t7d")
+metallic_texture = ExtResource("5_gpooh")
 metallic_texture_channel = 2
-roughness_texture = ExtResource("6_xvtou")
+roughness_texture = ExtResource("5_gpooh")
 roughness_texture_channel = 1
 normal_enabled = true
-normal_texture = ExtResource("7_m76qn")
+normal_texture = ExtResource("6_s413k")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_sggsd"]
 _surfaces = [{
@@ -57,7 +56,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_gh4lk"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_itsy5"]
 resource_name = "barra_imantada_glTF_Roundcube_002"
 _surfaces = [{
 "aabb": AABB(-0.174, -1.94, -0.9465, 0.348, 3.88, 1.893),
@@ -88,20 +87,10 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_sggsd")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5iqla"]
-points = PackedVector3Array(-0.204794, 1.90869, -0.977101, 0.226317, 1.90869, -0.915381, 0.226317, -1.90869, 0.931587, -0.204794, -1.90869, 0.931587, 0.226317, -1.90869, -0.915381, 0.226317, 1.90869, 0.931587, -0.204794, 1.97041, 0.87006, -0.204794, -1.97041, -0.915381, -0.204794, -1.90869, -0.977101, -0.204794, 1.97041, -0.915381, -0.204794, -1.97041, 0.87006, -0.204794, 1.90869, 0.931587)
-
-[node name="StickableWall" type="StaticBody3D"]
-collision_layer = 3
-collision_mask = 0
-script = ExtResource("1_n1c2n")
+[node name="barra_imantada_glTF" type="Node3D"]
 
 [node name="barra_imantada" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.909, 0)
-material_override = SubResource("StandardMaterial3D_4mosq")
-mesh = SubResource("ArrayMesh_gh4lk")
+transform = Transform3D(1.78814e-07, 0, 1, 0, 1, 0, -1, 0, 1.78814e-07, -0.000440121, 0.909304, -0.0510128)
+material_override = SubResource("StandardMaterial3D_sbskq")
+mesh = SubResource("ArrayMesh_itsy5")
 skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.909, 0)
-shape = SubResource("ConvexPolygonShape3D_5iqla")

@@ -49,9 +49,9 @@ var stickTimer : float = 0.2
 #var dashForce : float = 1000
 #var dashing : bool = false
 # CHAVES
-var hasBlueKey : bool
-var hasYellowKey : bool
-var hasRedKey : bool
+@export var hasBlueKey : bool
+@export var hasYellowKey : bool
+@export var hasRedKey : bool
 
 # REFERÊNCIAS
 # Referência ao nodo da câmera
