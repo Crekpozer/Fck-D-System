@@ -2,7 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5tbqbaffvo2n"
+
+uid="uid://df6s2mf0dju71"
+
 path.s3tc="res://.godot/imported/cilindro_inflamavel_rusty_metal_02_rough_8k.png-c0fd133b8f014a4a84d69b2c814d6022.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],

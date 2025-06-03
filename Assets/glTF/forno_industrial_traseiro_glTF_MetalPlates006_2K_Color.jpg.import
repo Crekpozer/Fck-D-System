@@ -2,7 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhr6hlolkqtfa"
+
+uid="uid://ckjgsus0q66i5"
+
 path.s3tc="res://.godot/imported/forno_industrial_traseiro_glTF_MetalPlates006_2K_Color.jpg-b01f81ee9cba3b6ca8afa4e5a2e9acf1.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],

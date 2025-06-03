@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=4 uid="uid://bbbl2ghkikmeo"]
+[gd_scene load_steps=94 format=4 uid="uid://bbbl2ghkikmeo"]
 
 [ext_resource type="Script" uid="uid://bhpmowj44i1kt" path="res://Source/Script/level_manager.gd" id="1_h2jux"]
 [ext_resource type="Texture2D" uid="uid://ca8kgb6838p6k" path="res://Source/Resource/Materials/Textures/PolygonPrototype_Texture_Grid_02.png" id="1_uyft7"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://c25if1tggla6x" path="res://Source/PlayerCharacter/character_body_3d.tscn" id="3_8fmr1"]
 [ext_resource type="PackedScene" uid="uid://d2md3evaysfe1" path="res://Source/Scenes/Misc/Special Wall/stickable_wall.tscn" id="4_8wsfg"]
 [ext_resource type="PackedScene" uid="uid://bu0ul7ygud58s" path="res://Source/Scenes/Misc/Moving Plataform/moving_plataform.tscn" id="5_h2jux"]
+[ext_resource type="PackedScene" uid="uid://urt2h44f7uv6" path="res://Assets/glTF/wall_glTF.glb" id="5_o1fda"]
+[ext_resource type="PackedScene" uid="uid://bv0olfefmif0j" path="res://Assets/FBX/eletricity_box.fbx" id="6_n6i3n"]
 [ext_resource type="PackedScene" uid="uid://c2y628badbr66" path="res://Source/Scenes/Misc/DeathArea/death_area_3d.tscn" id="6_s2b3k"]
 [ext_resource type="Texture2D" uid="uid://bxi5rniq6qlnw" path="res://Source/Resource/Materials/Textures/PolygonPrototype_Texture_Grid_07.png" id="7_u47u2"]
 [ext_resource type="Material" uid="uid://d1076ynoybsdx" path="res://Source/Resource/Materials/danger_standard_material_3d.tres" id="8_t0jq5"]
@@ -375,10 +377,9 @@ _data = {
 script = ExtResource("1_h2jux")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
-light_color = Color(0.675151, 0.776312, 1, 1)
+transform = Transform3D(-0.866024, -0.433016, 0.250001, 0.353556, -0.176778, 0.918558, -0.353556, 0.883882, 0.306189, 0, 6.01301, 12.7482)
+light_color = Color(0.851858, 0.885646, 1, 1)
 shadow_enabled = true
-sky_mode = 2
 
 [node name="Malha de fora" type="CSGMesh3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.75554, -35.749, 0.0980167)
@@ -396,11 +397,6 @@ transform = Transform3D(5.8081, 0, 0, 0, 0.529788, 0, 0, 0, 1, -44.8776, 4.89798
 mesh = SubResource("BoxMesh_mfu6t")
 material = SubResource("StandardMaterial3D_o4wny")
 
-[node name="CSGMesh3D3" type="CSGMesh3D" parent="Malha de fora"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.6566, 2.35024, -0.537507)
-mesh = SubResource("BoxMesh_woc6x")
-material = SubResource("StandardMaterial3D_o4wny")
-
 [node name="CSGMesh3D9" type="CSGMesh3D" parent="Malha de fora"]
 transform = Transform3D(0.764318, 0, 0, 0, 4.37066, 0, 0, 0, 0.314045, -55.8757, 5.38362, -3.81332)
 mesh = SubResource("BoxMesh_woc6x")
@@ -408,32 +404,6 @@ material = SubResource("StandardMaterial3D_o4wny")
 
 [node name="CSGMesh3D24" type="CSGMesh3D" parent="Malha de fora"]
 transform = Transform3D(0.764318, 0, 0, 0, 4.37066, 0, 0, 0, 0.314045, -55.8757, 5.38362, 2.89305)
-mesh = SubResource("BoxMesh_woc6x")
-material = SubResource("StandardMaterial3D_o4wny")
-
-[node name="CSGMesh3D25" type="CSGMesh3D" parent="Malha de fora"]
-transform = Transform3D(0.764318, 0, 0, 0, 5.18735, 0, 0, 0, 0.33366, -55.8483, 5.75925, 3.48144)
-mesh = SubResource("BoxMesh_woc6x")
-material = SubResource("StandardMaterial3D_o4wny")
-
-[node name="CSGMesh3D26" type="CSGMesh3D" parent="Malha de fora"]
-transform = Transform3D(-0.00446887, 0, -3.12989, 0, 5.18735, 0, 0.764305, 0, -0.0183004, -63.5248, 4.02339, -4.38519)
-mesh = SubResource("BoxMesh_woc6x")
-material = SubResource("StandardMaterial3D_o4wny")
-
-[node name="CSGMesh3D26" type="CSGMesh3D" parent="Malha de fora/CSGMesh3D26"]
-transform = Transform3D(3.88941, 0, 0, 0, 0.379747, 0, 0, 0, 0.593176, -0.93429, 0.364199, -0.419683)
-operation = 2
-mesh = SubResource("BoxMesh_woc6x")
-material = SubResource("StandardMaterial3D_o4wny")
-
-[node name="CSGMesh3D20" type="CSGMesh3D" parent="Malha de fora"]
-transform = Transform3D(0.764318, 0, 0, 0, 5.78943, 0, 0, 0, 0.314045, -55.8757, 5.72094, -11.1204)
-mesh = SubResource("BoxMesh_woc6x")
-material = SubResource("StandardMaterial3D_o4wny")
-
-[node name="CSGMesh3D15" type="CSGMesh3D" parent="Malha de fora"]
-transform = Transform3D(0.764169, 0, 0.00620423, 0, 5.51159, 0, -0.0150998, 0, 0.313984, -55.8757, 5.72094, -21.3534)
 mesh = SubResource("BoxMesh_woc6x")
 material = SubResource("StandardMaterial3D_o4wny")
 
@@ -1089,8 +1059,15 @@ metadata/_edit_lock_ = true
 
 [node name="LevelMap" type="MeshInstance3D" parent="LevelDesign"]
 transform = Transform3D(0.858193, 0, 0, 0, 0.792, 0, 0, 0, 1.019, 6.25494, 1.93184, -0.00823593)
+visible = false
 mesh = SubResource("QuadMesh_woc6x")
 skeleton = NodePath("../..")
+
+[node name="wall_glTF" parent="LevelDesign" instance=ExtResource("5_o1fda")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 7.63651, -35.6441, 2.16599)
+
+[node name="eletricity_box" parent="LevelDesign" instance=ExtResource("6_n6i3n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.0242, -34.249, -2.36738)
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("3_8fmr1")]
 unique_name_in_owner = true
@@ -2059,6 +2036,20 @@ shadow_enabled = true
 spot_range = 36.903
 spot_attenuation = 0.22
 spot_angle = 7.0
+
+[node name="Moldura" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.3577, 41.5271, -0.346718)
+material_override = ExtResource("2_8fmr1")
+
+[node name="Moldura" type="CSGBox3D" parent="Moldura"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.6102, -35.7644, 2.05298)
+size = Vector3(250, 150, 1)
+metadata/_edit_lock_ = true
+
+[node name="Moldura" type="CSGBox3D" parent="Moldura/Moldura"]
+transform = Transform3D(0.897736, 0, 0, 0, 0.813539, 0, 0, 0, 13.5603, 2.26912, -3.96229, 2.05298)
+operation = 2
+size = Vector3(140, 95, 1)
 
 [connection signal="body_entered" from="FallingCrateSection/FallingCrate/ActivationArea3D" to="FallingCrateSection/FallingCrate" method="_on_activation_area_3d_body_entered"]
 [connection signal="body_entered" from="FallingCrateSection/FallingCrate2/ActivationArea3D" to="FallingCrateSection/FallingCrate2" method="_on_activation_area_3d_body_entered"]
