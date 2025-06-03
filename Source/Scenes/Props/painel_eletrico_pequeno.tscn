@@ -1,0 +1,20 @@
+[gd_scene load_steps=6 format=3 uid="uid://cn7ib70f1jut0"]
+
+[ext_resource type="PackedScene" uid="uid://hjc2li71jfb7" path="res://Assets/glTF/painel_eletrico_pequeno.glb" id="1_3g6rw"]
+[ext_resource type="Texture2D" uid="uid://dwglupsh1ujdv" path="res://Assets/glTF/Images/eletricidade_painel_1_diffuse.png" id="2_g5x85"]
+[ext_resource type="Texture2D" uid="uid://dw02uig5omfan" path="res://Assets/glTF/Images/eletricidade_painel_1_roughness.png" id="3_415c0"]
+[ext_resource type="Texture2D" uid="uid://brr3utttqynwb" path="res://Assets/glTF/Images/eletricidade_painel_1_normal.png" id="4_oa3s0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_75njb"]
+albedo_texture = ExtResource("2_g5x85")
+metallic = 1.0
+metallic_texture = ExtResource("3_415c0")
+roughness_texture = ExtResource("3_415c0")
+normal_enabled = true
+normal_texture = ExtResource("4_oa3s0")
+
+[node name="painel_eletrico_pequeno" instance=ExtResource("1_3g6rw")]
+
+[node name="eletric_panel_1" parent="." index="0"]
+transform = Transform3D(1.78814e-07, 0, 1, 0, 1, 0, -1, 0, 1.78814e-07, 0.0450225, 0.0119321, 0.0113249)
+surface_material_override/0 = SubResource("StandardMaterial3D_75njb")
