@@ -1,0 +1,20 @@
+[gd_scene load_steps=6 format=3 uid="uid://bh4bti4gfacjt"]
+
+[ext_resource type="PackedScene" uid="uid://bhck8xpqdedsu" path="res://Assets/glTF/forno_industrial_frente_glTF.glb" id="1_tjrku"]
+[ext_resource type="Texture2D" uid="uid://cr7ujl5ey246h" path="res://Assets/glTF/Images/diffuse_forno.png" id="2_q328d"]
+[ext_resource type="Texture2D" uid="uid://cqeen558nye6v" path="res://Assets/glTF/Images/roughness_forno_frente.png" id="3_sdtge"]
+[ext_resource type="Texture2D" uid="uid://clhsn8p7ed8cx" path="res://Assets/glTF/Images/normal_forno.png" id="4_32bk6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0comy"]
+albedo_texture = ExtResource("2_q328d")
+metallic = 1.0
+metallic_texture = ExtResource("3_sdtge")
+roughness_texture = ExtResource("3_sdtge")
+normal_enabled = true
+normal_texture = ExtResource("4_32bk6")
+
+[node name="forno_industrial_frente_glTF" instance=ExtResource("1_tjrku")]
+
+[node name="forno_front" parent="." index="0"]
+transform = Transform3D(1.78814e-07, 0, -1, 0, 1, 0, 1, 0, 1.78814e-07, 0.0377045, -0.0117527, 0.0441177)
+surface_material_override/0 = SubResource("StandardMaterial3D_0comy")
