@@ -1,0 +1,19 @@
+[gd_scene load_steps=6 format=3 uid="uid://00hcjl80i6g"]
+
+[ext_resource type="PackedScene" uid="uid://657fr4ca7hss" path="res://Assets/glTF/cilindro_inflamavel.glb" id="1_qfbk3"]
+[ext_resource type="Texture2D" uid="uid://bwfye8whae12m" path="res://Assets/glTF/Images/diffuse_1tank_flamable.png" id="2_rr0lq"]
+[ext_resource type="Texture2D" uid="uid://i4llkbwu5fbb" path="res://Assets/glTF/Images/roughness.png" id="3_t2hlu"]
+[ext_resource type="Texture2D" uid="uid://cvuetiudy2j50" path="res://Assets/glTF/Images/normal.008.png" id="4_ltlcu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dfewo"]
+albedo_texture = ExtResource("2_rr0lq")
+metallic_texture = ExtResource("3_t2hlu")
+roughness_texture = ExtResource("3_t2hlu")
+normal_enabled = true
+normal_texture = ExtResource("4_ltlcu")
+
+[node name="cilindro_inflamavel" instance=ExtResource("1_qfbk3")]
+
+[node name="1tank_flamable" parent="." index="0"]
+transform = Transform3D(1.78814e-07, 0, -1, 0, 1, 0, 1, 0, 1.78814e-07, 0.00273275, -0.0409458, -0.0642014)
+material_override = SubResource("StandardMaterial3D_dfewo")
