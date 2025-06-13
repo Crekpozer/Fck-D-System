@@ -1,0 +1,27 @@
+[gd_scene load_steps=8 format=3 uid="uid://sc2lwhpr4qhu"]
+
+[ext_resource type="PackedScene" uid="uid://b8gnlg4av4aym" path="res://Assets/glTF/character_glTF.glb" id="1_hmc3r"]
+[ext_resource type="Texture2D" uid="uid://ctga1gvxpcfy1" path="res://Assets/glTF/Images/emission.png" id="2_2xror"]
+[ext_resource type="Texture2D" uid="uid://c3s64wj0pu6wb" path="res://Assets/glTF/Images/diffuse_character.png" id="3_87l0e"]
+[ext_resource type="Texture2D" uid="uid://bfj2dr288msei" path="res://Assets/glTF/Images/roughness_character.png" id="4_sbvpi"]
+[ext_resource type="Texture2D" uid="uid://d1fgpt3lwkakq" path="res://Assets/glTF/Images/normal_character.001.png" id="5_3d3s0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gca82"]
+albedo_texture = ExtResource("2_2xror")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a4t46"]
+albedo_texture = ExtResource("3_87l0e")
+metallic = 1.0
+metallic_texture = ExtResource("4_sbvpi")
+roughness_texture = ExtResource("4_sbvpi")
+emission_enabled = true
+emission_texture = ExtResource("2_2xror")
+normal_enabled = true
+normal_texture = ExtResource("5_3d3s0")
+
+[node name="character_glTF" instance=ExtResource("1_hmc3r")]
+
+[node name="Sphere" parent="." index="0"]
+transform = Transform3D(-1, -6.89178e-08, -7.52106e-08, 6.89178e-08, 0.0871556, -0.996195, 7.52106e-08, -0.996195, -0.0871556, 0.0305319, -0.0163631, -0.00450158)
+material_override = SubResource("StandardMaterial3D_gca82")
+surface_material_override/0 = SubResource("StandardMaterial3D_a4t46")

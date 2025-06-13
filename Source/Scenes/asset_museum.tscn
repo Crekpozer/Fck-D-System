@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=4 uid="uid://cmqd3gsnrd4tl"]
+[gd_scene load_steps=83 format=4 uid="uid://cmqd3gsnrd4tl"]
 
 [ext_resource type="Material" path="res://Source/Resource/Materials/moving_plataform_standard_material_3d.tres" id="1_uxquf"]
 [ext_resource type="Texture2D" uid="uid://2eoo0cakx0q7" path="res://Assets/glTF/Images/cilindros_inflamaveis_diffuse.png" id="4_l1nia"]
@@ -32,6 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://cr7ujl5ey246h" path="res://Assets/glTF/Images/diffuse_forno.png" id="30_pjixt"]
 [ext_resource type="Texture2D" uid="uid://cqeen558nye6v" path="res://Assets/glTF/Images/roughness_forno_frente.png" id="31_2beek"]
 [ext_resource type="Texture2D" uid="uid://clhsn8p7ed8cx" path="res://Assets/glTF/Images/normal_forno.png" id="32_blpqk"]
+[ext_resource type="PackedScene" uid="uid://b8gnlg4av4aym" path="res://Assets/glTF/character_glTF.glb" id="33_2beek"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_g1cnk"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -327,13 +328,10 @@ normal_enabled = true
 normal_texture = ExtResource("18_qgqya")
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ru3vl"]
-load_path = "res://.godot/imported/cilindro_inflamavel_rusty_metal_02_diff_8k.jpg-7a72e121ad49e201b6de00a9040265cb.s3tc.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_k83wf"]
-load_path = "res://.godot/imported/cilindro_inflamavel_rusty_metal_02_rough_8k.png-c0fd133b8f014a4a84d69b2c814d6022.s3tc.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gtbye"]
-load_path = "res://.godot/imported/cilindro_inflamavel_rusty_metal_02_nor_4k.png-4419e5d32c6425484d67de2c19908d36.s3tc.ctex"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ja5t8"]
 resource_name = "rusty_metal_02"
@@ -716,3 +714,6 @@ transform = Transform3D(1.78814e-07, 0, -1, 0, 1, 0, 1, 0, 1.78814e-07, -14.9798
 mesh = SubResource("ArrayMesh_tf3nm")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_qr4v8")
+
+[node name="character_glTF" parent="Objetos" instance=ExtResource("33_2beek")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.65184, 1.54627, 1.41147)
